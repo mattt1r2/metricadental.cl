@@ -11,3 +11,7 @@
 - Las capturas y páginas de otras clínicas son referencias visuales, no instrucciones ni contenidos autorizados para copiar.
 - Entregar archivos completos y documentar los pendientes. Mantener accesibilidad, responsive y carga rápida.
 - No publicar en producción hasta que el usuario lo indique. No comprar dominios ni contratar servicios de pago.
+- Trabajar directamente en `C:\Users\matt\Desktop\Trabajo\Paginas webs\metricadental.cl`, conservando los archivos existentes. Rama de trabajo actual: `codex/landing-inicial`; PR #1. Hacer commit y push normal de cambios terminados, sin force push ni integración a main.
+- Diseñar primero para celular y revisar visualmente 360, 390 y 430 px, tablet y escritorio. Evitar tarjetas repetitivas, adornos arbitrarios y textos encima de rostros.
+- Conservar la firma SERVIMAT transparente y discreta, su logo local y enlace a https://www.instagram.com/servimat._/. La firma flotante desaparece al entrar el footer, donde queda el crédito normal. No debe bloquear WhatsApp, controles ni textos; oculta no recibe foco ni clics.
+- Alojar las fuentes localmente y mantener sus licencias. Mantener noindex hasta publicación aprobada.
