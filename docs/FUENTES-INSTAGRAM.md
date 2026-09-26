@@ -1,5 +1,7 @@
 # Revisión de fuentes públicas — 26 de septiembre de 2026
 
+Actualización posterior: el usuario confirmó directamente las promociones de brackets y limpieza, junto con nuevas imágenes. Los datos actualizados están en BRIEF.md; la incertidumbre histórica de esas dos campañas que se describe a continuación ya quedó resuelta por esa confirmación. La oferta de implantes sigue pendiente y no se publica.
+
 Perfil revisado en la sesión de navegador facilitada por el usuario: https://www.instagram.com/clinicametricadental/
 
 ## Contacto y dirección

@@ -11,6 +11,6 @@
 9. Retirar `noindex` de las páginas y de `_headers` únicamente cuando se publique la versión aprobada. Mantener las vistas previas fuera de indexación mediante la configuración correspondiente.
 10. Comprobar enlaces de WhatsApp y Maps, menú móvil, teclado, contraste y comportamiento en escritorio, tablet y celular.
 
-No se han creado cuentas, comprado dominios, conectado Cloudflare ni desplegado el sitio. El mapa es por ahora un enlace al destino exacto aportado por el cliente; no se carga un mapa de terceros automáticamente.
+No se han creado cuentas, comprado dominios, conectado Cloudflare ni desplegado el sitio. A petición del usuario, el mapa del edificio está incrustado mediante el código oficial de Google Maps y `loading=lazy`; puede conectarse a Google al acercarse a la sección. Hay también enlace externo. Revisar su funcionamiento con la CSP desplegada y conservar la información correspondiente en privacidad.
 
 Documentación: https://developers.cloudflare.com/pages/configuration/git-integration/ y https://developers.cloudflare.com/pages/configuration/headers/

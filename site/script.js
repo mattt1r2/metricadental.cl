@@ -32,6 +32,23 @@ if (menuButton && menu) {
   });
 }
 
+// Service links open their explanation in this page, including shared deep links.
+const revealProcedure = (moveFocus = false) => {
+  const id = location.hash.slice(1);
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target?.matches('.procedure')) return;
+  target.open = true;
+  if (moveFocus) target.querySelector('summary')?.focus({ preventScroll: true });
+  requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+};
+window.addEventListener('hashchange', () => revealProcedure(true));
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (link && link.hash === location.hash) revealProcedure(true);
+});
+revealProcedure();
+
 // The footer credit replaces the floating signature, including keyboard access.
 const watermark = document.querySelector('.servimat-watermark');
 const footer = document.querySelector('.site-footer');
@@ -60,7 +77,7 @@ if (watermark && footer) {
       return;
     }
     // Keep the signature clear of controls and text at the bottom of small screens.
-    const obstacles = [...document.querySelectorAll('main a, main button, main summary, main video')]
+    const obstacles = [...document.querySelectorAll('main a, main button, main summary, main video, main iframe')]
       .map(element => element.getBoundingClientRect())
       .filter(box => box.bottom > innerHeight - 180 && box.top < innerHeight);
     const walker = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT);

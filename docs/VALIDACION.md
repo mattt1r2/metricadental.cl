@@ -1,26 +1,38 @@
-# Validación de la revisión visual
+# Validación de servicios, promociones y ubicación
 
-Fecha: 26 de septiembre de 2026. Servidor local del directorio `site/`, en `http://127.0.0.1:8081/`.
+Fecha: 26 de septiembre de 2026. Vista previa local: http://127.0.0.1:8081/.
 
-## Comprobado
+## Contenido y navegación
 
-- Revisión visual a 360, 390 y 430 px, tablet de 768 px y escritorio de 1366 px. Portada, encuadre, botones y navegación adaptados; sin desbordamiento horizontal en las medidas comprobadas.
-- Menú móvil mediante teclado: Enter abre, Escape cierra y devuelve el foco al botón. Foco visible en enlaces y controles. Preguntas frecuentes con Enter, expansión y cierre correctos.
-- Página de privacidad accesible desde el footer, con regreso a la landing y sin desbordamiento a 390 px.
-- Firma SERVIMAT pequeña y sin panel. En el footer se oculta la flotante: `aria-hidden`, `inert`, `tabindex=-1`, visibilidad oculta y sin capturar clics. Fuera del footer reaparece cuando hay espacio sin texto o controles; puede cambiar de esquina o desaparecer temporalmente para evitar superposición. Crédito permanente dentro del footer.
-- Video de 39,8 segundos: reproducción y pausa verificadas en el navegador integrado; sin reproducción automática y con `preload=none`. Estado inicial sin cargar el video. Se observó un cierre aislado de la pestaña al operar un control nativo; al repetir en una pestaña nueva, reprodujo y pausó correctamente, sin errores registrados en la página.
-- Logos y fuentes locales cargados. No se incorpora Google Fonts remoto, mapa incrustado, feed de Instagram ni analítica.
-- Revisión estática de las dos páginas: 40 enlaces, sin recursos locales faltantes, anclas internas inexistentes, IDs duplicados, formularios ni código en atributos. Todos los enlaces WhatsApp apuntan a `56949354494`; los enlaces que abren pestaña incluyen `noopener noreferrer`.
-- `node --check site/script.js` y `git diff --check` correctos.
-- Contrastes calculados para los colores principales: texto/fondo 11,79:1; texto secundario/fondo 5,64:1; secundario/lila 4,61:1; secundario/arena 4,73:1; blanco/botón petróleo 7,41:1. Se añadió foco claro sobre las secciones oscuras. Esto no constituye una auditoría completa de accesibilidad.
-- Se conserva `noindex` en ambas páginas y en `_headers`. No hay precios, horarios, números de oficina o profesionales sin confirmar en la web.
+- La portada y el poster del video ya no usan el retrato. Se conserva el video original como explicación complementaria, que sólo reproduce al interactuar.
+- Nueve servicios enlazan a información dentro de la página: implantes, ortodoncia, restauraciones, endodoncia, terceros molares, coronas, carillas, limpieza y blanqueamiento.
+- Implantes incluye cinco etapas; los otros ocho procedimientos tienen cuatro etapas cada uno. Los enlaces a desplegables abren el contenido y enfocan su resumen; también funciona la llegada directa con fragmento de URL.
+- Promociones transcritas de los datos e imágenes confirmados por el usuario: brackets $79.990, 10 cupos mensuales, control mensual separado $33.000, y limpieza + flúor $19.990. Se muestran todas las prestaciones confirmadas, sin inventar plazo final ni cupos restantes.
+- Los carteles originales se pueden desplegar con teclado. No se publica la campaña antigua de implantes.
+- Menú móvil, Escape, foco visible, preguntas frecuentes, regreso al inicio y privacidad comprobados.
+- Revisión estática de enlaces locales, anclas, IDs y WhatsApp: sin recursos faltantes, IDs repetidos ni formularios. Los siete enlaces WhatsApp de la landing usan 56949354494; los nueve servicios no abandonan la web.
+- JavaScript sin errores de sintaxis. No se modifica el archivo de video previamente probado; conserva controles, playsinline y preload=none.
 
-## Pendiente de publicación y contenido
+## Diseño y firma
 
-- Probar en teléfonos reales, especialmente Safari iOS y reproducción de video. Las dimensiones anteriores se verificaron mediante viewport del navegador integrado.
-- Validar el material audiovisual y el texto con la clínica. Sustituir el fotograma de portada por una fotografía original de mayor calidad.
-- Completar los pendientes de `BRIEF.md`, incluidos responsable de privacidad y vigencia de campañas.
-- Las cabeceras preparadas en `_headers` requieren verificación después del despliegue en Cloudflare: el servidor local de Python no las aplica. HTTPS, certificado, DNS y dominio tampoco se validan con esta vista previa.
-- Completar canonical, imagen social, URL pública, sitemap y retirada de noindex únicamente al aprobar y publicar el dominio definitivo.
+Revisión visual móvil en 360 y 390 px: portada sin retrato, prestaciones y precios legibles, procedimientos desplegados, sin desbordamiento horizontal. También se revisaron 430 px (guía de implantes), tablet de 768 px (contacto) y escritorio de 1366 px. Se corrigió la altura de la ilustración para evitar espacios vacíos en móvil.
 
-No se ha desplegado en Cloudflare ni integrado esta rama a `main`.
+Se conserva SERVIMAT con ocultación al entrar el footer, sin foco ni clics mientras está oculta. Se añadió el iframe del mapa a los obstáculos para evitar cubrir sus controles. En móvil, el botón flotante de WhatsApp se reduce a un icono con área táctil de 48 × 48 px y nombre accesible, para ocupar menos espacio. Menú, promociones y procedimientos usan superficies táctiles amplias y foco visible; los movimientos respetan prefers-reduced-motion.
+
+## Google Maps: inserción correcta, verificación visual pendiente
+
+Se obtuvo el iframe desde Compartir > Incorporar un mapa en la ficha exacta del Edificio Plaza Talca suministrada por el usuario. El código utiliza loading=lazy, título accesible, dimensiones adaptables y el origen Google permitido en la CSP.
+
+En el navegador integrado de Codex el iframe permaneció en blanco, tanto con carga diferida como inmediata. La variante de consulta por ubicación tampoco resolvió la visualización, por lo que se conserva el código oficial. Una consulta HTTP de diagnóstico con contexto de iframe recibió 200 y el documento de Google que inicializa el mapa del edificio, sin mensaje de error; esto no sustituye una comprobación visual en otro navegador. El enlace externo al mismo edificio sí funciona.
+
+Antes de publicar, comprobar el mapa en Chrome/Edge/Safari y en el despliegue Cloudflare. No se da por validada su representación visual. La privacidad ya explica la conexión a Google y sus posibles cookies.
+
+## Pendientes
+
+- Revisión clínica de los textos orientativos y autorización final del material audiovisual.
+- Confirmar oficina, horarios y dirección de acceso: el usuario indicó 1 Sur 690; la ficha del edificio dice Calle 1 Pte. 690.
+- Confirmar fechas y condiciones adicionales de promociones, responsable de privacidad y dominio.
+- Validar en teléfonos reales. Las comprobaciones responsive se realizan con viewport del navegador integrado.
+- Verificar HTTPS y cabeceras después del despliegue: el servidor Python local no aplica _headers. Noindex permanece activo.
+
+Sin despliegue en Cloudflare ni integración a main.

@@ -15,3 +15,7 @@
 - Diseñar primero para celular y revisar visualmente 360, 390 y 430 px, tablet y escritorio. Evitar tarjetas repetitivas, adornos arbitrarios y textos encima de rostros.
 - Conservar la firma SERVIMAT transparente y discreta, su logo local y enlace a https://www.instagram.com/servimat._/. La firma flotante desaparece al entrar el footer, donde queda el crédito normal. No debe bloquear WhatsApp, controles ni textos; oculta no recibe foco ni clics.
 - Alojar las fuentes localmente y mantener sus licencias. Mantener noindex hasta publicación aprobada.
+- La portada representa a la clínica y sus servicios, sin retrato del dueño. El video suministrado puede mantenerse como complemento de implantes, sin retrato en su poster.
+- Los servicios deben explicar su proceso dentro de la landing; no convertir cada servicio en un enlace directo a WhatsApp. Incluir pasos orientativos y revisión profesional pendiente, sin atribuir técnicas no confirmadas a la clínica.
+- El usuario pidió Google Maps visible. Se permite el iframe oficial del edificio, con carga diferida y privacidad actualizada.
+- Promociones confirmadas por el usuario el 26/09/2026: brackets $79.990 (10 cupos mensuales), control mensual separado $33.000; limpieza + flúor $19.990. Beneficios completos en docs/BRIEF.md. No reutilizar la promoción vencida de implantes.

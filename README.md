@@ -12,7 +12,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 
 - `site/index.html`: contenido completo de la landing.
 - `site/styles.css`: diseño responsive.
-- `site/script.js`: menú móvil y firma flotante accesible.
+- `site/script.js`: menú móvil, apertura de procedimientos por enlace y firma flotante accesible.
 - `site/privacidad.html`: borrador informativo de privacidad.
 - `site/_headers`: cabeceras HTTP para Pages.
 - `site/assets/`: logos, video optimizado e imagen de portada.
@@ -23,7 +23,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 
 Los textos, enlaces y datos comerciales se editan directamente en HTML. Los colores se encuentran al principio de `styles.css`. No hay dependencias de producción, recopilación de formularios ni servicios de pago.
 
-El video se optimizó a partir del archivo suministrado, manteniendo el original fuera del repositorio. La imagen de portada procede del mismo video. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial.
+El video se optimizó a partir del archivo suministrado, manteniendo el original fuera del repositorio. La portada muestra una ilustración original de tratamientos y no al dueño. El antiguo fotograma `clinica.webp` se conserva pero ya no está referenciado. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial.
 
 Se utiliza Manrope en pesos 400, 500, 600 y 700, servida desde el propio sitio. Su licencia se conserva en `site/assets/fonts/OFL.txt`. No se realizan peticiones a Google Fonts desde la web.
 
@@ -31,6 +31,8 @@ La firma SERVIMAT usa el logo original suministrado y enlaza a su Instagram. Se 
 
 Los originales `logo-metrica-dental.png` y `logo-servimat.png` que ya existían en la raíz local se conservan intactos y están excluidos de Git; las copias utilizadas por la página viven dentro de `site/assets/`.
 
-El contenido pendiente (equipo, equipamiento, casos y promociones verificadas) está documentado en el brief; no hay fichas ficticias ni precios antiguos presentados como actuales. La privacidad sigue siendo un borrador hasta confirmar al responsable.
+La landing incluye nueve servicios con sus pasos orientativos, dos promociones confirmadas por el usuario y un iframe oficial de Google Maps con carga diferida. Los carteles originales de las promociones pueden desplegarse desde sus tarjetas. `_headers` permite únicamente `https://www.google.com` como origen de frames; la privacidad informa sobre esta conexión externa.
+
+El contenido pendiente (equipo, equipamiento, casos, dirección de acceso y fechas de las promociones) está documentado en el brief. Las fuentes de referencia para la redacción clínica están en `docs/FUENTES-CLINICAS.md`; la clínica debe validar la versión final. La privacidad sigue siendo un borrador hasta confirmar al responsable.
 
 El sitio lleva `noindex` durante su preparación. No eliminarlo hasta completar la revisión descrita en `docs/PUBLICACION.md`.

@@ -261,6 +261,184 @@ html:not(.js) .servimat-watermark { display: none; }
   .footer-bottom { padding-top: 20px; }
   .site-footer { padding-top: 48px; }
 }
+/* Service-led landing: the clinic and its procedures lead the experience. */
+.hero-actions { margin-top: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.hero-actions .button { margin: 0; width: 100%; }
+.hero-actions .text-link { font-size: 12px; }
+.hero-specialty { min-width: 0; overflow: hidden; background: var(--sand-light); border-radius: 8px; }
+.specialty-heading { display: flex; justify-content: space-between; gap: 10px; padding: 19px 20px 0; color: var(--teal); font-size: 8px; letter-spacing: .09em; font-weight: 600; }
+.hero-specialty > img { width: 100%; height: auto; }
+.hero-specialty figcaption { display: flex; align-items: center; justify-content: space-between; padding: 0 20px 17px; }
+.hero-specialty figcaption div { display: grid; gap: 5px; }
+.hero-specialty figcaption span { color: var(--muted); font-size: 8px; letter-spacing: .07em; }
+.hero-specialty figcaption strong { font-weight: 600; font-size: 19px; }
+.hero-specialty figcaption a { display: grid; place-items: center; min-width: 44px; min-height: 44px; font-size: 25px; color: var(--teal); }
+.services { background: #edf2ef; }
+.service-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; }
+.service-link { display: flex; flex-direction: column; min-width: 0; padding: 24px 0 22px; border-top: 1px solid #cbd8d2; }
+.service-icon { color: var(--teal); margin-bottom: 16px; }
+.service-icon svg { width: 40px; height: 40px; stroke-width: 1.4; }
+.service-link h3 { font-size: 17px; line-height: 1.3; letter-spacing: -.025em; margin-bottom: 9px; }
+.service-link p { font-size: 13px; line-height: 1.65; color: var(--muted); margin-bottom: 18px; }
+.service-more { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; color: var(--teal); margin-top: auto; }
+.service-more span { font-size: 17px; }
+.implant-guide { background: var(--paper); }
+.implant-intro { display: grid; gap: 28px; }
+.implant-visual { min-width: 0; }
+.implant-visual img { width: 100%; height: auto; border-radius: 7px; }
+.implant-visual > span { display: block; font-size: 10px; color: var(--muted); padding-top: 7px; }
+.implant-benefits h3 { font-size: 22px; max-width: 27ch; }
+.implant-benefits ul { list-style: none; padding: 0; margin: 18px 0; }
+.implant-benefits li { padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.implant-benefits li strong { color: var(--ink); font-weight: 600; }
+.clinical-note { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.process-heading { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 32px; }
+.process-heading > span { color: var(--teal); font-size: 9px; letter-spacing: .08em; font-weight: 600; }
+.process-heading h3 { font-size: 24px; margin-top: 10px; }
+.implant-steps { list-style: none; margin: 25px 0 0; padding: 0; }
+.implant-steps li { display: grid; grid-template-columns: 42px 1fr; gap: 17px; position: relative; padding-bottom: 29px; }
+.implant-steps li:not(:last-child)::before { content: ''; position: absolute; width: 1px; background: #bed2cf; top: 42px; bottom: 0; left: 20px; }
+.step-number { display: grid; align-items: center; justify-items: center; width: 42px; height: 42px; border-radius: 50%; color: var(--teal); background: #e0ebe6; font-size: 13px; font-weight: 600; }
+.step-label { display: block; font-size: 9px; font-weight: 700; letter-spacing: .06em; color: var(--teal); margin: 0 0 6px; }
+.implant-steps h3 { font-size: 21px; margin-bottom: 11px; }
+.implant-steps p { color: var(--muted); font-size: 14px; line-height: 1.75; }
+.implant-video-row { padding: 24px; background: var(--deep); color: #fff; display: grid; gap: 20px; border-radius: 8px; margin-top: 9px; }
+.implant-video-row .eyebrow { color: var(--sand); margin-bottom: 10px; }
+.implant-video-row h3 { font-size: 22px; }
+.implant-video-row p:not(.eyebrow) { color: #d6e1df; font-size: 13px; margin-top: 12px; }
+.implant-video-row video { aspect-ratio: 16 / 9; width: 100%; height: auto; border-radius: 5px; background: #163438; object-fit: contain; }
+.implant-video-row :focus-visible { outline-color: var(--sand-light); }
+.guide-end { padding-top: 25px; display: flex; flex-direction: column; gap: 17px; align-items: flex-start; }
+.guide-end p { font-size: 14px; color: var(--muted); }
+.procedures { background: #edf2ef; }
+.procedure-list { border-top: 1px solid #cbd8d2; }
+.procedure { border-bottom: 1px solid #cbd8d2; }
+.procedure > summary { display: flex; gap: 15px; align-items: center; padding: 21px 0; cursor: pointer; list-style: none; }
+.procedure > summary::-webkit-details-marker { display: none; }
+.procedure-icon { color: var(--teal); }
+.procedure-icon svg { width: 33px; height: 33px; stroke-width: 1.5; }
+.procedure summary strong { display: block; font-weight: 600; font-size: 17px; line-height: 1.4; letter-spacing: -.025em; }
+.procedure summary small { display: block; font-size: 10px; color: var(--muted); margin-top: 5px; }
+.procedure-toggle { margin-left: auto; color: var(--teal); font-size: 27px; flex-shrink: 0; font-weight: 400; }
+.procedure[open] .procedure-toggle { transform: rotate(45deg); }
+.procedure-content { padding: 0 0 22px; }
+.procedure-intro { font-size: 14px; line-height: 1.75; max-width: 76ch; color: var(--muted); padding-bottom: 23px; }
+.procedure-steps { display: grid; gap: 23px; padding: 0; margin: 0; list-style: none; }
+.procedure-steps li { display: flex; gap: 13px; }
+.procedure-steps li > span { color: var(--teal); font-size: 12px; font-weight: 600; padding-top: 3px; }
+.procedure-steps h4 { font-size: 15px; font-weight: 600; margin: 0 0 7px; }
+.procedure-steps p { margin: 0; font-size: 14px; color: var(--muted); }
+.process-note { margin-top: 22px; }
+.promotions { background: var(--paper); }
+.promotion-grid { display: grid; gap: 24px; }
+.promotion-card { overflow: hidden; border-radius: 8px; display: flex; flex-direction: column; background: #eee7f3; }
+.promotion-limpieza { background: var(--sand-light); }
+.promotion-top { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 10px; padding: 21px 23px 0; font-size: 8px; font-weight: 600; color: var(--teal); letter-spacing: .055em; }
+.promotion-tag { border: 1px solid #abb8b7; border-radius: 30px; padding: 5px 9px; }
+.promotion-copy { padding: 24px 23px; flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.promotion-copy h3 { font-size: 26px; max-width: 18ch; }
+.promotion-copy .promotion-price { font-size: 44px; font-weight: 600; letter-spacing: -.05em; line-height: 1.3; color: var(--deep); margin-top: 16px; }
+.promotion-price span { font-size: 12px; font-weight: 400; letter-spacing: 0; }
+.price-description { font-size: 12px; color: var(--muted); }
+.monthly-price { display: flex; justify-content: space-between; gap: 15px; width: 100%; align-items: center; border-top: 1px solid #cbc2d3; border-bottom: 1px solid #cbc2d3; padding: 13px 0; margin-top: 22px; font-size: 12px; }
+.monthly-price strong { font-size: 20px; font-weight: 600; }
+.promotion-copy h4 { font-size: 12px; margin: 23px 0 9px; font-weight: 700; }
+.promotion-copy ul { padding: 0 0 0 17px; margin: 0 0 24px; font-size: 13px; color: #465457; line-height: 1.75; }
+.promotion-copy li { padding: 3px 0; }
+.promotion-copy .button { width: 100%; margin-top: auto; font-size: 12px; }
+.promotion-copy .text-link { font-size: 12px; margin-top: 8px; }
+.promotion-poster { width: 100%; margin-top: 13px; border-top: 1px solid #c9c2c7; }
+.promotion-poster summary { font-size: 10px; cursor: pointer; padding: 16px 0 4px; min-height: 44px; color: var(--muted); }
+.promotion-poster img { margin-top: 15px; width: 100%; height: auto; border-radius: 4px; }
+.promotion-conditions { margin-top: 21px; font-size: 11px; color: var(--muted); max-width: 100ch; }
+.location-map { margin-top: 30px; }
+.location-map iframe { display: block; width: 100%; height: 310px; border: 0; border-radius: 8px; background: #e0e5df; }
+.location-map figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 7px 16px; align-items: center; margin-top: 8px; color: var(--muted); font-size: 10px; }
+.location-map figcaption a { display: inline-flex; min-height: 44px; align-items: center; color: var(--teal); }
+@media (max-width: 599px) {
+  .whatsapp-float { width: 48px; height: 48px; padding: 0; justify-content: center; }
+  .whatsapp-float > span { display: none; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-link:hover h3, .procedure > summary:hover strong { color: var(--teal); }
+  .service-link:hover .service-more { text-decoration: underline; text-underline-offset: 4px; }
+}
+@media (min-width: 600px) {
+  .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 5px 25px; align-items: center; }
+  .hero-actions .button { width: auto; }
+  .hero-specialty { max-width: 650px; }
+  .service-grid { grid-template-columns: repeat(3, 1fr); gap: 0 30px; }
+  .service-link { padding-block: 27px; }
+  .service-link h3 { font-size: 19px; }
+  .service-link p { font-size: 13px; }
+  .service-more { font-size: 11px; }
+  .implant-intro { grid-template-columns: 1fr 1fr; align-items: center; gap: 30px; }
+  .implant-benefits h3 { font-size: 24px; }
+  .implant-benefits li { font-size: 13px; padding-block: 13px; }
+  .process-heading { margin-top: 45px; padding-top: 35px; }
+  .implant-steps li { grid-template-columns: 56px 1fr; gap: 24px; padding-bottom: 31px; }
+  .implant-steps li:not(:last-child)::before { left: 27px; top: 56px; }
+  .step-number { width: 56px; height: 56px; font-size: 17px; }
+  .implant-steps h3 { font-size: 24px; }
+  .implant-steps p { max-width: 78ch; }
+  .implant-video-row { grid-template-columns: .9fr 1fr; align-items: center; gap: 28px; padding: 28px; }
+  .guide-end { flex-direction: row; align-items: center; justify-content: space-between; }
+  .guide-end p { max-width: 32ch; }
+  .procedure summary strong { font-size: 20px; }
+  .procedure summary small { font-size: 12px; }
+  .procedure-steps { grid-template-columns: 1fr 1fr; gap: 25px 35px; }
+  .procedure-content { padding-left: 48px; padding-bottom: 30px; }
+  .promotion-grid { grid-template-columns: 1fr 1fr; }
+  .promotion-copy { padding: 24px; }
+  .promotion-copy h3 { font-size: 25px; }
+  .promotion-copy .button { font-size: 11px; padding-inline: 12px; gap: 10px; }
+  .promotion-copy .text-link { font-size: 11px; }
+  .promotion-copy ul { font-size: 12px; }
+  .location-map iframe { height: 380px; }
+}
+@media (min-width: 900px) {
+  .hero { gap: 60px; grid-template-columns: 1.05fr 1fr; }
+  .hero-actions { margin-top: 28px; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .hero .hero-actions .button { margin: 0; }
+  .hero-specialty figcaption { padding: 0 28px 24px; }
+  .specialty-heading { padding: 25px 28px 0; font-size: 9px; }
+  .hero-specialty figcaption strong { font-size: 22px; }
+  .service-grid { gap: 0 48px; }
+  .service-link { display: grid; grid-template-columns: 49px 1fr; gap: 0 18px; padding-block: 31px; }
+  .service-icon { grid-row: 1 / 4; margin: 0; }
+  .service-link h3 { font-size: 20px; }
+  .service-link p { margin-bottom: 15px; }
+  .implant-intro { grid-template-columns: 1fr 1fr; gap: 70px; }
+  .implant-benefits h3 { font-size: 28px; }
+  .implant-benefits li { font-size: 15px; padding-block: 17px; }
+  .process-heading { margin-top: 55px; padding-top: 44px; }
+  .process-heading h3 { font-size: 30px; }
+  .implant-steps { max-width: 960px; margin-top: 35px; }
+  .implant-steps li { gap: 32px; padding-bottom: 37px; }
+  .implant-steps h3 { font-size: 27px; }
+  .implant-steps p { font-size: 15px; }
+  .implant-video-row { grid-template-columns: 1fr 1.1fr; gap: 65px; padding: 34px 40px; }
+  .implant-video-row h3 { font-size: 28px; }
+  .guide-end p { max-width: none; }
+  .procedure > summary { padding-block: 25px; gap: 24px; }
+  .procedure-icon svg { width: 40px; height: 40px; }
+  .procedure summary strong { font-size: 23px; }
+  .procedure-content { padding-left: 64px; padding-bottom: 37px; }
+  .procedure-steps { gap: 30px 60px; }
+  .procedure-steps h4 { font-size: 17px; }
+  .procedure-steps p { font-size: 14px; }
+  .promotion-grid { gap: 34px; }
+  .promotion-top { padding: 28px 34px 0; font-size: 10px; }
+  .promotion-copy { padding: 27px 34px 32px; }
+  .promotion-copy h3 { font-size: 30px; max-width: none; }
+  .promotion-copy .promotion-price { font-size: 53px; }
+  .promotion-copy ul { font-size: 14px; }
+  .promotion-copy .button, .promotion-copy .text-link { font-size: 13px; }
+  .promotion-copy .button { padding-inline: 20px; }
+  .promotion-copy h4 { font-size: 13px; }
+  .promotion-conditions { font-size: 12px; }
+  .location-map { margin-top: 40px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
