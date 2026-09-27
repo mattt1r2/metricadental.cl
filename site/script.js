@@ -90,7 +90,10 @@ if (watermark && footer) {
       }
     }
     let clear = false;
-    const positions = [...new Set([watermark.dataset.position || 'default', 'default', 'raised-left', 'raised-right'])];
+    // Stay on the left; WhatsApp occupies the right corner.
+    const positions = watermark.dataset.position === 'raised-left'
+      ? ['raised-left', 'default']
+      : ['default', 'raised-left'];
     for (const position of positions) {
       watermark.dataset.position = position;
       const box = watermark.getBoundingClientRect();

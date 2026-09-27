@@ -31,7 +31,6 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid #956213; outline-offset: 5px; }
 .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .section { padding-block: 52px; }
-.eyebrow { color: var(--teal); font-size: 10px; font-weight: 700; line-height: 1.5; letter-spacing: .13em; margin-bottom: 17px; }
 .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: space-between; gap: 22px; padding: 14px 19px; border: 1px solid transparent; border-radius: 5px; background: var(--teal); color: white; font-size: 13px; font-weight: 600; line-height: 1.5; transition: background .18s ease; }
 .button > span { font-size: 20px; font-weight: 400; line-height: 1; }
 .button-small { min-height: 44px; }
@@ -59,7 +58,6 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 /* Copy and photography have separate space, without overlays. */
 .hero { display: grid; gap: 29px; padding-top: 32px; padding-bottom: 27px; }
 .hero h1 { max-width: 20ch; }
-.hero .eyebrow { margin-bottom: 14px; }
 .hero-description { margin-top: 18px; color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 46ch; }
 .hero .button { margin-top: 23px; width: 100%; max-width: 345px; }
 .hero-helper { margin-top: 10px; font-size: 11px; color: var(--muted); }
@@ -93,7 +91,6 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 
 .implants { background: var(--deep); color: white; }
 .implants :focus-visible, .site-footer :focus-visible { outline-color: var(--sand-light); }
-.implants .eyebrow { color: var(--sand); }
 .implants .section-heading > p { color: #d6e1df; }
 .implant-layout { display: grid; gap: 28px; }
 .video-figure { min-width: 0; }
@@ -107,7 +104,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .campaign-section { padding-bottom: 5px; }
 .campaign { display: grid; gap: 25px; padding: 29px 24px; border-radius: 7px; background: var(--lilac); }
 .campaign h2 { font-size: 26px; }
-.campaign p:not(.eyebrow) { margin-top: 17px; color: var(--muted); font-size: 14px; max-width: 47ch; }
+.campaign p { margin-top: 17px; color: var(--muted); font-size: 14px; max-width: 47ch; }
 .campaign-action { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .campaign-note { font-size: 10px; color: var(--muted); }
 .campaign .button { width: 100%; max-width: 300px; }
@@ -122,14 +119,13 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 
 .contact { background: #f0f3f0; }
 .contact-layout { display: grid; gap: 32px; }
-.contact-copy > p:not(.eyebrow) { margin-top: 20px; color: var(--muted); max-width: 43ch; }
+.contact-copy > p { margin-top: 20px; color: var(--muted); max-width: 43ch; }
 .contact-phone { display: inline-flex; min-height: 48px; gap: 20px; align-items: center; margin-top: 13px; color: var(--teal); font-weight: 600; font-size: 24px; letter-spacing: -.03em; }
 .contact-phone > span { font-weight: 400; font-size: 22px; }
 .contact-channel { display: block; font-size: 11px; color: var(--muted); }
 .contact-copy .privacy-note { max-width: 50ch; font-size: 11px; margin-top: 26px; }
 .location { background: var(--sand-light); padding: 26px 23px; border-radius: 7px; }
 .location-pin { width: 28px; height: 28px; color: var(--teal); margin-bottom: 22px; }
-.location .eyebrow { margin-bottom: 10px; }
 .location address { font-size: 25px; font-weight: 600; font-style: normal; line-height: 1.3; letter-spacing: -.025em; }
 .location address > span { display: block; margin-top: 9px; font-weight: 400; font-size: 15px; line-height: 1.6; letter-spacing: 0; }
 .location .text-link { margin-top: 13px; font-size: 12px; }
@@ -154,7 +150,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .servimat-credit > span { font-size: 12px; }
 
 /* White artwork reverses against light sections without a background panel. */
-.servimat-watermark { position: fixed; z-index: 60; left: max(15px, env(safe-area-inset-left, 0px)); bottom: calc(13px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; justify-content: center; width: max-content; max-width: 138px; min-height: 44px; color: #fff; mix-blend-mode: difference; opacity: .76; transition: opacity .18s ease, visibility .18s ease; }
+.servimat-watermark { position: fixed; z-index: 60; left: max(15px, env(safe-area-inset-left, 0px)); right: auto; bottom: calc(13px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; justify-content: center; width: max-content; max-width: 138px; min-height: 44px; color: #fff; mix-blend-mode: difference; opacity: .76; transition: opacity .18s ease, visibility .18s ease; }
 .servimat-label { font-size: 6px; font-weight: 600; letter-spacing: .075em; white-space: nowrap; }
 .servimat-brand { display: flex; align-items: center; gap: 6px; }
 .servimat-brand img { width: 22px; height: 22px; object-fit: contain; }
@@ -163,7 +159,6 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .servimat-watermark.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 html:not(.js) .servimat-watermark { display: none; }
 .servimat-watermark[data-position="raised-left"] { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
-.servimat-watermark[data-position="raised-right"] { left: auto; right: max(15px, env(safe-area-inset-right, 0px)); bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
 .whatsapp-float { position: fixed; z-index: 50; right: max(15px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: 8px; min-height: 46px; padding: 11px 15px; color: white; background: var(--teal); border: 1px solid #ffffff50; border-radius: 30px; box-shadow: 0 3px 12px #132f331f; font-size: 11px; font-weight: 600; }
 .whatsapp-float svg { width: 20px; height: 20px; }
 .legal { max-width: 760px; padding-block: 45px 70px; }
@@ -225,7 +220,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .navigation > .button { margin: 0 0 0 5px; font-size: 11px; padding-inline: 14px; gap: 20px; }
   .hero { grid-template-columns: 1fr 1fr; align-items: center; gap: 55px; padding-top: 46px; padding-bottom: 33px; }
   .hero h1 { font-size: clamp(40px, 3.75vw, 52px); line-height: 1.18; }
-  .hero .eyebrow { font-size: 10px; margin-bottom: 20px; }
   .hero-description { font-size: 15px; margin-top: 25px; }
   .hero .button { width: auto; margin-top: 29px; }
   .hero-image { height: 425px; aspect-ratio: auto; }
@@ -303,9 +297,8 @@ html:not(.js) .servimat-watermark { display: none; }
 .implant-steps h3 { font-size: 21px; margin-bottom: 11px; }
 .implant-steps p { color: var(--muted); font-size: 14px; line-height: 1.75; }
 .implant-video-row { padding: 24px; background: var(--deep); color: #fff; display: grid; gap: 20px; border-radius: 8px; margin-top: 9px; }
-.implant-video-row .eyebrow { color: var(--sand); margin-bottom: 10px; }
 .implant-video-row h3 { font-size: 22px; }
-.implant-video-row p:not(.eyebrow) { color: #d6e1df; font-size: 13px; margin-top: 12px; }
+.implant-video-row p { color: #d6e1df; font-size: 13px; margin-top: 12px; }
 .implant-video-row video { aspect-ratio: 16 / 9; width: 100%; height: auto; border-radius: 5px; background: #163438; object-fit: contain; }
 .implant-video-row :focus-visible { outline-color: var(--sand-light); }
 .guide-end { padding-top: 25px; display: flex; flex-direction: column; gap: 17px; align-items: flex-start; }
@@ -451,13 +444,10 @@ html:not(.js) .servimat-watermark { display: none; }
 .implant-hero h1 > span { color: var(--teal); }
 .implant-hero-description { max-width: 49ch; margin-top: 20px; color: var(--muted); font-size: 14px; }
 .implant-professional { padding-left: 15px; border-left: 2px solid var(--sand); margin-top: 23px; display: flex; flex-direction: column; gap: 4px; }
-.implant-professional > span { font-size: 8px; letter-spacing: .09em; color: var(--muted); }
 .implant-professional strong { font-size: 14px; font-weight: 600; }
 .implant-hero-copy > .button { margin-top: 23px; width: 100%; }
 .implant-hero-copy > .text-link { margin-top: 6px; }
 .implant-film { min-width: 0; align-self: center; overflow: hidden; border-radius: 8px; background: var(--deep); color: #fff; }
-.film-label { display: flex; flex-wrap: wrap; gap: 5px 16px; justify-content: space-between; padding: 15px 18px; font-size: 8px; font-weight: 600; letter-spacing: .09em; }
-.film-label > span:last-child { color: var(--sand); }
 .implant-film video { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #eee5da; }
 .implant-film figcaption { padding: 15px 18px 18px; color: #d4e0dd; font-size: 11px; }
 .implant-film :focus-visible { outline-color: var(--sand); outline-offset: -4px; }
@@ -465,7 +455,6 @@ html:not(.js) .servimat-watermark { display: none; }
 .offer-layout { display: grid; gap: 27px; }
 .offer-prices { min-width: 0; }
 .offer-price-row { padding: 23px 0; border-top: 1px solid #c9bbab; }
-.offer-stage { display: block; font-size: 9px; font-weight: 700; letter-spacing: .08em; color: var(--teal); margin-bottom: 9px; }
 .offer-price-row h3 { font-size: 23px; }
 .offer-price-row div > p { color: var(--muted); font-size: 12px; margin-top: 6px; }
 .offer-amount { color: var(--deep); font-size: 40px; font-weight: 600; letter-spacing: -.05em; line-height: 1.25; margin-top: 14px; white-space: nowrap; }
@@ -476,7 +465,6 @@ html:not(.js) .servimat-watermark { display: none; }
 .offer-total > strong { font-weight: 600; font-size: 29px; letter-spacing: -.04em; }
 .offer-total > strong > small { display: inline; }
 .offer-included { background: var(--paper); padding: 25px 22px; border-radius: 7px; }
-.offer-included .eyebrow { font-size: 9px; margin-bottom: 10px; }
 .offer-included h3 { font-size: 23px; max-width: 23ch; }
 .offer-included ul { list-style: none; padding: 0; margin: 22px 0; }
 .offer-included li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
@@ -486,9 +474,8 @@ html:not(.js) .servimat-watermark { display: none; }
 .journey-list { list-style: none; padding: 0; margin: 30px 0 0; }
 .journey-list > li { display: grid; grid-template-columns: 39px minmax(0,1fr); gap: 19px; padding: 29px 0; border-top: 1px solid var(--line); }
 .journey-number { color: #427078; font-size: 29px; line-height: 1; letter-spacing: -.07em; font-weight: 400; }
-.journey-copy .eyebrow { font-size: 8px; margin-bottom: 10px; }
 .journey-copy h3 { font-size: 23px; line-height: 1.3; margin-bottom: 13px; max-width: 24ch; }
-.journey-copy > p:not(.eyebrow) { color: var(--muted); font-size: 14px; max-width: 70ch; }
+.journey-copy > p { color: var(--muted); font-size: 14px; max-width: 70ch; }
 .journey-detail { display: block; color: var(--teal); font-size: 11px; font-weight: 600; margin-top: 16px; }
 .journey-copy img { width: 100%; height: auto; border-radius: 6px; margin-top: 22px; }
 .journey-end { padding: 24px 0 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 20px; }
@@ -497,7 +484,7 @@ html:not(.js) .servimat-watermark { display: none; }
 .journey-end .button { font-size: 12px; }
 .implant-payment { background: var(--lilac); }
 .payment-layout { display: grid; gap: 24px; }
-.payment-layout > div > p:not(.eyebrow) { color: var(--muted); font-size: 15px; max-width: 47ch; }
+.payment-layout > div > p { color: var(--muted); font-size: 15px; max-width: 47ch; }
 .payment-layout .payment-detail { font-size: 12px !important; margin-top: 14px; }
 .payment-layout .text-link { margin-top: 15px; }
 .secondary-promotions { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -513,7 +500,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .implant-hero-copy > .button { width: auto; }
   .implant-hero-copy > .text-link { display: flex; width: max-content; }
   .implant-film { max-width: 700px; width: 100%; }
-  .film-label { padding: 19px 24px; }
   .implant-film figcaption { padding-inline: 24px; }
   .offer-price-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
   .offer-amount { margin-top: 0; }
@@ -521,7 +507,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .offer-included h3 { max-width: none; }
   .journey-list > li { grid-template-columns: 64px minmax(0,1fr); gap: 28px; padding-block: 32px; }
   .journey-number { font-size: 45px; }
-  .journey-copy .eyebrow { font-size: 9px; }
   .journey-copy h3 { font-size: 27px; max-width: none; }
   .journey-end { flex-direction: row; align-items: center; justify-content: space-between; gap: 35px; }
   .journey-end .button { max-width: 290px; }
@@ -534,7 +519,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .implant-hero-description { font-size: 15px; }
   .implant-professional { margin-top: 24px; }
   .implant-hero-copy > .text-link { margin-top: 9px; }
-  .film-label { font-size: 9px; }
   .implant-film figcaption { font-size: 12px; padding-block: 21px; }
   .offer-layout { grid-template-columns: 1.15fr 1fr; gap: 50px; }
   .offer-price-row { padding-block: 26px; }
@@ -548,7 +532,7 @@ html:not(.js) .servimat-watermark { display: none; }
   .journey-list > li { grid-template-columns: 140px minmax(0,1fr); gap: 50px; padding-block: 42px; }
   .journey-number { font-size: 64px; }
   .journey-copy h3 { font-size: 30px; }
-  .journey-copy > p:not(.eyebrow) { font-size: 15px; }
+  .journey-copy > p { font-size: 15px; }
   .journey-detail { font-size: 12px; }
   .journey-end { padding-top: 32px; }
   .journey-end p { font-size: 18px; }

@@ -13,7 +13,8 @@
 - No publicar en producción hasta que el usuario lo indique. No comprar dominios ni contratar servicios de pago.
 - Trabajar directamente en `C:\Users\matt\Desktop\Trabajo\Paginas webs\metricadental.cl`, conservando los archivos existentes. Rama de trabajo actual: `codex/landing-inicial`; PR #1. Hacer commit y push normal de cambios terminados, sin force push ni integración a main.
 - Diseñar primero para celular y revisar visualmente 360, 390 y 430 px, tablet y escritorio. Evitar tarjetas repetitivas, adornos arbitrarios y textos encima de rostros.
-- Conservar la firma SERVIMAT transparente y discreta, su logo local y enlace a https://www.instagram.com/servimat._/. La firma flotante desaparece al entrar el footer, donde queda el crédito normal. No debe bloquear WhatsApp, controles ni textos; oculta no recibe foco ni clics.
+- Conservar la firma SERVIMAT transparente y discreta, su logo local y enlace a https://www.instagram.com/servimat._/. La firma flotante se mantiene exclusivamente a la izquierda (abajo o elevada); nunca pasa a la derecha, donde está WhatsApp. Desaparece al entrar el footer, donde queda el crédito normal. No debe bloquear controles ni textos; oculta no recibe foco ni clics.
+- No añadir minitítulos decorativos encima de los títulos de las secciones. Usar encabezados directos y claros; evitar la repetición de etiquetas pequeñas en mayúsculas. Los pasos deben conservar su nombre descriptivo como título principal.
 - Alojar las fuentes localmente y mantener sus licencias. Mantener noindex hasta publicación aprobada.
 - La portada conserva la marca de la clínica, sin retrato del dueño. El video suministrado se presenta junto al mensaje de implantes, sin retrato en su poster.
 - Los servicios deben explicar su proceso dentro de la landing; no convertir cada servicio en un enlace directo a WhatsApp. Incluir pasos orientativos y revisión profesional pendiente, sin atribuir técnicas no confirmadas a la clínica.

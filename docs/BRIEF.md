@@ -15,6 +15,8 @@
 
 ## Diseño de la versión revisada
 
+Último ajuste visual: eliminar los minitítulos decorativos y repetitivos (por ejemplo, la etiqueta pequeña «PROMOCIÓN DE IMPLANTES») y usar un solo encabezado claro por bloque. La marca de agua SERVIMAT queda exclusivamente a la izquierda, con ocultación si coincide con contenido o al entrar el footer. WhatsApp conserva su posición a la derecha.
+
 Portada de implantes sin retrato, video, promoción con dos etapas y total explícito, cinco fases, casos preparados pero ocultos, consulta sobre pagos, otros ocho servicios, promociones secundarias desplegables, procedimientos, preguntas frecuentes, mapa y contacto. Los servicios llevan a explicaciones dentro de la página; WhatsApp se usa para agendar y consultar.
 
 Manrope local, composición móvil y una ilustración original de implante como recurso educativo, sin retrato del dueño. Catálogo de servicios con pictogramas, secuencia vertical de implantes y desplegables con etapas. Las promociones usan lila y arena, y su información está escrita en HTML legible además de las imágenes originales desplegables. La identidad utiliza #155E68, #173F44, #D8C1AA, #EEE5DA, #E8E1EE y #FAFAF7.

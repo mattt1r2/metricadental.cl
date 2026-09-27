@@ -1,5 +1,12 @@
 # Validación de la landing
 
+## Ajuste de títulos y firma: 27/09/2026
+
+- Eliminados 17 minitítulos de la landing y uno de privacidad, junto con etiquetas decorativas redundantes del video y las tarjetas. Los títulos de sección y de las cinco fases son directos y descriptivos.
+- SERVIMAT solo puede aparecer a la izquierda, abajo o elevada. Si ambas posiciones coinciden con contenido, se oculta. WhatsApp conserva la derecha.
+- Revisión visual de la promoción en escritorio y a 390 px, sin desbordamiento. A 360 px se comprobó que la firma flotante desaparece al llegar al footer, con `aria-hidden=true` y `tabindex=-1`, mientras permanece la firma normal del pie.
+- Se verificó también la ocultación de la firma cuando coincide con los precios. Sin errores de sintaxis JavaScript ni espacios sobrantes en el diff.
+
 ## Revisión del 27/09/2026: foco en implantes
 
 - Una sola página principal, según la aclaración del usuario: implantes primero y otros ocho servicios más abajo. No se creó una landing separada.
