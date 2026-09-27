@@ -20,3 +20,5 @@ Estas fuentes describen procedimientos generales. No acreditan el equipamiento, 
 No se trasladaron reglas de financiación, precios, edades, sistemas sanitarios ni números de emergencia extranjeros a la página chilena. No se prometen ausencia de dolor, plazos exactos, resultados garantizados ni conservación del hueso como resultado universal.
 
 Los datos comerciales de brackets y limpieza proceden directamente de la confirmación del usuario y de sus dos imágenes. El catálogo también se apoya en la historia «Nuestros servicios» aportada por el usuario, que incluye blanqueamiento dental.
+
+Actualización 27/09/2026: se volvieron a consultar ADA y Guy's and St Thomas' NHS para la explicación de las cinco fases de implantes. La nueva promoción y el nombre Dr. Tomás Abraham Carrasco proceden de las capturas del mensaje del cliente entregadas por el usuario. Son independientes de las fuentes clínicas y de la promoción de la clínica usada como referencia. Garantías y condiciones de pago no se consideran confirmadas.

@@ -443,3 +443,115 @@ html:not(.js) .servimat-watermark { display: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Implant campaign: the main treatment leads, with the other services below. */
+.implant-campaign [hidden] { display: none !important; }
+.implant-hero { display: grid; gap: 28px; padding-block: 35px 40px; }
+.implant-hero h1 { max-width: 19ch; font-size: clamp(32px, 8.9vw, 42px); line-height: 1.16; }
+.implant-hero h1 > span { color: var(--teal); }
+.implant-hero-description { max-width: 49ch; margin-top: 20px; color: var(--muted); font-size: 14px; }
+.implant-professional { padding-left: 15px; border-left: 2px solid var(--sand); margin-top: 23px; display: flex; flex-direction: column; gap: 4px; }
+.implant-professional > span { font-size: 8px; letter-spacing: .09em; color: var(--muted); }
+.implant-professional strong { font-size: 14px; font-weight: 600; }
+.implant-hero-copy > .button { margin-top: 23px; width: 100%; }
+.implant-hero-copy > .text-link { margin-top: 6px; }
+.implant-film { min-width: 0; align-self: center; overflow: hidden; border-radius: 8px; background: var(--deep); color: #fff; }
+.film-label { display: flex; flex-wrap: wrap; gap: 5px 16px; justify-content: space-between; padding: 15px 18px; font-size: 8px; font-weight: 600; letter-spacing: .09em; }
+.film-label > span:last-child { color: var(--sand); }
+.implant-film video { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #eee5da; }
+.implant-film figcaption { padding: 15px 18px 18px; color: #d4e0dd; font-size: 11px; }
+.implant-film :focus-visible { outline-color: var(--sand); outline-offset: -4px; }
+.implant-offer { background: var(--sand-light); }
+.offer-layout { display: grid; gap: 27px; }
+.offer-prices { min-width: 0; }
+.offer-price-row { padding: 23px 0; border-top: 1px solid #c9bbab; }
+.offer-stage { display: block; font-size: 9px; font-weight: 700; letter-spacing: .08em; color: var(--teal); margin-bottom: 9px; }
+.offer-price-row h3 { font-size: 23px; }
+.offer-price-row div > p { color: var(--muted); font-size: 12px; margin-top: 6px; }
+.offer-amount { color: var(--deep); font-size: 40px; font-weight: 600; letter-spacing: -.05em; line-height: 1.25; margin-top: 14px; white-space: nowrap; }
+.offer-amount > span { font-size: 11px; letter-spacing: 0; font-weight: 400; }
+.offer-total { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding: 20px 0 0; border-top: 1px solid #c9bbab; }
+.offer-total > span { font-size: 14px; font-weight: 600; }
+.offer-total small { display: block; font-size: 10px; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+.offer-total > strong { font-weight: 600; font-size: 29px; letter-spacing: -.04em; }
+.offer-total > strong > small { display: inline; }
+.offer-included { background: var(--paper); padding: 25px 22px; border-radius: 7px; }
+.offer-included .eyebrow { font-size: 9px; margin-bottom: 10px; }
+.offer-included h3 { font-size: 23px; max-width: 23ch; }
+.offer-included ul { list-style: none; padding: 0; margin: 22px 0; }
+.offer-included li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.offer-included li strong { color: var(--teal); font-size: 11px; font-weight: 600; }
+.offer-included .button { width: 100%; gap: 12px; font-size: 12px; }
+.offer-note { margin-top: 22px; max-width: 105ch; font-size: 11px; line-height: 1.8; color: var(--muted); }
+.journey-list { list-style: none; padding: 0; margin: 30px 0 0; }
+.journey-list > li { display: grid; grid-template-columns: 39px minmax(0,1fr); gap: 19px; padding: 29px 0; border-top: 1px solid var(--line); }
+.journey-number { color: #427078; font-size: 29px; line-height: 1; letter-spacing: -.07em; font-weight: 400; }
+.journey-copy .eyebrow { font-size: 8px; margin-bottom: 10px; }
+.journey-copy h3 { font-size: 23px; line-height: 1.3; margin-bottom: 13px; max-width: 24ch; }
+.journey-copy > p:not(.eyebrow) { color: var(--muted); font-size: 14px; max-width: 70ch; }
+.journey-detail { display: block; color: var(--teal); font-size: 11px; font-weight: 600; margin-top: 16px; }
+.journey-copy img { width: 100%; height: auto; border-radius: 6px; margin-top: 22px; }
+.journey-end { padding: 24px 0 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 20px; }
+.journey-end p { font-size: 15px; color: var(--muted); }
+.journey-end strong { color: var(--ink); font-weight: 600; }
+.journey-end .button { font-size: 12px; }
+.implant-payment { background: var(--lilac); }
+.payment-layout { display: grid; gap: 24px; }
+.payment-layout > div > p:not(.eyebrow) { color: var(--muted); font-size: 15px; max-width: 47ch; }
+.payment-layout .payment-detail { font-size: 12px !important; margin-top: 14px; }
+.payment-layout .text-link { margin-top: 15px; }
+.secondary-promotions { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.secondary-promotions > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 64px; padding: 17px 0; font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; }
+.secondary-promotions > summary::-webkit-details-marker { display: none; }
+.secondary-promotions > summary > span:last-child { font-size: 27px; color: var(--teal); font-weight: 400; }
+.secondary-promotions[open] > summary > span:last-child { transform: rotate(45deg); }
+.secondary-promotions .promotion-grid { padding-top: 14px; }
+.secondary-promotions .promotion-conditions { margin-bottom: 24px; }
+.clinical-cases-grid { display: grid; gap: 25px; }
+@media (min-width: 600px) {
+  .implant-hero { padding-block: 44px; gap: 34px; }
+  .implant-hero-copy > .button { width: auto; }
+  .implant-hero-copy > .text-link { display: flex; width: max-content; }
+  .implant-film { max-width: 700px; width: 100%; }
+  .film-label { padding: 19px 24px; }
+  .implant-film figcaption { padding-inline: 24px; }
+  .offer-price-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+  .offer-amount { margin-top: 0; }
+  .offer-included { padding: 29px; }
+  .offer-included h3 { max-width: none; }
+  .journey-list > li { grid-template-columns: 64px minmax(0,1fr); gap: 28px; padding-block: 32px; }
+  .journey-number { font-size: 45px; }
+  .journey-copy .eyebrow { font-size: 9px; }
+  .journey-copy h3 { font-size: 27px; max-width: none; }
+  .journey-end { flex-direction: row; align-items: center; justify-content: space-between; gap: 35px; }
+  .journey-end .button { max-width: 290px; }
+  .payment-layout { grid-template-columns: 1fr 1fr; gap: 35px; }
+  .clinical-cases-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 900px) {
+  .implant-hero { grid-template-columns: 1fr 1fr; align-items: center; gap: 55px; padding-block: 58px 65px; }
+  .implant-hero h1 { font-size: clamp(40px, 3.8vw, 53px); }
+  .implant-hero-description { font-size: 15px; }
+  .implant-professional { margin-top: 24px; }
+  .implant-hero-copy > .text-link { margin-top: 9px; }
+  .film-label { font-size: 9px; }
+  .implant-film figcaption { font-size: 12px; padding-block: 21px; }
+  .offer-layout { grid-template-columns: 1.15fr 1fr; gap: 50px; }
+  .offer-price-row { padding-block: 26px; }
+  .offer-price-row h3 { font-size: 25px; }
+  .offer-amount { font-size: 42px; }
+  .offer-included { padding: 31px; }
+  .offer-included li { font-size: 14px; padding-block: 14px; }
+  .offer-total { padding-top: 27px; }
+  .offer-total > strong { font-size: 34px; }
+  .offer-note { margin-top: 28px; font-size: 12px; }
+  .journey-list > li { grid-template-columns: 140px minmax(0,1fr); gap: 50px; padding-block: 42px; }
+  .journey-number { font-size: 64px; }
+  .journey-copy h3 { font-size: 30px; }
+  .journey-copy > p:not(.eyebrow) { font-size: 15px; }
+  .journey-detail { font-size: 12px; }
+  .journey-end { padding-top: 32px; }
+  .journey-end p { font-size: 18px; }
+  .journey-end .button { max-width: none; font-size: 13px; }
+  .payment-layout { gap: 90px; }
+}

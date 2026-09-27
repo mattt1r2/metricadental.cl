@@ -1,6 +1,6 @@
 # Métrica Dental
 
-Landing de Clínica Métrica Dental con diseño móvil, contacto por WhatsApp y firma SERVIMAT. Proyecto estático preparado para GitHub y Cloudflare Pages; todavía no publicado.
+Landing de Clínica Métrica Dental centrada en implantes, con diseño móvil, contacto por WhatsApp y firma SERVIMAT. Conserva las otras prestaciones más abajo. Proyecto estático preparado para GitHub y Cloudflare Pages; sin despliegue definitivo.
 
 ## Vista previa
 
@@ -31,7 +31,11 @@ La firma SERVIMAT usa el logo original suministrado y enlaza a su Instagram. Se 
 
 Los originales `logo-metrica-dental.png` y `logo-servimat.png` que ya existían en la raíz local se conservan intactos y están excluidos de Git; las copias utilizadas por la página viven dentro de `site/assets/`.
 
-La landing incluye nueve servicios con sus pasos orientativos, dos promociones confirmadas por el usuario y un iframe oficial de Google Maps con carga diferida. Los carteles originales de las promociones pueden desplegarse desde sus tarjetas. `_headers` permite únicamente `https://www.google.com` como origen de frames; la privacidad informa sobre esta conexión externa.
+La portada presenta implantes, el profesional mencionado por el cliente y el video. Sigue la promoción de instalación JD ($270.000) y corona de zirconio con laboratorio y aditamentos ($300.000), con suma explícita de $570.000. Evaluación, planificación, escáner y controles sin costo según la nueva información aportada. Las cinco fases aparecen antes de los otros ocho servicios. Brackets y limpieza conservan sus condiciones dentro de un bloque desplegable.
+
+Las garantías y condiciones de cuotas están pendientes; la página solo invita a consultar opciones de pago. No se promete mantenimiento gratuito. La sección `#casos` permanece oculta hasta recibir 3 a 5 casos reales autorizados; los comentarios de cada fase indican dónde incorporar fotografías propias. No se muestran marcadores vacíos al paciente.
+
+Se conserva el iframe oficial de Google Maps con carga diferida. `_headers` permite únicamente `https://www.google.com` como origen de frames; la privacidad informa sobre esta conexión externa. El enlace `/#promocion` abre directamente la oferta de implantes y `/#tratamientos` permite consultar el resto de los servicios.
 
 El contenido pendiente (equipo, equipamiento, casos, dirección de acceso y fechas de las promociones) está documentado en el brief. Las fuentes de referencia para la redacción clínica están en `docs/FUENTES-CLINICAS.md`; la clínica debe validar la versión final. La privacidad sigue siendo un borrador hasta confirmar al responsable.
 

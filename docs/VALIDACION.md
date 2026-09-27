@@ -1,4 +1,18 @@
-# Validación de servicios, promociones y ubicación
+# Validación de la landing
+
+## Revisión del 27/09/2026: foco en implantes
+
+- Una sola página principal, según la aclaración del usuario: implantes primero y otros ocho servicios más abajo. No se creó una landing separada.
+- Portada con marca de la clínica, nombre del profesional aportado, video local con controles y sin reproducción automática. No se añadió un retrato.
+- Promoción nueva: implante JD $270.000; corona de zirconio con laboratorio y aditamentos $300.000; suma $570.000. Evaluación, planificación, escáner y controles sin costo, conforme al mensaje del cliente. No se prometen cobertura universal, plazos exactos ni procedimientos adicionales incluidos.
+- Cinco fases visibles, catálogo de ocho servicios y procedimientos conservados. Brackets y limpieza mantienen valores y prestaciones en un bloque desplegable.
+- Casos clínicos ocultos hasta recibir fotografías y autorizaciones. Sin promesas de garantía de por vida, cuotas sin interés o mantenimiento gratuito; el usuario los dejó pendientes.
+- Revisión visual en 360, 390 y 430 px, tablet 768 px y escritorio 1366 px; sin desbordamiento horizontal en esos tamaños. Precios y beneficios legibles, portada/video, fases y promociones secundarias comprobados.
+- Enlace de ortodoncia abre y enfoca su explicación. Desplegable de otras promociones comprobado. Cinco fases y ocho procedimientos presentes.
+- Verificación estática con Python estándar: etiquetas HTML balanceadas, recursos y anclas locales existentes, IDs únicos, WhatsApp correcto, sin formularios, noindex en las dos páginas. Consola de la vista previa sin errores ni avisos registrados durante la revisión.
+- Mapa y video originales conservados. No se da por resuelta la limitación de visualización del mapa descrita en la revisión anterior.
+
+## Revisión anterior: 26/09/2026
 
 Fecha: 26 de septiembre de 2026. Vista previa local: http://127.0.0.1:8081/.
 
