@@ -27,7 +27,7 @@ El video se optimizó a partir del archivo suministrado, manteniendo el original
 
 Se utiliza Manrope en pesos 400, 500, 600 y 700, servida desde el propio sitio. Su licencia se conserva en `site/assets/fonts/OFL.txt`. No se realizan peticiones a Google Fonts desde la web.
 
-La firma SERVIMAT usa el logo original suministrado y enlaza a su Instagram. Se oculta cuando el footer aparece, dejando la firma permanente del pie. Para evitar cubrir textos y controles, busca espacio únicamente a la izquierda (abajo o elevada) o se oculta temporalmente. WhatsApp permanece a la derecha. Si está oculta, no admite clics ni foco de teclado. Las transiciones respetan movimiento reducido.
+La firma SERVIMAT usa el logo original suministrado y enlaza a su Instagram. Permanece fija y visible en la esquina inferior izquierda durante todo el recorrido, sin elevarse ni ocultarse por coincidir con contenido. Solo se oculta cuando aparece el footer, dejando la firma permanente del pie; al salir del footer reaparece en la misma esquina. WhatsApp permanece a la derecha. Si está oculta, no admite clics ni foco de teclado. Las transiciones respetan movimiento reducido.
 
 Las secciones utilizan títulos directos sin minitítulos decorativos en mayúsculas. Las cinco fases conservan sus nombres descriptivos como encabezados, sin repetirlos en etiquetas pequeñas.
 

@@ -158,7 +158,6 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .servimat-brand > span { font-size: 12px; }
 .servimat-watermark.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 html:not(.js) .servimat-watermark { display: none; }
-.servimat-watermark[data-position="raised-left"] { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
 .whatsapp-float { position: fixed; z-index: 50; right: max(15px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: 8px; min-height: 46px; padding: 11px 15px; color: white; background: var(--teal); border: 1px solid #ffffff50; border-radius: 30px; box-shadow: 0 3px 12px #132f331f; font-size: 11px; font-weight: 600; }
 .whatsapp-float svg { width: 20px; height: 20px; }
 .legal { max-width: 760px; padding-block: 45px 70px; }

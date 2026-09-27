@@ -15,7 +15,7 @@
 
 ## Diseño de la versión revisada
 
-Último ajuste visual: eliminar los minitítulos decorativos y repetitivos (por ejemplo, la etiqueta pequeña «PROMOCIÓN DE IMPLANTES») y usar un solo encabezado claro por bloque. La marca de agua SERVIMAT queda exclusivamente a la izquierda, con ocultación si coincide con contenido o al entrar el footer. WhatsApp conserva su posición a la derecha.
+Último ajuste visual: eliminar los minitítulos decorativos y repetitivos (por ejemplo, la etiqueta pequeña «PROMOCIÓN DE IMPLANTES») y usar un solo encabezado claro por bloque. La marca de agua SERVIMAT permanece fija y visible en la esquina inferior izquierda, sin cambios de posición ni ocultación por coincidir con contenido. Solo desaparece al entrar el footer y reaparece en la misma esquina al salir de él. WhatsApp conserva su posición a la derecha.
 
 Portada de implantes sin retrato, video, promoción con dos etapas y total explícito, cinco fases, casos preparados pero ocultos, consulta sobre pagos, otros ocho servicios, promociones secundarias desplegables, procedimientos, preguntas frecuentes, mapa y contacto. Los servicios llevan a explicaciones dentro de la página; WhatsApp se usa para agendar y consultar.
 

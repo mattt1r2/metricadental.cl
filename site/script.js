@@ -53,15 +53,13 @@ revealProcedure();
 const watermark = document.querySelector('.servimat-watermark');
 const footer = document.querySelector('.site-footer');
 if (watermark && footer) {
-  const updateWatermark = visible => {
-    if (visible && document.activeElement === watermark) {
-      const footerBox = footer.getBoundingClientRect();
-      if (footerBox.top >= innerHeight || footerBox.bottom <= 0) return;
+  const updateWatermark = hidden => {
+    if (hidden && document.activeElement === watermark) {
       footer.querySelector('.servimat-credit')?.focus({ preventScroll: true });
     }
-    watermark.classList.toggle('is-hidden', visible);
-    watermark.inert = visible;
-    if (visible) {
+    watermark.classList.toggle('is-hidden', hidden);
+    watermark.inert = hidden;
+    if (hidden) {
       watermark.setAttribute('aria-hidden', 'true');
       watermark.setAttribute('tabindex', '-1');
     } else {
@@ -72,37 +70,8 @@ if (watermark && footer) {
   const updateFromPosition = () => {
     const rect = footer.getBoundingClientRect();
     const footerVisible = rect.top < window.innerHeight && rect.bottom > 0;
-    if (footerVisible) {
-      updateWatermark(true);
-      return;
-    }
-    // Keep the signature clear of controls and text at the bottom of small screens.
-    const obstacles = [...document.querySelectorAll('main a, main button, main summary, main video, main iframe')]
-      .map(element => element.getBoundingClientRect())
-      .filter(box => box.bottom > innerHeight - 180 && box.top < innerHeight);
-    const walker = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT);
-    while (walker.nextNode()) {
-      if (!walker.currentNode.textContent.trim()) continue;
-      const range = document.createRange();
-      range.selectNodeContents(walker.currentNode);
-      for (const box of range.getClientRects()) {
-        if (box.bottom > innerHeight - 180 && box.top < innerHeight) obstacles.push(box);
-      }
-    }
-    let clear = false;
-    // Stay on the left; WhatsApp occupies the right corner.
-    const positions = watermark.dataset.position === 'raised-left'
-      ? ['raised-left', 'default']
-      : ['default', 'raised-left'];
-    for (const position of positions) {
-      watermark.dataset.position = position;
-      const box = watermark.getBoundingClientRect();
-      const intersects = obstacles.some(other =>
-        box.left < other.right + 5 && box.right > other.left - 5 &&
-        box.top < other.bottom + 5 && box.bottom > other.top - 5);
-      if (!intersects) { clear = true; break; }
-    }
-    updateWatermark(!clear);
+    // The signature stays fixed at bottom left; only the footer hides it.
+    updateWatermark(footerVisible);
   };
   updateFromPosition();
   if ('IntersectionObserver' in window) {
