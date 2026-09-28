@@ -1,5 +1,13 @@
 # Validación del sitio
 
+## Promociones como portada: 28/09/2026
+
+- Las tres promociones abren el inicio, con precios destacados, desglose de implante y corona, 12 cuotas y control mensual de brackets separado. La presentación general y los nueve servicios aparecen después.
+- Composición revisada visualmente en 360, 390, 430, 768 y 1440 px. Medición adicional en 1000 px; sin desbordamiento horizontal ni precios recortados en los seis tamaños.
+- Enlaces reales desde las tres ofertas hacia la sección de promoción de implantes, ortodoncia y limpieza, y regreso a Inicio comprobados en móvil.
+- Auditoría de once HTML y 421 enlaces/recursos locales: anclas existentes, IDs únicos, un H1, HTML balanceado, noindex y cabeceras HTTP conservados. Consola sin avisos ni errores y diff sin espacios sobrantes.
+- Sin cambios en el comportamiento del menú, la firma SERVIMAT, el mapa ni las páginas de tratamientos. No se añadieron dependencias ni recursos externos. Captura de escritorio guardada en work/home-promotions.png para revisión local.
+
 ## Inicio y menú de servicios: 28/09/2026
 
 - Cabecera común en las once páginas, incluida privacidad, con Inicio y nueve enlaces de servicios. Inicio permanece visible en móvil y tablet; servicio actual marcado con aria-current.

@@ -3,7 +3,7 @@
 ## Confirmado
 
 - Sitio multipágina, confirmado el 28/09/2026. El inicio presenta la clínica en general y cada servicio abre una página propia, con la información centralizada del tratamiento. Sustituye la decisión de una sola landing enfocada en implantes.
-- Portada: «Atención dental cercana para ti y tu familia». La página de implantes conserva el video y al profesional mencionado por el cliente: Dr. Tomás Abraham Carrasco.
+- Portada: las tres promociones como contenido principal y más llamativo, con precios grandes y enlaces a cada servicio. «Atención dental cercana para ti y tu familia» se mantiene en la presentación de la clínica inmediatamente después. La página de implantes conserva el video y al profesional mencionado por el cliente: Dr. Tomás Abraham Carrasco.
 - Sin énfasis geográfico en la portada; Talca aparece en dirección y en el logo original.
 - Verde petróleo #155E68, arena #D8C1AA y lila #DCD0EA como acento. Fondo #FAFAF7.
 - Contacto y solicitud de hora exclusivamente mediante WhatsApp: +56 9 4935 4494.
@@ -17,7 +17,7 @@
 
 Último ajuste visual: eliminar los minitítulos decorativos y repetitivos (por ejemplo, la etiqueta pequeña «PROMOCIÓN DE IMPLANTES») y usar un solo encabezado claro por bloque. La marca de agua SERVIMAT permanece fija y visible en la esquina inferior izquierda, sin cambios de posición ni ocultación por coincidir con contenido. Solo desaparece al entrar el footer y reaparece en la misma esquina al salir de él. WhatsApp conserva su posición a la derecha.
 
-Inicio general con identidad de la clínica sin retrato, catálogo de nueve tratamientos, filosofía de atención, resumen de promociones, preguntas generales, mapa y contacto. Cada servicio lleva a su propia página HTML. Implantes centraliza video, promoción, cuotas, garantía, cinco fases y preguntas; brackets y limpieza centralizan sus respectivas promociones. Los otros servicios explican sus cuatro etapas y preguntas específicas. WhatsApp se usa para agendar y consultar.
+Inicio con las tres promociones en primer lugar: implantes sobre verde petróleo, brackets sobre lila y limpieza sobre arena. Precios, desglose de implantes, cuotas y control mensual de brackets visibles, con enlaces a las condiciones completas. Después aparecen la presentación general de la clínica, el catálogo de nueve tratamientos, filosofía de atención, preguntas generales, mapa y contacto. Sin retrato, carrusel ni contadores de urgencia. Cada servicio lleva a su propia página HTML. Implantes centraliza video, promoción, cuotas, garantía, cinco fases y preguntas; brackets y limpieza centralizan sus respectivas promociones. Los otros servicios explican sus cuatro etapas y preguntas específicas. WhatsApp se usa para agendar y consultar.
 
 Manrope local, composición móvil y una ilustración original de implante como poster del video en su página. Catálogo con pictogramas y etapas visibles en cada tratamiento. Las promociones usan lila y arena; las 12 cuotas se destacan con un número grande sobre verde petróleo, mediante texto HTML accesible. La identidad utiliza #155E68, #173F44, #D8C1AA, #EEE5DA, #E8E1EE y #FAFAF7.
 

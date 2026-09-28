@@ -566,27 +566,10 @@ html:not(.js) .servimat-watermark { display: none; }
 
 /* Clinic homepage and individual treatment pages. */
 [hidden] { display: none !important; }
-.clinic-hero { display: grid; gap: 30px; padding-block: 38px 46px; }
-.clinic-hero h1 { max-width: 19ch; }
-.clinic-hero h1 span { color: var(--teal); }
-.clinic-hero-copy > p { color: var(--muted); margin-top: 22px; max-width: 49ch; }
-.clinic-identity { padding: 30px 24px; background: var(--sand-light); display: flex; flex-direction: column; justify-content: center; }
-.identity-logo { position: relative; width: 100%; max-width: 390px; aspect-ratio: 2.8; overflow: hidden; margin: 0 auto 20px; }
-.identity-logo img { position: absolute; top: -72%; width: 100%; height: auto; }
-.clinic-identity > p { font-size: 19px; line-height: 1.5; letter-spacing: -.025em; text-align: center; }
-.identity-areas { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; padding-top: 20px; margin-top: 22px; border-top: 1px solid #c9bbab; font-size: 11px; color: var(--muted); }
 .clinic-values { padding: 0; margin: 24px 0 0; list-style: none; }
 .clinic-values li { display: grid; gap: 5px; padding-block: 17px; border-top: 1px solid var(--line); }
 .clinic-values strong { font-size: 17px; font-weight: 600; }
 .clinic-values span { color: var(--muted); font-size: 14px; }
-.home-promotions { background: var(--lilac); }
-.promotion-directory > a { display: grid; gap: 17px; border-top: 1px solid #c7bdce; padding-block: 27px; }
-.promotion-directory h3 { font-size: 22px; }
-.promotion-directory p { color: var(--muted); margin-top: 8px; font-size: 14px; }
-.promotion-directory a > div > span { color: var(--muted); font-size: 12px; }
-.directory-price { display: flex; flex-wrap: wrap; gap: 10px 25px; align-items: center; justify-content: space-between; }
-.directory-price strong { font-size: 32px; font-weight: 600; letter-spacing: -.04em; color: var(--deep); }
-.promotion-directory .directory-price > span { color: var(--teal); font-size: 13px; font-weight: 600; }
 .breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 10px; padding-top: 16px; font-size: 11px; color: var(--muted); }
 .breadcrumbs a { display: inline-flex; min-height: 44px; align-items: center; text-decoration: underline; text-underline-offset: 4px; }
 .breadcrumbs [aria-current] { color: var(--ink); }
@@ -629,15 +612,10 @@ html:not(.js) .servimat-watermark { display: none; }
 .guarantee p + p { margin-top: 18px; }
 .guarantee strong { color: var(--ink); font-weight: 600; }
 @media (hover: hover) and (pointer: fine) {
-  .promotion-directory a:hover h3, .service-overview a:hover, .related a:hover { text-decoration: underline; text-underline-offset: 5px; }
+  .service-overview a:hover, .related a:hover { text-decoration: underline; text-underline-offset: 5px; }
 }
 @media (min-width: 600px) {
-  .clinic-hero { padding-block: 45px 55px; }
-  .clinic-hero h1 { font-size: 46px; }
-  .clinic-identity { padding: 35px; }
   .clinic-values li { grid-template-columns: 140px 1fr; gap: 20px; }
-  .promotion-directory > a { grid-template-columns: 1fr auto; align-items: center; gap: 35px; }
-  .directory-price { flex-direction: column; align-items: flex-end; }
   .related nav { grid-template-columns: 1fr 1fr; column-gap: 30px; }
   .finance-layout { grid-template-columns: .65fr 1fr; align-items: center; gap: 50px; }
   .finance-number { font-size: 180px; }
@@ -645,14 +623,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .service-hero { padding-block: 35px 55px; }
 }
 @media (min-width: 900px) {
-  .clinic-hero { grid-template-columns: 1.1fr 1fr; align-items: center; gap: 70px; padding-block: 65px 70px; }
-  .clinic-hero h1 { font-size: clamp(42px, 4vw, 56px); }
-  .clinic-hero .hero-actions { flex-direction: column; }
-  .clinic-identity { min-height: 350px; padding: 45px 30px; }
-  .clinic-identity > p { font-size: 23px; }
-  .identity-areas { font-size: 12px; }
-  .promotion-directory h3 { font-size: 26px; }
-  .directory-price strong { font-size: 38px; }
   .service-hero { grid-template-columns: 1.2fr .8fr; align-items: start; gap: 85px; padding-block: 38px 65px; }
   .service-lead { font-size: 26px; }
   .service-hero p:not(.service-lead) { font-size: 15px; }
@@ -665,4 +635,80 @@ html:not(.js) .servimat-watermark { display: none; }
   .finance-number { font-size: 250px; justify-self: center; }
   .finance-copy h2 { font-size: 39px; }
   .guarantee { grid-template-columns: 1fr 1fr; gap: 90px; }
+}
+
+/* The homepage opens with all three offers; details stay on treatment pages. */
+.home-promotions { padding-block: 30px 26px; }
+.promotions-heading { display: grid; gap: 14px; margin-bottom: 24px; }
+.promotions-heading h1 { max-width: 21ch; font-size: clamp(30px, 8vw, 40px); }
+.promotions-heading h1 span { display: block; color: var(--teal); }
+.promotions-heading > p { max-width: 42ch; color: var(--muted); font-size: 14px; }
+.promotion-showcase { display: grid; gap: 14px; }
+.home-offer { display: flex; flex-direction: column; min-width: 0; padding: 24px; border-radius: 6px; }
+.home-offer h2 { max-width: 22ch; font-size: 24px; line-height: 1.25; }
+.home-offer-price { margin-block: 14px 16px; font-size: clamp(41px, 11vw, 48px); line-height: 1.1; font-weight: 600; letter-spacing: -.055em; white-space: nowrap; }
+.home-offer-includes { font-size: 13px; line-height: 1.65; }
+.home-offer-detail { margin-top: 12px; font-size: 12px; line-height: 1.65; }
+.home-offer-detail strong { white-space: nowrap; font-weight: 600; }
+.home-offer-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding-block: 12px; margin-top: 20px; border-top: 1px solid #173f4440; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.home-offer-link > span { font-size: 23px; line-height: 1; font-weight: 400; }
+.home-offer-implant { background: var(--teal); color: white; }
+.home-offer-implant .home-offer-price { color: var(--sand-light); font-size: clamp(49px, 13vw, 64px); }
+.home-offer-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding-top: 16px; border-top: 1px solid #ffffff40; font-size: 12px; line-height: 1.6; }
+.home-offer-breakdown strong { display: block; font-size: 17px; font-weight: 500; margin-top: 3px; }
+.home-offer-implant .home-offer-includes { margin-top: 17px; color: #e0eeea; }
+.home-offer-finance { display: flex; align-items: center; gap: 17px; margin-block: 22px; }
+.home-offer-finance > strong { color: var(--sand-light); font-size: 64px; letter-spacing: -.065em; font-weight: 600; line-height: .9; }
+.home-offer-finance > p { font-size: 20px; font-weight: 600; line-height: 1.3; }
+.home-offer-finance p > span { display: block; max-width: 30ch; margin-top: 6px; font-size: 11px; font-weight: 400; line-height: 1.6; color: #e0eeea; }
+.home-offer-implant .home-offer-link { padding-inline: 15px; margin-top: auto; border: 0; border-radius: 3px; color: var(--deep); background: var(--sand-light); }
+.home-offer-implant :focus-visible { outline-color: var(--sand-light); }
+.home-offer-brackets { color: var(--deep); background: var(--lilac); }
+.home-offer-cleaning { color: var(--deep); background: var(--sand-light); }
+.home-offer-cleaning h2 > span { white-space: nowrap; }
+.home-promotions-note { margin-top: 18px; max-width: 110ch; color: var(--muted); font-size: 11px; line-height: 1.7; }
+.clinic-intro { display: grid; gap: 20px; padding-block: 36px 48px; border-top: 1px solid var(--line); }
+.clinic-intro h2 { max-width: 24ch; }
+.clinic-intro h2 > span { color: var(--teal); }
+.clinic-intro p { max-width: 58ch; color: var(--muted); font-size: 14px; }
+.clinic-intro .text-link { margin-top: 14px; }
+@media (hover: hover) and (pointer: fine) {
+  .home-offer-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .home-offer-implant .home-offer-link:hover { background: var(--sand); }
+}
+@media (min-width: 600px) {
+  .home-promotions { padding-block: 36px 30px; }
+  .promotions-heading h1 { font-size: 42px; }
+  .promotion-showcase { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .home-offer { padding: 26px; }
+  .home-offer-implant { grid-column: 1 / -1; }
+  .home-offer-implant .home-offer-price { font-size: 64px; }
+  .home-offer-implant .home-offer-link { max-width: 340px; width: 100%; }
+  .home-offer-brackets .home-offer-link, .home-offer-cleaning .home-offer-link { margin-top: auto; }
+  .home-offer-brackets .home-offer-detail, .home-offer-cleaning .home-offer-includes { margin-bottom: 20px; }
+  .clinic-intro { padding-block: 40px 52px; }
+}
+@media (min-width: 1000px) {
+  .home-promotions { padding-top: 38px; }
+  .promotions-heading { grid-template-columns: 1.15fr 1fr; align-items: end; gap: 70px; margin-bottom: 30px; }
+  .promotions-heading h1 { font-size: clamp(42px, 3.4vw, 49px); }
+  .promotions-heading > p { max-width: 40ch; font-size: 15px; padding-bottom: 5px; }
+  .promotion-showcase { grid-template-columns: 1.15fr 1fr; }
+  .home-offer { padding: 26px 30px; }
+  .home-offer-implant { grid-column: 1; grid-row: 1 / 3; padding: 34px; }
+  .home-offer-implant h2 { font-size: 30px; }
+  .home-offer-implant .home-offer-price { margin-top: 20px; font-size: 76px; }
+  .home-offer-implant .home-offer-includes { max-width: 45ch; }
+  .home-offer-finance { margin-block: 30px; }
+  .home-offer-finance > strong { font-size: 82px; }
+  .home-offer-finance > p { font-size: 23px; }
+  .home-offer-finance p > span { font-size: 12px; }
+  .home-offer-top { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 15px; margin-bottom: 15px; }
+  .home-offer-top h2 { font-size: 23px; }
+  .home-offer-top .home-offer-price { font-size: 40px; margin: 0; }
+  .home-offer-detail { margin-top: 10px; }
+  .home-offer-link { font-size: 13px; }
+  .home-offer-brackets .home-offer-detail, .home-offer-cleaning .home-offer-includes { margin-bottom: 15px; }
+  .clinic-intro { grid-template-columns: 1fr 1fr; align-items: start; gap: 80px; padding-block: 45px 58px; }
+  .clinic-intro h2 { font-size: 30px; }
 }

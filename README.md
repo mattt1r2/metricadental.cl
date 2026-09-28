@@ -10,7 +10,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 
 ## Estructura
 
-- `site/index.html`: inicio general, clínica, catálogo, resumen de promociones, preguntas, mapa y contacto.
+- `site/index.html`: promociones destacadas al comienzo, presentación de la clínica, catálogo, preguntas, mapa y contacto.
 - `site/implantes.html`: video, promoción, financiación, garantía, cinco fases y preguntas.
 - `site/ortodoncia.html` y `site/limpieza-dental.html`: información de cada tratamiento y sus promociones completas.
 - `site/restauraciones.html`, `site/endodoncia.html`, `site/terceros-molares.html`, `site/coronas.html`, `site/carillas.html` y `site/blanqueamiento.html`: explicación, etapas y preguntas específicas.
