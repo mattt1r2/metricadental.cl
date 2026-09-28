@@ -2,8 +2,8 @@
 
 ## Confirmado
 
-- Una sola landing principal centrada en implantes, conservando los demás servicios más abajo. El usuario confirmó este criterio el 27/09/2026, después de aportar el comentario del cliente sobre una página exclusiva de implantes.
-- Portada: «Implantes dentales. Un nuevo comienzo para tu sonrisa»; video y profesional mencionado por el cliente: Dr. Tomás Abraham Carrasco.
+- Sitio multipágina, confirmado el 28/09/2026. El inicio presenta la clínica en general y cada servicio abre una página propia, con la información centralizada del tratamiento. Sustituye la decisión de una sola landing enfocada en implantes.
+- Portada: «Atención dental cercana para ti y tu familia». La página de implantes conserva el video y al profesional mencionado por el cliente: Dr. Tomás Abraham Carrasco.
 - Sin énfasis geográfico en la portada; Talca aparece en dirección y en el logo original.
 - Verde petróleo #155E68, arena #D8C1AA y lila #DCD0EA como acento. Fondo #FAFAF7.
 - Contacto y solicitud de hora exclusivamente mediante WhatsApp: +56 9 4935 4494.
@@ -17,9 +17,9 @@
 
 Último ajuste visual: eliminar los minitítulos decorativos y repetitivos (por ejemplo, la etiqueta pequeña «PROMOCIÓN DE IMPLANTES») y usar un solo encabezado claro por bloque. La marca de agua SERVIMAT permanece fija y visible en la esquina inferior izquierda, sin cambios de posición ni ocultación por coincidir con contenido. Solo desaparece al entrar el footer y reaparece en la misma esquina al salir de él. WhatsApp conserva su posición a la derecha.
 
-Portada de implantes sin retrato, video, promoción con dos etapas y total explícito, cinco fases, casos preparados pero ocultos, consulta sobre pagos, otros ocho servicios, promociones secundarias desplegables, procedimientos, preguntas frecuentes, mapa y contacto. Los servicios llevan a explicaciones dentro de la página; WhatsApp se usa para agendar y consultar.
+Inicio general con identidad de la clínica sin retrato, catálogo de nueve tratamientos, filosofía de atención, resumen de promociones, preguntas generales, mapa y contacto. Cada servicio lleva a su propia página HTML. Implantes centraliza video, promoción, cuotas, garantía, cinco fases y preguntas; brackets y limpieza centralizan sus respectivas promociones. Los otros servicios explican sus cuatro etapas y preguntas específicas. WhatsApp se usa para agendar y consultar.
 
-Manrope local, composición móvil y una ilustración original de implante como recurso educativo, sin retrato del dueño. Catálogo de servicios con pictogramas, secuencia vertical de implantes y desplegables con etapas. Las promociones usan lila y arena, y su información está escrita en HTML legible además de las imágenes originales desplegables. La identidad utiliza #155E68, #173F44, #D8C1AA, #EEE5DA, #E8E1EE y #FAFAF7.
+Manrope local, composición móvil y una ilustración original de implante como poster del video en su página. Catálogo con pictogramas y etapas visibles en cada tratamiento. Las promociones usan lila y arena; las 12 cuotas se destacan con un número grande sobre verde petróleo, mediante texto HTML accesible. La identidad utiliza #155E68, #173F44, #D8C1AA, #EEE5DA, #E8E1EE y #FAFAF7.
 
 El logo original dice «Dental Talca». Se conserva la marca sin rediseñarla. El antiguo fotograma con el profesional ya no se usa en la página ni como poster del video. Se podrá incorporar una fotografía de las instalaciones cuando el cliente aporte una adecuada. No se copian fotografías ni textos de la otra clínica de referencia.
 
@@ -54,7 +54,7 @@ No presentar precios de capturas de otras clínicas o campañas antiguas como vi
 - Corona de zirconio: $300.000 CLP, con laboratorio y aditamentos incluidos.
 - Suma de ambas etapas: $570.000 CLP. No equivale a un presupuesto universal: la evaluación identifica necesidades adicionales.
 - Evaluación, planificación, escáner y controles sin costo, según mensaje del cliente aportado por el usuario. Tipo de escáner, alcance de controles y vigencia exacta por completar; no se asume Cone Beam ni se copia el valor de $25.000 de la referencia externa.
-- Garantía «de por vida», cobertura de implante/corona, mantenimiento y condiciones: el usuario pidió dejarlos pendientes mientras consulta al cliente. No se publica la promesa ni se presenta el mantenimiento como gratuito.
-- Medios de pago, cantidad de cuotas e intereses pendientes. Solo invitación a consultar opciones.
+- Actualización del 28/09/2026: garantía de por vida para implante y corona siempre que se asista a los controles indicados, incluidos en el tratamiento. No extender la gratuidad a otros servicios de mantenimiento ni prometer resultados clínicos de por vida.
+- Actualización del 28/09/2026: 12 cuotas sin interés con tarjeta de crédito mediante Compraquí de BancoEstado, según confirmación directa del cliente trasladada por el usuario. No se asumen tarjetas específicas ni otras condiciones no proporcionadas.
 - El cliente enviará 3 a 5 casos clínicos y fotos propias de las fases. La sección permanece oculta y sin enlace de navegación hasta recibir el material autorizado.
-- La última instrucción del usuario prevalece sobre el comentario inicial del cliente de quitar los otros servicios: conservarlos en la misma landing, con protagonismo de implantes.
+- La instrucción del 28/09/2026 prevalece sobre los enfoques anteriores: portada general y páginas independientes para todos los servicios. La dirección implantes.html permite difundir solo la información del tratamiento en anuncios.

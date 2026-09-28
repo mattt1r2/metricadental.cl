@@ -1,6 +1,6 @@
 # Métrica Dental
 
-Landing de Clínica Métrica Dental centrada en implantes, con diseño móvil, contacto por WhatsApp y firma SERVIMAT. Conserva las otras prestaciones más abajo. Proyecto estático preparado para GitHub y Cloudflare Pages; sin despliegue definitivo.
+Web de Clínica Métrica Dental con inicio general y nueve páginas independientes de tratamientos. Diseño móvil, contacto por WhatsApp y firma SERVIMAT. Proyecto estático preparado para GitHub y Cloudflare Pages; sin despliegue definitivo.
 
 ## Vista previa
 
@@ -10,9 +10,12 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 
 ## Estructura
 
-- `site/index.html`: contenido completo de la landing.
+- `site/index.html`: inicio general, clínica, catálogo, resumen de promociones, preguntas, mapa y contacto.
+- `site/implantes.html`: video, promoción, financiación, garantía, cinco fases y preguntas.
+- `site/ortodoncia.html` y `site/limpieza-dental.html`: información de cada tratamiento y sus promociones completas.
+- `site/restauraciones.html`, `site/endodoncia.html`, `site/terceros-molares.html`, `site/coronas.html`, `site/carillas.html` y `site/blanqueamiento.html`: explicación, etapas y preguntas específicas.
 - `site/styles.css`: diseño responsive.
-- `site/script.js`: menú móvil, apertura de procedimientos por enlace y firma flotante accesible.
+- `site/script.js`: menú móvil, compatibilidad con enlaces de la antigua landing y firma flotante accesible.
 - `site/privacidad.html`: borrador informativo de privacidad.
 - `site/_headers`: cabeceras HTTP para Pages.
 - `site/assets/`: logos, video optimizado e imagen de portada.
@@ -21,9 +24,9 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 - `docs/PUBLICACION.md`: preparación del despliegue.
 - `docs/VALIDACION.md`: comprobaciones y límites de la revisión.
 
-Los textos, enlaces y datos comerciales se editan directamente en HTML. Los colores se encuentran al principio de `styles.css`. No hay dependencias de producción, recopilación de formularios ni servicios de pago.
+Los textos, enlaces y datos comerciales se editan directamente en HTML. Cada archivo está completo; mantener coherentes la navegación, el pie y la firma en todas las páginas. Los colores se encuentran al principio de `styles.css`. No hay dependencias de producción, recopilación de formularios ni pagos en línea.
 
-El video se optimizó a partir del archivo suministrado, manteniendo el original fuera del repositorio. La portada muestra una ilustración original de tratamientos y no al dueño. El antiguo fotograma `clinica.webp` se conserva pero ya no está referenciado. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial.
+El video se optimizó a partir del archivo suministrado, manteniendo el original fuera del repositorio. La portada utiliza la identidad de la clínica sin retrato del dueño. El video con poster ilustrado está en la página de implantes. El antiguo fotograma `clinica.webp` se conserva sin referencias. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial.
 
 Se utiliza Manrope en pesos 400, 500, 600 y 700, servida desde el propio sitio. Su licencia se conserva en `site/assets/fonts/OFL.txt`. No se realizan peticiones a Google Fonts desde la web.
 
@@ -33,11 +36,13 @@ Las secciones utilizan títulos directos sin minitítulos decorativos en mayúsc
 
 Los originales `logo-metrica-dental.png` y `logo-servimat.png` que ya existían en la raíz local se conservan intactos y están excluidos de Git; las copias utilizadas por la página viven dentro de `site/assets/`.
 
-La portada presenta implantes, el profesional mencionado por el cliente y el video. Sigue la promoción de instalación JD ($270.000) y corona de zirconio con laboratorio y aditamentos ($300.000), con suma explícita de $570.000. Evaluación, planificación, escáner y controles sin costo según la nueva información aportada. Las cinco fases aparecen antes de los otros ocho servicios. Brackets y limpieza conservan sus condiciones dentro de un bloque desplegable.
+La página de implantes centraliza al profesional mencionado por el cliente, el video, la promoción de instalación JD ($270.000) y corona de zirconio con laboratorio y aditamentos ($300.000), con suma de $570.000. Evaluación, planificación, escáner y controles sin costo según los datos aportados. Brackets y limpieza conservan sus condiciones en sus propias páginas; el inicio enlaza a las tres promociones.
 
-Las garantías y condiciones de cuotas están pendientes; la página solo invita a consultar opciones de pago. No se promete mantenimiento gratuito. La sección `#casos` permanece oculta hasta recibir 3 a 5 casos reales autorizados; los comentarios de cada fase indican dónde incorporar fotografías propias. No se muestran marcadores vacíos al paciente.
+El 28/09/2026 el usuario confirmó garantía de por vida para implante y corona condicionada a asistir a controles incluidos, y 12 cuotas sin interés con tarjeta de crédito mediante Compraquí de BancoEstado. La condición aparece junto a la garantía; no se promete otro mantenimiento gratuito ni se asume compatibilidad con todas las tarjetas. La sección `#casos` permanece oculta hasta recibir 3 a 5 casos reales autorizados; los comentarios de cada fase indican dónde incorporar fotografías propias.
 
-Se conserva el iframe oficial de Google Maps con carga diferida. `_headers` permite únicamente `https://www.google.com` como origen de frames; la privacidad informa sobre esta conexión externa. El enlace `/#promocion` abre directamente la oferta de implantes y `/#tratamientos` permite consultar el resto de los servicios.
+Se conserva el iframe oficial de Google Maps con carga diferida en el inicio. `_headers` permite únicamente `https://www.google.com` como origen de frames; la privacidad informa sobre esta conexión externa. Los enlaces antiguos como `/#promocion` redirigen a su página correspondiente; los nuevos apuntan directamente al HTML. Para anuncios de implantes, usar `implantes.html`.
+
+El servidor temporal de revisión aplica las cabeceras de seguridad y limita los archivos servidos. Al añadir archivos nuevos, reiniciarlo para actualizar su lista permitida. No requiere cambios para editar archivos ya existentes.
 
 El contenido pendiente (equipo, equipamiento, casos, dirección de acceso y fechas de las promociones) está documentado en el brief. Las fuentes de referencia para la redacción clínica están en `docs/FUENTES-CLINICAS.md`; la clínica debe validar la versión final. La privacidad sigue siendo un borrador hasta confirmar al responsable.
 

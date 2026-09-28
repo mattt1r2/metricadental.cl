@@ -1,4 +1,14 @@
-# Validación de la landing
+# Validación del sitio
+
+## Conversión a sitio multipágina: 28/09/2026
+
+- Inicio general de la clínica y nueve páginas de tratamientos; privacidad completa once HTML. Todos respondieron HTTP 200 desde el servidor de vista previa reiniciado, con CSP y noindex.
+- Auditoría de 298 enlaces/recursos locales: archivos y anclas existentes, IDs únicos, un H1 por página, HTML balanceado e imágenes con atributo alt. JavaScript sin errores de sintaxis y diff sin espacios sobrantes.
+- Navegación real desde el catálogo a ortodoncia; menú móvil hacia promociones del inicio y desde ahí a implantes. Los otros ocho tratamientos cargaron con su H1, cuatro etapas y WhatsApp contextual. El enlace anterior /#promocion redirige a implantes.html#promocion.
+- Revisión visual en 360 y 390 px (inicio), 390 px (ortodoncia e implantes), 430 px (promoción de brackets), 768 px (cuotas y garantía) y 1440 px (inicio). Sin desbordamiento horizontal en esos tamaños ni en las ocho páginas de servicios revisadas a 390 px.
+- SERVIMAT conserva la posición fija inferior izquierda; en el footer de implantes se oculta con aria-hidden y permanece el crédito del pie. Al volver al inicio reaparece.
+- Bloque de 12 cuotas sin interés con texto HTML y Compraquí de BancoEstado; garantía de implante y corona junto a su condición de asistencia a controles incluidos. Datos aportados por el usuario el 28/09/2026, sin extenderlos a todos los tratamientos ni a todas las tarjetas.
+- La portada no usa retrato del dueño. El video permanece en implantes; fotografías de instalaciones y casos siguen pendientes. El mapa mantiene la limitación de verificación externa documentada abajo. Sin despliegue definitivo.
 
 ## Ajuste de títulos y firma fija: 27/09/2026
 

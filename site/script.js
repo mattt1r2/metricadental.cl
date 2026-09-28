@@ -32,22 +32,29 @@ if (menuButton && menu) {
   });
 }
 
-// Service links open their explanation in this page, including shared deep links.
-const revealProcedure = (moveFocus = false) => {
-  const id = location.hash.slice(1);
-  if (!id) return;
-  const target = document.getElementById(id);
-  if (!target?.matches('.procedure')) return;
-  target.open = true;
-  if (moveFocus) target.querySelector('summary')?.focus({ preventScroll: true });
-  requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+// Preserve shared links from the previous single-page version.
+const legacyServiceLinks = {
+  'ortodoncia': 'ortodoncia.html',
+  'restauraciones': 'restauraciones.html',
+  'endodoncia': 'endodoncia.html',
+  'molares': 'terceros-molares.html',
+  'coronas': 'coronas.html',
+  'carillas': 'carillas.html',
+  'limpieza': 'limpieza-dental.html',
+  'blanqueamiento': 'blanqueamiento.html',
+  'implantes': 'implantes.html',
+  'promocion': 'implantes.html#promocion',
+  'fases': 'implantes.html#fases',
+  'pagos': 'implantes.html#pagos',
+  'casos': 'implantes.html#casos'
 };
-window.addEventListener('hashchange', () => revealProcedure(true));
-document.addEventListener('click', event => {
-  const link = event.target.closest('a[href^="#"]');
-  if (link && link.hash === location.hash) revealProcedure(true);
-});
-revealProcedure();
+const openLegacyService = () => {
+  if (!document.body.classList.contains('clinic-home')) return;
+  const destination = legacyServiceLinks[location.hash.slice(1)];
+  if (destination) location.replace(destination);
+};
+window.addEventListener('hashchange', openLegacyService);
+openLegacyService();
 
 // The footer credit replaces the floating signature, including keyboard access.
 const watermark = document.querySelector('.servimat-watermark');
