@@ -637,78 +637,81 @@ html:not(.js) .servimat-watermark { display: none; }
   .guarantee { grid-template-columns: 1fr 1fr; gap: 90px; }
 }
 
-/* The homepage opens with all three offers; details stay on treatment pages. */
-.home-promotions { padding-block: 30px 26px; }
+/* Brief clinic introduction, then an extensible offer grid in document order. */
+.home-promotions { padding-block: 0 42px; }
 .promotions-heading { display: grid; gap: 14px; margin-bottom: 24px; }
-.promotions-heading h1 { max-width: 21ch; font-size: clamp(30px, 8vw, 40px); }
-.promotions-heading h1 span { display: block; color: var(--teal); }
+.promotions-heading h2 { max-width: 23ch; font-size: 28px; }
+.promotions-heading h2 span { color: var(--teal); }
 .promotions-heading > p { max-width: 42ch; color: var(--muted); font-size: 14px; }
 .promotion-showcase { display: grid; gap: 14px; }
-.home-offer { display: flex; flex-direction: column; min-width: 0; padding: 24px; border-radius: 6px; }
-.home-offer h2 { max-width: 22ch; font-size: 24px; line-height: 1.25; }
+.home-offer { display: flex; flex-direction: column; min-width: 0; padding: 24px; border-radius: 6px; color: var(--deep); background: var(--lilac); }
+.home-offer h3 { max-width: 22ch; font-size: 24px; line-height: 1.25; }
 .home-offer-price { margin-block: 14px 16px; font-size: clamp(41px, 11vw, 48px); line-height: 1.1; font-weight: 600; letter-spacing: -.055em; white-space: nowrap; }
 .home-offer-includes { font-size: 13px; line-height: 1.65; }
 .home-offer-detail { margin-top: 12px; font-size: 12px; line-height: 1.65; }
 .home-offer-detail strong { white-space: nowrap; font-weight: 600; }
 .home-offer-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding-block: 12px; margin-top: 20px; border-top: 1px solid #173f4440; font-size: 13px; font-weight: 700; line-height: 1.5; }
 .home-offer-link > span { font-size: 23px; line-height: 1; font-weight: 400; }
-.home-offer-implant { background: var(--teal); color: white; }
-.home-offer-implant .home-offer-price { color: var(--sand-light); font-size: clamp(49px, 13vw, 64px); }
+.home-offer-featured { background: var(--teal); color: white; }
+.home-offer-featured .home-offer-price { color: var(--sand-light); font-size: clamp(49px, 13vw, 64px); }
 .home-offer-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding-top: 16px; border-top: 1px solid #ffffff40; font-size: 12px; line-height: 1.6; }
 .home-offer-breakdown strong { display: block; font-size: 17px; font-weight: 500; margin-top: 3px; }
-.home-offer-implant .home-offer-includes { margin-top: 17px; color: #e0eeea; }
+.home-offer-featured .home-offer-includes { margin-top: 17px; color: #e0eeea; }
 .home-offer-finance { display: flex; align-items: center; gap: 17px; margin-block: 22px; }
 .home-offer-finance > strong { color: var(--sand-light); font-size: 64px; letter-spacing: -.065em; font-weight: 600; line-height: .9; }
 .home-offer-finance > p { font-size: 20px; font-weight: 600; line-height: 1.3; }
 .home-offer-finance p > span { display: block; max-width: 30ch; margin-top: 6px; font-size: 11px; font-weight: 400; line-height: 1.6; color: #e0eeea; }
-.home-offer-implant .home-offer-link { padding-inline: 15px; margin-top: auto; border: 0; border-radius: 3px; color: var(--deep); background: var(--sand-light); }
-.home-offer-implant :focus-visible { outline-color: var(--sand-light); }
-.home-offer-brackets { color: var(--deep); background: var(--lilac); }
-.home-offer-cleaning { color: var(--deep); background: var(--sand-light); }
-.home-offer-cleaning h2 > span { white-space: nowrap; }
+.home-offer-featured .home-offer-link { padding-inline: 15px; margin-top: auto; border: 0; border-radius: 3px; color: var(--deep); background: var(--sand-light); }
+.home-offer-featured :focus-visible { outline-color: var(--sand-light); }
+.home-offer-lilac { color: var(--deep); background: var(--lilac); }
+.home-offer-sand { color: var(--deep); background: var(--sand-light); }
+.home-offer-sand h3 > span { white-space: nowrap; }
 .home-promotions-note { margin-top: 18px; max-width: 110ch; color: var(--muted); font-size: 11px; line-height: 1.7; }
-.clinic-intro { display: grid; gap: 20px; padding-block: 36px 48px; border-top: 1px solid var(--line); }
-.clinic-intro h2 { max-width: 24ch; }
-.clinic-intro h2 > span { color: var(--teal); }
+.clinic-intro { display: grid; gap: 18px; padding-block: 34px 32px; margin-bottom: 30px; border-bottom: 1px solid var(--line); }
+.clinic-intro h1 { max-width: 24ch; font-size: clamp(31px, 8vw, 40px); }
+.clinic-intro h1 > span { display: block; color: var(--teal); }
 .clinic-intro p { max-width: 58ch; color: var(--muted); font-size: 14px; }
-.clinic-intro .text-link { margin-top: 14px; }
+.clinic-intro p > strong { color: var(--ink); font-weight: 600; }
+.clinic-intro .text-link { margin-top: 10px; }
 @media (hover: hover) and (pointer: fine) {
   .home-offer-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-  .home-offer-implant .home-offer-link:hover { background: var(--sand); }
+  .home-offer-featured .home-offer-link:hover { background: var(--sand); }
 }
 @media (min-width: 600px) {
-  .home-promotions { padding-block: 36px 30px; }
-  .promotions-heading h1 { font-size: 42px; }
+  .home-promotions { padding-block: 0 50px; }
+  .promotions-heading h2 { font-size: 32px; }
   .promotion-showcase { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .home-offer { padding: 26px; }
-  .home-offer-implant { grid-column: 1 / -1; }
-  .home-offer-implant .home-offer-price { font-size: 64px; }
-  .home-offer-implant .home-offer-link { max-width: 340px; width: 100%; }
-  .home-offer-brackets .home-offer-link, .home-offer-cleaning .home-offer-link { margin-top: auto; }
-  .home-offer-brackets .home-offer-detail, .home-offer-cleaning .home-offer-includes { margin-bottom: 20px; }
-  .clinic-intro { padding-block: 40px 52px; }
+  .home-offer-featured { grid-column: 1 / -1; }
+  .promotion-showcase > .home-offer-featured ~ .home-offer:nth-child(n + 4):last-child:nth-child(even) { grid-column: 1 / -1; }
+  .home-offer-featured .home-offer-price { font-size: 64px; }
+  .home-offer-featured .home-offer-link { max-width: 340px; width: 100%; }
+  .home-offer:not(.home-offer-featured) .home-offer-link { margin-top: auto; }
+  .home-offer:not(.home-offer-featured) > p:last-of-type { margin-bottom: 20px; }
+  .clinic-intro { padding-block: 40px 30px; }
 }
 @media (min-width: 1000px) {
-  .home-promotions { padding-top: 38px; }
-  .promotions-heading { grid-template-columns: 1.15fr 1fr; align-items: end; gap: 70px; margin-bottom: 30px; }
-  .promotions-heading h1 { font-size: clamp(42px, 3.4vw, 49px); }
-  .promotions-heading > p { max-width: 40ch; font-size: 15px; padding-bottom: 5px; }
+  .promotions-heading { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 70px; margin-bottom: 24px; }
+  .promotions-heading h2 { max-width: none; font-size: 34px; }
+  .promotions-heading > p { max-width: 40ch; font-size: 14px; }
   .promotion-showcase { grid-template-columns: 1.15fr 1fr; }
   .home-offer { padding: 26px 30px; }
-  .home-offer-implant { grid-column: 1; grid-row: 1 / 3; padding: 34px; }
-  .home-offer-implant h2 { font-size: 30px; }
-  .home-offer-implant .home-offer-price { margin-top: 20px; font-size: 76px; }
-  .home-offer-implant .home-offer-includes { max-width: 45ch; }
+  .home-offer-featured { grid-column: 1; grid-row: span 2; padding: 34px; }
+  .home-offer-featured:only-child { grid-column: 1 / -1; grid-row: auto; }
+  .home-offer-featured:first-child:nth-last-child(2) { grid-row: auto; }
+  .home-offer-featured h3 { font-size: 30px; }
+  .home-offer-featured .home-offer-price { margin-top: 20px; font-size: 76px; }
+  .home-offer-featured .home-offer-includes { max-width: 45ch; }
   .home-offer-finance { margin-block: 30px; }
   .home-offer-finance > strong { font-size: 82px; }
   .home-offer-finance > p { font-size: 23px; }
   .home-offer-finance p > span { font-size: 12px; }
   .home-offer-top { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 15px; margin-bottom: 15px; }
-  .home-offer-top h2 { font-size: 23px; }
+  .home-offer-top h3 { font-size: 23px; }
   .home-offer-top .home-offer-price { font-size: 40px; margin: 0; }
   .home-offer-detail { margin-top: 10px; }
   .home-offer-link { font-size: 13px; }
-  .home-offer-brackets .home-offer-detail, .home-offer-cleaning .home-offer-includes { margin-bottom: 15px; }
-  .clinic-intro { grid-template-columns: 1fr 1fr; align-items: start; gap: 80px; padding-block: 45px 58px; }
-  .clinic-intro h2 { font-size: 30px; }
+  .home-offer:not(.home-offer-featured) > p:last-of-type { margin-bottom: 15px; }
+  .clinic-intro { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 70px; padding-block: 42px 34px; margin-bottom: 28px; }
+  .clinic-intro h1 { max-width: 24ch; font-size: clamp(36px, 3.2vw, 44px); }
 }

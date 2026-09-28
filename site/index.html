@@ -22,6 +22,7 @@
       <div class="header-actions"><a class="header-home" href="index.html" aria-current="page">Inicio</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation"><span>Menú</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button></div>
       <nav id="navigation" class="navigation" aria-label="Navegación principal">
         <a href="index.html" aria-current="page">Inicio</a>
+        <a href="index.html#promociones">Promociones</a>
         <details class="services-menu"><summary>Servicios <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><div class="service-submenu">
               <a href="implantes.html">Implantes dentales</a>
               <a href="ortodoncia.html">Ortodoncia</a>
@@ -34,36 +35,41 @@
               <a href="blanqueamiento.html">Blanqueamiento dental</a>
               <a class="all-services" href="index.html#tratamientos">Ver todos los servicios <span aria-hidden="true">↗</span></a>
         </div></details>
-        <a href="index.html#clinica">La clínica</a><a href="index.html#promociones">Promociones</a><a href="index.html#contacto">Ubicación</a>
+        <a href="index.html#clinica">La clínica</a><a href="index.html#contacto">Ubicación</a>
         <a class="button button-small" href="https://wa.me/56949354494?text=Hola%2C%20quiero%20solicitar%20una%20hora%20en%20M%C3%A9trica%20Dental." target="_blank" rel="noopener noreferrer">Solicitar hora <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
   <main id="contenido">
 
-    <section class="home-promotions" id="inicio" aria-labelledby="hero-title">
-      <div class="wrap" id="promociones">
+    <section class="clinic-intro wrap" id="inicio" aria-labelledby="hero-title">
+      <h1 id="hero-title">Atención dental cercana <span>para ti y tu familia.</span></h1>
+      <div><p><strong>Métrica Dental</strong> es una clínica enfocada en brindar atención cercana y accesible. Te escuchamos, explicamos tus alternativas y planificamos un tratamiento pensado para ti.</p><a class="text-link" href="#clinica">Conoce nuestra clínica <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section class="home-promotions" id="promociones" aria-labelledby="promotions-title">
+      <div class="wrap">
         <div class="promotions-heading">
-          <h1 id="hero-title">Promociones para <span>cuidar tu sonrisa.</span></h1>
-          <p>Implantes, brackets y limpieza dental. Conoce lo que incluye cada promoción.</p>
+          <h2 id="promotions-title">Promociones para <span>cuidar tu sonrisa.</span></h2>
+          <p>Conoce lo que incluye cada promoción y sus condiciones.</p>
         </div>
+        <!-- Añadir ofertas como artículos hermanos. Guía y plantilla: docs/PROMOCIONES.md. -->
         <div class="promotion-showcase">
-          <article class="home-offer home-offer-implant" aria-labelledby="implant-offer-title">
-            <h2 id="implant-offer-title">Implante + corona de zirconio</h2>
+          <article class="home-offer home-offer-featured" aria-labelledby="implant-offer-title">
+            <h3 id="implant-offer-title">Implante + corona de zirconio</h3>
             <p class="home-offer-price">$570.000</p>
             <div class="home-offer-breakdown"><p>Instalación de implante JD <strong>$270.000</strong></p><p>Corona de zirconio <strong>$300.000</strong></p></div>
             <p class="home-offer-includes">Evaluación, planificación, escáner y controles sin costo.</p>
             <div class="home-offer-finance"><strong>12</strong><p>cuotas sin interés<span>Con tarjeta de crédito · Compraquí de BancoEstado</span></p></div>
             <a class="home-offer-link" href="implantes.html#promocion">Ver promoción de implantes <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="home-offer home-offer-brackets" aria-labelledby="brackets-offer-title">
-            <div class="home-offer-top"><h2 id="brackets-offer-title">Instalación de brackets</h2><p class="home-offer-price">$79.990</p></div>
+          <article class="home-offer home-offer-lilac" aria-labelledby="brackets-offer-title">
+            <div class="home-offer-top"><h3 id="brackets-offer-title">Instalación de brackets</h3><p class="home-offer-price">$79.990</p></div>
             <p class="home-offer-includes">Superior e inferior, escáner digital y evaluación con especialista.</p>
             <p class="home-offer-detail">10 cupos mensuales · Control mensual por separado: <strong>$33.000</strong></p>
             <a class="home-offer-link" href="ortodoncia.html#promocion">Ver promoción de brackets <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="home-offer home-offer-cleaning" aria-labelledby="cleaning-offer-title">
-            <div class="home-offer-top"><h2 id="cleaning-offer-title">Limpieza dental <span>+ flúor</span></h2><p class="home-offer-price">$19.990</p></div>
+          <article class="home-offer home-offer-sand" aria-labelledby="cleaning-offer-title">
+            <div class="home-offer-top"><h3 id="cleaning-offer-title">Limpieza dental <span>+ flúor</span></h3><p class="home-offer-price">$19.990</p></div>
             <p class="home-offer-includes">Limpieza con ultrasonido, pulido, aeropulido de manchas, barniz de flúor y evaluación de caries.</p>
             <a class="home-offer-link" href="limpieza-dental.html#promocion">Ver promoción de limpieza <span aria-hidden="true">↗</span></a>
           </article>
@@ -71,7 +77,6 @@
         <p class="home-promotions-note">Valores en pesos chilenos. La evaluación define el tratamiento y las necesidades adicionales. Revisa las condiciones de cada promoción; la clínica confirma disponibilidad y aplicación de las cuotas a tu tarjeta.</p>
       </div>
     </section>
-    <section class="clinic-intro wrap" aria-labelledby="intro-title"><h2 id="intro-title">Atención dental cercana <span>para ti y tu familia.</span></h2><div><p>Te escuchamos, resolvemos tus dudas y planificamos una atención a tu medida. En Métrica Dental queremos que cuidar tu sonrisa sea más accesible.</p><a class="text-link" href="#tratamientos">Conoce todos nuestros tratamientos <span aria-hidden="true">↓</span></a></div></section>
     <section class="services section" id="tratamientos" aria-labelledby="treatments-title"><div class="wrap"><div class="section-heading"><h2 id="treatments-title">¿Cómo podemos ayudarte?</h2><p>Conoce cada tratamiento, sus etapas y la información para preparar tu visita.</p></div><div class="service-grid"><a class="service-link" href="implantes.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 8q4-5 12-2 8-3 12 2l-2 12H14ZM19 24h10l-2 17-3 3-3-3ZM17 28l14-2M18 33l12-2M20 38l9-2"/></svg></span><h3>Implantes dentales</h3><p>Reemplazar dientes perdidos y planificar su rehabilitación.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="ortodoncia.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10v26q0 6 7 5h18q7 1 7-5V10q-5-6-10-3-6 3-12 0-5-3-10 3Z"/><path d="M4 24h40M19 9v30M29 9v30"/><rect x="12" y="20" width="6" height="8" rx="1"/><rect x="22" y="20" width="6" height="8" rx="1"/><rect x="32" y="20" width="5" height="8" rx="1"/></svg></span><h3>Ortodoncia</h3><p>Alinear los dientes y evaluar la mordida.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="restauraciones.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 10q3-6 14-2 11-4 14 2 4 8-2 21-4 15-9 6l-3-10-3 10q-5 9-9-6-6-13-2-21Z"/><path d="M17 8l1 8 6 3 6-3 1-8M21 13h6"/></svg></span><h3>Restauraciones</h3><p>Tratar caries y reparar la estructura dental.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="endodoncia.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 10q3-6 14-2 11-4 14 2 4 8-2 21-4 15-9 6l-3-10-3 10q-5 9-9-6-6-13-2-21Z"/><path d="M18 37l2-13q4-8 8 0l2 13M24 17V7"/></svg></span><h3>Endodoncia</h3><p>Tratar el interior del diente para conservarlo.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="terceros-molares.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 17q3-5 11-2 9-3 12 3 3 8-2 18-4 9-7 2l-2-8-3 8q-4 7-7-3-5-10-2-18Z"/><path d="M35 22V4M29 10l6-6 6 6M5 43h37"/></svg></span><h3>Terceros molares</h3><p>Evaluar tus muelas del juicio y su extracción.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="coronas.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 25h20l-3 14q-3 8-7-3-4 11-7 3ZM10 9q4-6 14-2 10-4 14 2l-3 11H13Z"/><path d="M24 21v4M15 14h18"/></svg></span><h3>Coronas</h3><p>Proteger y rehabilitar un diente dañado.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="carillas.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 10q3-6 13-2 10-4 13 2l-4 27q-3 8-9-4-6 12-9 4Z"/><path d="M16 11q8 3 16 0l-2 16H18Z"/></svg></span><h3>Carillas</h3><p>Evaluar cambios en la forma y apariencia dental.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="limpieza-dental.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 16q4-5 13-2 9-3 13 2l-4 20q-3 9-9-2-6 11-9 2Z"/><path d="M30 5l12 4M37 2l-4 9M5 10l8 3M10 7l-3 9"/></svg></span><h3>Limpieza dental</h3><p>Retirar placa y sarro, y cuidar tus encías.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a><a class="service-link" href="blanqueamiento.html"><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 12q4-6 14-2 10-4 14 2l-4 23q-3 10-10-2-7 12-10 2ZM17 15l-1 8M32 4l8 4M38 2l-4 8"/></svg></span><h3>Blanqueamiento dental</h3><p>Evaluar opciones para aclarar el tono de dientes naturales.</p><span class="service-more">Conocer el tratamiento <span aria-hidden="true">↗</span></span></a></div></div></section>
     <section class="about section wrap" id="clinica" aria-labelledby="about-title"><h2 id="about-title">Queremos que te sientas acompañado.</h2><div class="about-copy"><p class="lead">Métrica Dental nace para acercar la atención odontológica a más personas y familias.</p><p>Creemos en una atención personalizada, con empatía y tiempo para explicar. Desde el cuidado preventivo hasta tratamientos de rehabilitación, el primer paso es conocerte y entender lo que necesitas.</p><ul class="clinic-values"><li><strong>Escucharte</strong><span>Conocer tus inquietudes y expectativas.</span></li><li><strong>Explicarte</strong><span>Conversar sobre las alternativas y el presupuesto.</span></li><li><strong>Acompañarte</strong><span>Orientarte en las etapas y cuidados de tu tratamiento.</span></li></ul></div></section>
 <section class="faq section wrap" id="preguntas" aria-labelledby="faq-title"><h2 id="faq-title">Preguntas frecuentes</h2><div class="faq-list"><details><summary>¿Cómo solicito una hora?<span aria-hidden="true">+</span></summary><p>Escríbenos por WhatsApp. La clínica confirma contigo la disponibilidad y el horario de atención.</p></details><details><summary>¿Puedo conocer el presupuesto antes de comenzar?<span aria-hidden="true">+</span></summary><p>Sí. La evaluación permite definir el tratamiento y explicar sus valores. También puedes revisar las promociones y sus condiciones en la página de cada servicio.</p></details><details><summary>¿Qué información debo enviar por WhatsApp?<span aria-hidden="true">+</span></summary><p>Indica que deseas solicitar una hora y el tratamiento que te interesa. No envíes diagnósticos, exámenes ni antecedentes médicos en el mensaje de contacto inicial.</p></details></div></section><section class="contact section" id="contacto" aria-labelledby="contact-title"><div class="wrap">

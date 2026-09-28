@@ -1,5 +1,14 @@
 # Validación del sitio
 
+## Presentación, promociones ampliables y menú: 28/09/2026
+
+- Orden del inicio: presentación breve de Métrica Dental, promociones destacadas, servicios, información ampliada de la clínica, preguntas y ubicación/contacto. Se conserva el estilo aprobado de las tres ofertas y el H1 vuelve a presentar la clínica.
+- Bloques de promoción reutilizables con variantes destacada, lila y arena. La guía docs/PROMOCIONES.md incluye una plantilla completa. Las ofertas nuevas continúan en filas; los ejemplos de prueba no se incorporaron al sitio.
+- Se comprobaron composiciones locales con 1, 2, 4, 5 y 6 ofertas en 390, 768 y 1440 px: sin solapamientos, desbordamiento ni precios recortados. La última oferta sin pareja ocupa la fila completa en los casos de 4 y 6.
+- Revisión visual de la portada en 360, 390, 430, 768 y 1440 px; medición adicional en 1000 px. Sin desbordamiento horizontal ni importes recortados.
+- Menú consistente en las once páginas: Inicio → Promociones → Servicios → La clínica → Ubicación. Comprobados en móvil el enlace a promociones, el cierre del menú, el cambio a ortodoncia, su servicio actual y el regreso a Inicio.
+- Auditoría completa: once HTML, 421 enlaces/recursos locales, anclas existentes, IDs únicos, un H1, etiquetas balanceadas, noindex y cabeceras HTTP. Se conservan los precios y condiciones, las páginas de servicios y el comportamiento de SERVIMAT.
+
 ## Promociones como portada: 28/09/2026
 
 - Las tres promociones abren el inicio, con precios destacados, desglose de implante y corona, 12 cuotas y control mensual de brackets separado. La presentación general y los nueve servicios aparecen después.
