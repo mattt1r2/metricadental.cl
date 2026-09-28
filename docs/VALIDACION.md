@@ -1,5 +1,13 @@
 # Validación del sitio
 
+## Inicio y menú de servicios: 28/09/2026
+
+- Cabecera común en las once páginas, incluida privacidad, con Inicio y nueve enlaces de servicios. Inicio permanece visible en móvil y tablet; servicio actual marcado con aria-current.
+- Navegación real en móvil desde implantes a endodoncia usando el menú y regreso al inicio desde la cabecera. En escritorio, cambio a carillas y resaltado del servicio actual verificados.
+- Escape cierra primero Servicios y devuelve el foco al summary; el siguiente Escape cierra Menú y devuelve el foco al botón. Clic exterior cierra el desplegable de escritorio.
+- Revisados 360, 390, 430, 768 y 1440 px; sin desbordamiento horizontal, tampoco en el cambio de diseño a 900 px. Panel móvil con desplazamiento para acceder a todos los enlaces.
+- Auditoría local actualizada: 422 enlaces/recursos y anclas válidos en once HTML; cabeceras y noindex conservados. JavaScript sin errores de sintaxis.
+
 ## Conversión a sitio multipágina: 28/09/2026
 
 - Inicio general de la clínica y nueve páginas de tratamientos; privacidad completa once HTML. Todos respondieron HTTP 200 desde el servidor de vista previa reiniciado, con CSP y noindex.

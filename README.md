@@ -15,7 +15,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 - `site/ortodoncia.html` y `site/limpieza-dental.html`: información de cada tratamiento y sus promociones completas.
 - `site/restauraciones.html`, `site/endodoncia.html`, `site/terceros-molares.html`, `site/coronas.html`, `site/carillas.html` y `site/blanqueamiento.html`: explicación, etapas y preguntas específicas.
 - `site/styles.css`: diseño responsive.
-- `site/script.js`: menú móvil, compatibilidad con enlaces de la antigua landing y firma flotante accesible.
+- `site/script.js`: menú móvil, cierre accesible del desplegable de servicios, compatibilidad con enlaces de la antigua landing y firma flotante accesible.
 - `site/privacidad.html`: borrador informativo de privacidad.
 - `site/_headers`: cabeceras HTTP para Pages.
 - `site/assets/`: logos, video optimizado e imagen de portada.
@@ -25,6 +25,8 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 - `docs/VALIDACION.md`: comprobaciones y límites de la revisión.
 
 Los textos, enlaces y datos comerciales se editan directamente en HTML. Cada archivo está completo; mantener coherentes la navegación, el pie y la firma en todas las páginas. Los colores se encuentran al principio de `styles.css`. No hay dependencias de producción, recopilación de formularios ni pagos en línea.
+
+Todas las páginas incluyen Inicio y un desplegable Servicios con los nueve tratamientos y enlace al catálogo completo. En móvil, Inicio queda visible junto a Menú; el panel se puede desplazar si no cabe. El tratamiento actual se marca con `aria-current="page"`. Escape cierra primero Servicios y devuelve el foco a su control; un segundo Escape cierra el menú móvil. Los enlaces funcionan sin JavaScript.
 
 El video se optimizó a partir del archivo suministrado, manteniendo el original fuera del repositorio. La portada utiliza la identidad de la clínica sin retrato del dueño. El video con poster ilustrado está en la página de implantes. El antiguo fotograma `clinica.webp` se conserva sin referencias. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial.
 

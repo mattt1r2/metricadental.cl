@@ -54,6 +54,31 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .navigation > .button { padding-inline: 16px; margin-top: 10px; }
 .js .navigation { display: none; }
 .js .navigation.is-open { display: flex; }
+.header-actions { display: flex; align-items: center; gap: 14px; }
+.header-home { display: inline-flex; align-items: center; min-height: 44px; font-size: 12px; color: var(--teal); text-decoration: underline; text-underline-offset: 4px; }
+.header-actions .menu-toggle { padding-left: 0; }
+.services-menu { position: relative; }
+.services-menu > summary { display: flex; align-items: center; justify-content: space-between; gap: 9px; min-height: 46px; padding: 10px 8px; font-size: 14px; cursor: pointer; list-style: none; }
+.services-menu > summary::-webkit-details-marker { display: none; }
+.services-menu > summary svg { width: 16px; height: 16px; }
+.services-menu[open] > summary svg { transform: rotate(180deg); }
+.service-submenu { padding: 5px 12px; background: #edf2ef; border-left: 2px solid var(--teal); }
+.service-submenu a { display: flex; align-items: center; gap: 16px; min-height: 44px; padding: 9px 10px; font-size: 13px; }
+.service-submenu .all-services { border-top: 1px solid #cbd8d2; margin-top: 5px; color: var(--teal); font-weight: 600; }
+.navigation [aria-current="page"] { color: var(--teal); font-weight: 700; }
+.service-submenu [aria-current="page"] { background: #dce7e1; }
+@media (max-width: 899px) {
+  .js .navigation { max-height: calc(100vh - 100px); max-height: calc(100svh - 100px); overflow-y: auto; overscroll-behavior: contain; }
+}
+@media (min-width: 900px) {
+  .header-actions { display: none; }
+  .services-menu > summary { padding-inline: 0; font-size: 12px; }
+  .service-submenu { position: absolute; z-index: 31; top: 100%; left: -16px; width: 275px; padding: 10px; max-height: calc(100vh - 110px); overflow-y: auto; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 28px #173f441a; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-submenu a:hover { background: #e2ebe5; }
+  .services-menu > summary:hover { color: var(--teal); }
+}
 
 /* Copy and photography have separate space, without overlays. */
 .hero { display: grid; gap: 29px; padding-top: 32px; padding-bottom: 27px; }

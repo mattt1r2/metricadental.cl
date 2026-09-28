@@ -5,6 +5,7 @@
 - Portada general de la clínica, sin protagonismo exclusivo de implantes ni retrato del dueño. No destacar Talca en titulares, campañas ni mensajes comerciales. Mostrar la ciudad en la dirección. Conservar el logo suministrado.
 - Colores: verde petróleo y arena; lila como acento.
 - Decisión del 28/09/2026, que sustituye la landing anterior: sitio multipágina. Inicio general de la clínica y nueve páginas independientes de servicios; cada una centraliza su descripción, etapas, preguntas y promociones correspondientes. Los servicios de la portada deben abrir esas páginas, no desplegables en el inicio.
+- Mantener Inicio y el desplegable Servicios con acceso a los nueve tratamientos en todas las páginas, incluida privacidad. En móvil, Inicio permanece visible junto a Menú. Marcar el servicio actual y conservar cierre por Escape y clic exterior, con navegación por teclado.
 - WhatsApp confirmado: +56 9 4935 4494. No añadir formularios, reservas automáticas ni almacenamiento de información médica.
 - Dirección confirmada: 1 Sur 690, Edificio Plaza Talca, Talca. Google Maps: https://maps.app.goo.gl/6zYxd3dHFrWPg6Hu7
 - No inventar horarios, piso/oficina, profesionales, credenciales, equipamiento, testimonios, promociones, resultados ni garantías.
