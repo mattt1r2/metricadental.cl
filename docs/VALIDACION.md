@@ -1,5 +1,13 @@
 # Validación del sitio
 
+## Menú según sección y sello de implantes: 29/09/2026
+
+- El menú del inicio cambia su color de fondo y subrayado según la sección visible, usando aria-current=location. Comprobados Inicio, Promociones, Servicios, Casos clínicos, La clínica y Ubicación, desplazamiento manual, regreso al inicio y recarga con ancla. No modifica la URL al desplazarse ni mueve el foco. La galería y las preguntas permanecen dentro del tramo de La clínica.
+- Probados los cambios de altura al filtrar servicios y expandir la promoción. El seguimiento usa la franja superior del contenido visible y recalcula con scroll, resize, carga de fuentes, detalles y ResizeObserver. Al abrir el menú móvil conserva la selección previa y al cerrarlo vuelve a calcularla; comprobado también Escape. Las páginas de tratamientos resaltan Servicios y conservan aria-current=page en el enlace del tratamiento.
+- Imagen promocional de implantes con logo JDentalCare, Made in Italy, bandera italiana SVG y sello de garantía de por vida. Se muestra en implantes.html y al abrir el detalle de la oferta del inicio. La cobertura para implante y corona y la condición de asistir a los controles incluidos quedan visibles junto al sello. No se alteró la ilustración ni se presenta como un modelo específico del fabricante.
+- Composición revisada a 360, 390, 430, 768 y 1440 px, sin desbordamiento horizontal; menú y detalle del inicio también revisados a 390 px. Bandera SVG con los tres colores correctos, sin emojis. Consola de implantes sin errores ni avisos.
+- Once HTML y 458 enlaces/recursos locales y anclas válidos, sintaxis JavaScript y git diff --check correctos. Captura: work/implante-garantia-italia.png. No se añadieron recursos externos ni se publicó en producción.
+
 ## Contraste, imágenes y navegación visual: 29/09/2026
 
 - Sustituidas 170 flechas de texto por SVG inline decorativos en las once páginas. Sin caracteres Unicode de flecha restantes. La plantilla de promociones también usa SVG. No se realizó una prueba en un dispositivo iOS físico.

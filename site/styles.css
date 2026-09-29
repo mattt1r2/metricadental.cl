@@ -736,7 +736,7 @@ html:not(.js) .servimat-watermark { display: none; }
 .promotion-details > p { font-size: 12px; margin-block: 10px 14px; }
 .home-offer-featured .promotion-details { border-color: #ffffff40; margin-bottom: 20px; }
 .home-offer:not(.home-offer-featured) .promotion-details { margin-bottom: 12px; }
-.home-implant-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: center; margin-block: 8px 16px; }
+.home-implant-preview { margin-block: 8px 16px; }
 .home-implant-preview > img { width: 100%; height: auto; border-radius: 4px; }
 .home-implant-preview p { font-size: 11px; }
 .jd-logo { width: 90px; height: auto; padding: 6px; background: white; border-radius: 4px; margin-bottom: 10px; }
@@ -744,10 +744,6 @@ html:not(.js) .servimat-watermark { display: none; }
 .implant-promotion-layout { display: grid; gap: 26px; align-items: start; }
 .promotion-visual { min-width: 0; background: #f8f3ec; border-radius: 6px; overflow: hidden; }
 .implant-product { width: 100%; height: auto; }
-.implant-brand { display: flex; align-items: center; gap: 22px; padding: 18px 22px; background: #fff; }
-.implant-brand img { width: 75px; height: auto; flex: 0 0 auto; }
-.implant-brand p { font-size: 14px; font-weight: 600; }
-.implant-brand p > span { display: block; margin-top: 4px; font-size: 11px; font-weight: 400; color: var(--muted); }
 .promotion-visual > figcaption { padding: 10px 20px; font-size: 10px; color: var(--muted); }
 .implant-price-panel { min-width: 0; order: -1; }
 .implant-price-panel > h3 { font-size: 24px; }
@@ -808,7 +804,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .case-image-slots { min-height: 160px; }
   .case-image-slots span { padding: 10px; }
   .promotion-visual { max-width: 500px; margin-inline: auto; }
-  .home-implant-preview { grid-template-columns: 150px 1fr; }
 }
 @media (min-width: 900px) {
   .navigation, .js .navigation { gap: 13px; }
@@ -819,8 +814,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .implant-price-panel > h3 { font-size: 28px; }
   .implant-price-panel .promotion-comparison { margin-top: 16px; }
   .implant-price-panel .promotion-price { margin-block: 20px; }
-  .implant-brand { padding-inline: 30px; }
-  .implant-brand img { width: 90px; }
   .clinic-media-grid { grid-template-columns: 1.25fr 1fr; gap: 36px; align-items: start; }
   .case-image-slots { min-height: 230px; }
   .case-image-slots span { padding: 18px; }
@@ -980,4 +973,41 @@ body { font-size: 16px; }
 @media (prefers-reduced-motion: reduce) {
   .icon-arrow, .service-thumb img, .service-filters button { transition: none; }
   a:hover > .icon-arrow, a:hover .service-more .icon-arrow, .service-link:hover .service-thumb img { transform: none; }
+}
+
+/* The current location follows scrolling; treatment pages keep Services selected. */
+.navigation > a:not(.button), .services-menu > summary, .header-home { text-decoration: none; }
+.navigation > a.is-current, .services-menu > summary.is-current,
+.services-menu:has(.service-submenu [aria-current="page"]) > summary,
+.header-home.is-current { color: var(--teal); text-decoration: underline; text-decoration-color: #a87841; text-decoration-thickness: 2px; text-underline-offset: 8px; }
+.navigation > a.is-current, .services-menu > summary.is-current,
+.services-menu:has(.service-submenu [aria-current="page"]) > summary { background: #eadcc9; border-radius: 3px; box-shadow: 0 0 0 5px #eadcc9; }
+@media (max-width: 1099px) {
+  .navigation > a.is-current, .services-menu > summary.is-current { box-shadow: none; }
+}
+
+/* Product credentials remain readable HTML beside the illustration. */
+.home-implant-preview { display: block; }
+.home-implant-preview > img { border-radius: 5px 5px 0 0; }
+.implant-credentials { border: 1px solid #b99a6c; background: #fffaf1; color: var(--deep); }
+.implant-origin { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; }
+.implant-origin > img { width: 70px; height: auto; flex: 0 0 auto; }
+.implant-italy { display: flex; align-items: center; gap: 12px; }
+.italy-flag { width: 43px; height: 29px; flex: 0 0 auto; stroke: none; border: 1px solid #ded9cd; border-radius: 2px; }
+.implant-italy p { font-size: 14px; line-height: 1.5; }
+.implant-italy strong { display: block; font-weight: 700; letter-spacing: .015em; }
+.implant-italy span { display: block; max-width: 140px; font-size: 11px; color: #536465; }
+.implant-guarantee { display: grid; grid-template-columns: 40px 1fr; align-items: center; gap: 12px 16px; padding: 20px; background: #173f44; color: #fff8ec; border-top: 1px solid #b99a6c; }
+.guarantee-seal { width: 40px; height: 44px; color: #e3bd82; stroke-width: 1.6; }
+.implant-guarantee p { font-size: 14px; line-height: 1.5; }
+.implant-guarantee strong { display: block; color: #f1d7ad; font-size: clamp(18px, 4.7vw, 22px); font-weight: 600; letter-spacing: -.025em; }
+.implant-guarantee span { display: block; margin-top: 3px; }
+.implant-guarantee .implant-guarantee-condition { grid-column: 1 / -1; font-size: 12px; color: #e0e9e3; border-top: 1px solid #52706e; padding-top: 12px; }
+@media (min-width: 600px) {
+  .implant-origin { padding: 22px 26px; }
+  .implant-origin > img { width: 80px; }
+  .implant-italy { gap: 16px; }
+  .italy-flag { width: 51px; height: 34px; }
+  .implant-italy p { font-size: 16px; }
+  .implant-guarantee { padding: 22px 26px; }
 }

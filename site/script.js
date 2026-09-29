@@ -41,6 +41,66 @@ if (menuButton && menu) {
   window.addEventListener('pageshow', closeMenu);
 }
 
+// Follow the section being read, including restored scroll and changing layouts.
+if (menu && document.body.classList.contains('clinic-home')) {
+  const sections = [
+    ['inicio', menu.querySelector(':scope > a[href="index.html"]')],
+    ['promociones', menu.querySelector(':scope > a[href="index.html#promociones"]')],
+    ['tratamientos', menu.querySelector('.services-menu > summary')],
+    ['casos', menu.querySelector(':scope > a[href="index.html#casos"]')],
+    ['clinica', menu.querySelector(':scope > a[href="index.html#clinica"]')],
+    ['contacto', menu.querySelector(':scope > a[href="index.html#contacto"]')]
+  ].map(([id, control]) => ({ section: document.getElementById(id), control }))
+    .filter(item => item.section && item.control);
+  const homeShortcut = document.querySelector('.header-home');
+  const headerRow = document.querySelector('.header-inner');
+  let currentSection;
+  let navigationFrame = false;
+  const updateCurrentSection = () => {
+    navigationFrame = false;
+    // Opening the mobile menu pushes the document; keep the reading location.
+    if (menuButton?.getAttribute('aria-expanded') === 'true') return;
+    // The first row stays stable when the mobile menu is expanded.
+    const logo = headerRow?.querySelector('.brand');
+    const headerEdge = logo ? logo.getBoundingClientRect().bottom + 12 : 100;
+    const readingLine = headerEdge + (window.innerHeight - headerEdge) * .35;
+    let current = sections[0];
+    sections.forEach(item => {
+      if (item.section.getBoundingClientRect().top <= readingLine) current = item;
+    });
+    if (!current || current === currentSection) return;
+    currentSection = current;
+    sections.forEach(item => {
+      const selected = item === current;
+      item.control.classList.toggle('is-current', selected);
+      if (selected) item.control.setAttribute('aria-current', 'location');
+      else item.control.removeAttribute('aria-current');
+    });
+    if (homeShortcut) {
+      const atHome = current.section.id === 'inicio';
+      homeShortcut.classList.toggle('is-current', atHome);
+      if (atHome) homeShortcut.setAttribute('aria-current', 'location');
+      else homeShortcut.removeAttribute('aria-current');
+    }
+  };
+  const scheduleNavigationUpdate = () => {
+    if (navigationFrame) return;
+    navigationFrame = true;
+    requestAnimationFrame(updateCurrentSection);
+  };
+  window.addEventListener('scroll', scheduleNavigationUpdate, { passive: true });
+  window.addEventListener('resize', scheduleNavigationUpdate);
+  window.addEventListener('pageshow', scheduleNavigationUpdate);
+  document.addEventListener('toggle', scheduleNavigationUpdate, true);
+  document.fonts?.ready.then(scheduleNavigationUpdate);
+  if ('ResizeObserver' in window) {
+    const layoutObserver = new ResizeObserver(scheduleNavigationUpdate);
+    layoutObserver.observe(document.querySelector('main'));
+    if (headerRow) layoutObserver.observe(headerRow);
+  }
+  updateCurrentSection();
+}
+
 // Preserve shared links from the previous single-page version.
 const legacyServiceLinks = {
   'ortodoncia': 'ortodoncia.html',
