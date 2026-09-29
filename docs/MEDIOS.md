@@ -2,6 +2,21 @@
 
 Los espacios están preparados en `site/index.html`. Se sustituyen editando HTML y copiando los archivos a `site/assets/`; no hay un formulario de subida público ni se almacenan datos de pacientes.
 
+## Fotografías de los servicios
+
+El catálogo del inicio incorpora una imagen en `.service-thumb` para cada tratamiento. Las ocho páginas distintas de implantes tienen además una figura `.treatment-photo` junto a su presentación; implantes mantiene la ilustración, retrato y video existentes.
+
+De momento se utilizan imágenes referenciales generadas de modelos y materiales, identificadas como tales. Las imágenes se agrupan por tema: `ortodoncia-referencial.webp`, `cuidado-dental-referencial.webp` y `rehabilitacion-referencial.webp`, además de `implante-3d.webp`. No representan pacientes, instalaciones ni resultados de la clínica. La procedencia y los prompts están en docs/RECURSOS-VISUALES.md. Las tres WebP suman aproximadamente 446 KiB.
+
+Para poner una fotografía real de un servicio:
+
+1. Guardarla con un nombre propio en `site/assets/`, por ejemplo `ortodoncia-clinica.webp`. Evitar sobrescribir un recurso compartido porque afectaría a otros servicios.
+2. Cambiar el `src` de la imagen dentro del enlace correspondiente `.service-link[href="ortodoncia.html"]` de `index.html`.
+3. Cambiar también el `src` y las dimensiones del `<img>` en `.treatment-photo` de la página del servicio. Escribir un `alt` descriptivo y actualizar su pie. La miniatura del inicio conserva `alt=""` porque el enlace ya tiene el nombre del tratamiento.
+4. Cuando todas las fotografías sean propias, actualizar `.service-photo-note` del catálogo. Si se mezclan con referencias, indicar cuáles siguen siendo referenciales.
+
+Para incorporar otra imagen a una página, copiar la figura `.treatment-photo` con el archivo y pie correctos a la etapa correspondiente. Los filtros del catálogo utilizan `data-service-category`: `rehabilitacion`, `estetica` o `cuidado`; al cambiar una foto, conservar esos atributos y el enlace al tratamiento.
+
 ## Casos clínicos del inicio
 
 Buscar `id="casos"`. Hay tres `.case-placeholder`, cada uno con espacios antes/después. Mientras no existan casos, se muestra “Fotografías del caso en preparación”. No se han usado resultados ficticios.

@@ -20,7 +20,7 @@ Plantilla completa de un artículo; sustituir todos los datos de ejemplo antes d
   </div>
   <p class="home-offer-includes">Prestaciones incluidas confirmadas por la clínica.</p>
   <p class="home-offer-detail">Condiciones, vigencia y costos adicionales, si corresponde.</p>
-  <a class="home-offer-link" href="tratamiento.html#promocion">Ver promoción de tratamiento <span aria-hidden="true">↗</span></a>
+  <a class="home-offer-link" href="tratamiento.html#promocion">Ver promoción de tratamiento <svg class="icon-arrow icon-arrow-ne" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
 </article>
 ```
 

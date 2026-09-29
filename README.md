@@ -15,7 +15,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 - `site/ortodoncia.html` y `site/limpieza-dental.html`: información de cada tratamiento y sus promociones completas.
 - `site/restauraciones.html`, `site/endodoncia.html`, `site/terceros-molares.html`, `site/coronas.html`, `site/carillas.html` y `site/blanqueamiento.html`: explicación, etapas y preguntas específicas.
 - `site/styles.css`: diseño responsive.
-- `site/script.js`: menú móvil, cierre accesible del desplegable de servicios, selector de precio total/cuotas, compatibilidad con enlaces de la antigua landing y firma flotante accesible.
+- `site/script.js`: menú móvil, cierre accesible del desplegable de servicios, selector de precio total/cuotas, filtros del catálogo y apariciones suaves con movimiento reducido, compatibilidad con enlaces de la antigua landing y firma flotante accesible.
 - `site/privacidad.html`: borrador informativo de privacidad.
 - `site/_headers`: cabeceras HTTP para Pages.
 - `site/assets/`: logos, video optimizado e imagen de portada.
@@ -29,7 +29,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 
 Los textos, enlaces y datos comerciales se editan directamente en HTML. Cada archivo está completo; mantener coherentes la navegación, el pie y la firma en todas las páginas. Los colores se encuentran al principio de `styles.css`. No hay dependencias de producción, recopilación de formularios ni pagos en línea.
 
-Todas las páginas mantienen el orden Inicio → Promociones → Servicios → Casos clínicos → La clínica → Ubicación, siguiendo las secciones del inicio. El desplegable Servicios contiene los nueve tratamientos y el enlace al catálogo completo. En móvil, Inicio queda visible junto a Menú; el panel se puede desplazar si no cabe. El tratamiento actual se marca con `aria-current="page"`. Escape cierra primero Servicios y devuelve el foco a su control; un segundo Escape cierra el menú móvil. Los enlaces funcionan sin JavaScript.
+Todas las páginas mantienen el orden Inicio → Promociones → Servicios → Casos clínicos → La clínica → Ubicación, siguiendo las secciones del inicio. El desplegable Servicios contiene los nueve tratamientos y el enlace al catálogo completo. En móvil, Inicio queda visible junto a Menú; el panel se puede desplazar si no cabe. La navegación de escritorio aparece a partir de 1100 px para dar espacio al logo ampliado. El tratamiento actual se marca con `aria-current="page"`. Escape cierra primero Servicios y devuelve el foco a su control; un segundo Escape cierra el menú móvil. Los enlaces funcionan sin JavaScript.
 
 El video se optimizó a partir del archivo suministrado, manteniendo el original fuera del repositorio. La portada utiliza la identidad de la clínica sin retrato del dueño. El video con poster ilustrado está en la página de implantes y en la galería del inicio. El antiguo fotograma `clinica.webp` se conserva sin referencias. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial.
 
@@ -52,3 +52,6 @@ El servidor temporal de revisión aplica las cabeceras de seguridad y limita los
 El contenido pendiente (equipo, equipamiento, casos, dirección de acceso y fechas de las promociones) está documentado en el brief. Las fuentes de referencia para la redacción clínica están en `docs/FUENTES-CLINICAS.md`; la clínica debe validar la versión final. La privacidad sigue siendo un borrador hasta confirmar al responsable.
 
 El sitio lleva `noindex` durante su preparación. No eliminarlo hasta completar la revisión descrita en `docs/PUBLICACION.md`.
+
+
+La revisión visual del 29/09/2026 utiliza SVG para todas las flechas, amplía el logo y los textos y refuerza los bloques verde petróleo, lila, arena y ciruela. El catálogo incorpora fotografías referenciales y filtros por área, con contador anunciado y botones utilizables por teclado. Las ocho páginas de servicio distintas de implantes tienen una fotografía sustituible y su navegación por etapas debajo de la presentación. La información permanece disponible sin JavaScript. Las apariciones, el cambio de importes y el hover son breves y respetan prefers-reduced-motion; no hay animación continua ni reproducción automática. Imágenes y reemplazos documentados en docs/MEDIOS.md.

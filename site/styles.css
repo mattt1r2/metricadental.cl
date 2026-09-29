@@ -67,10 +67,10 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .service-submenu .all-services { border-top: 1px solid #cbd8d2; margin-top: 5px; color: var(--teal); font-weight: 600; }
 .navigation [aria-current="page"] { color: var(--teal); font-weight: 700; }
 .service-submenu [aria-current="page"] { background: #dce7e1; }
-@media (max-width: 899px) {
+@media (max-width: 1099px) {
   .js .navigation { max-height: calc(100vh - 100px); max-height: calc(100svh - 100px); overflow-y: auto; overscroll-behavior: contain; }
 }
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .header-actions { display: none; }
   .services-menu > summary { padding-inline: 0; font-size: 12px; }
   .service-submenu { position: absolute; z-index: 31; top: 100%; left: -16px; width: 275px; padding: 10px; max-height: calc(100vh - 110px); overflow-y: auto; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 28px #173f441a; }
@@ -235,13 +235,6 @@ html:not(.js) .servimat-watermark { display: none; }
 @media (min-width: 900px) {
   h2 { font-size: 35px; }
   .section { padding-block: 88px; }
-  .header-inner { padding-block: 15px; flex-wrap: nowrap; }
-  .logo-crop { width: 170px; height: 58px; }
-  .logo-crop img { width: 170px; top: -44px; }
-  .js .menu-toggle { display: none; }
-  .navigation, .js .navigation { display: flex; flex-direction: row; align-items: center; width: auto; padding: 0; gap: 18px; }
-  .navigation > a { font-size: 12px; padding: 10px 0; }
-  .navigation > .button { margin: 0 0 0 5px; font-size: 11px; padding-inline: 14px; gap: 20px; }
   .hero { grid-template-columns: 1fr 1fr; align-items: center; gap: 55px; padding-top: 46px; padding-bottom: 33px; }
   .hero h1 { font-size: clamp(40px, 3.75vw, 52px); line-height: 1.18; }
   .hero-description { font-size: 15px; margin-top: 25px; }
@@ -834,4 +827,157 @@ html:not(.js) .servimat-watermark { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .promotion-details > summary > span, .doctor-training > summary > span { transition: none; }
+}
+
+@media (min-width: 1100px) {
+  .header-inner { padding-block: 15px; flex-wrap: nowrap; }
+  .logo-crop { width: 170px; height: 58px; }
+  .logo-crop img { width: 170px; top: -44px; }
+  .js .menu-toggle { display: none; }
+  .navigation, .js .navigation { display: flex; flex-direction: row; align-items: center; width: auto; padding: 0; gap: 18px; }
+  .navigation > a { font-size: 12px; padding: 10px 0; }
+  .navigation > .button { margin: 0 0 0 5px; font-size: 11px; padding-inline: 14px; gap: 20px; }
+}
+
+/* Stronger brand colour, larger reading text and consistent vector arrows. */
+:root { --sand-light: #ead9c7; --lilac: #d7c3e5; --terracotta: #a4563e; --plum: #634a72; }
+html { scroll-padding-top: 120px; }
+body { font-size: 16px; }
+.icon-arrow { display: inline-block; width: 22px; height: 22px; vertical-align: middle; flex: 0 0 auto; stroke-width: 1.7; transition: transform .2s ease; }
+.servimat-brand .icon-arrow, .servimat-credit .icon-arrow { width: 12px; height: 12px; }
+.location-map .icon-arrow { width: 16px; height: 16px; }
+.site-header { background: #f8f1e7; border-bottom-color: #cfbda8; }
+.logo-crop { --logo-width: clamp(166px, 48vw, 190px); width: var(--logo-width); height: calc(var(--logo-width) * .352); }
+.logo-crop img { width: var(--logo-width); top: calc(var(--logo-width) * -.257); }
+.header-actions { gap: 12px; }
+.header-home, .menu-toggle { font-size: 13px; }
+.navigation { gap: 0; }
+.navigation > a, .services-menu > summary { font-size: 15px; }
+.service-submenu a { font-size: 14px; }
+.button, .text-link { font-size: 15px; }
+.button { padding-block: 15px; }
+.clinic-intro-band { background: var(--deep); color: white; }
+.clinic-intro { border: 0; margin-bottom: 0; padding-block: 35px; }
+.clinic-intro h1 > span { color: #e7bf9b; }
+.clinic-intro p { color: #e2ece8; font-size: 16px; }
+.clinic-intro p > strong { color: white; }
+.clinic-intro .text-link { color: #f2d9c0; margin-top: 14px; }
+.clinic-intro-band :focus-visible, .services :focus-visible { outline-color: #e9bf94; }
+.home-promotions { padding-block: 35px 48px; background: #f4ece2; }
+.promotions-heading > p { font-size: 16px; }
+.home-offer-lilac { background: #cdb3dc; }
+.home-offer-sand { background: #dfb78f; }
+.home-offer-includes { font-size: 15px; }
+.home-offer-detail { font-size: 14px; }
+.home-offer-link { font-size: 15px; }
+.home-offer-top { column-gap: 24px; }
+.home-offer-breakdown { font-size: 14px; }
+.home-offer-breakdown strong { font-size: 19px; }
+.home-promotions-note, .offer-note { font-size: 12px; }
+.promotion-price > span, .price-options button { font-size: 14px; }
+.price-payment-note { font-size: 16px; }
+.price-payment-note > span { font-size: 12px; }
+.promotion-details > summary { font-size: 15px; }
+.promotion-details ul, .promotion-details > p { font-size: 14px; }
+.promotion-comparison > strong { font-size: 14px; }
+.price-breakdown > div { font-size: 15px; }
+.price-breakdown small { font-size: 12px; }
+.section-heading > p, .section-description, .journey-copy p, .faq-list details > p { font-size: 16px; }
+.about-copy p, .clinic-values span, .contact-copy > p { font-size: 16px; }
+.doctor-profile p, .doctor-training > summary, .doctor-training ul { font-size: 13px; }
+.implant-hero-description { font-size: 16px; }
+.page-index a, .related a { font-size: 15px; }
+.breadcrumbs { font-size: 12px; }
+.clinic-media-video p { font-size: 15px; }
+.media-pending, .media-placeholder figcaption { font-size: 15px; }
+.media-placeholder figcaption span, .case-placeholder > p { font-size: 12px; }
+.clinical-note { font-size: 13px; }
+.clinical-cases { background: #d9c9e0; }
+.clinical-cases .section-heading > p, .clinical-cases .media-pending, .clinical-cases .clinical-note, .clinical-cases .case-placeholder > p { color: var(--ink); }
+.case-image-slots { border-color: #b3a0be; background: #b3a0be; }
+.case-image-slots span { color: #4e4257; background: #cbbcd3; font-size: 12px; }
+.case-image-slots span + span { background: #e6dcec; }
+.clinic-gallery { border-top: 2px solid var(--terracotta); padding-top: 32px; }
+.media-placeholder-art { background: #c2d7cd; border-color: #a5bfb2; }
+.media-placeholder:nth-child(2) .media-placeholder-art { background: #d9b796; border-color: #c59c78; }
+
+/* Image-led service catalogue with accessible area filters. */
+.services { background: #113f46; color: #fff; }
+.services .section-heading > p { color: #d6e6df; }
+.service-browser { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+.service-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.service-filters button { border: 1px solid #92b1ac; color: #e8f1ec; background: transparent; border-radius: 3px; min-height: 44px; padding: 9px 13px; font-size: 13px; cursor: pointer; transition: color .2s, background .2s; }
+.service-filters button[aria-pressed="true"] { color: var(--deep); background: #e7bf9b; border-color: #e7bf9b; }
+.service-count { color: #d6e6df; font-size: 13px; }
+.service-photo-note { color: #c4d8d0; font-size: 12px; margin-block: 0 24px; }
+.service-grid { grid-template-columns: 1fr; gap: 30px; }
+.service-link { display: flex; padding: 0; border: 0; color: white; background: transparent; }
+.service-thumb { display: block; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 4px; background: #ddcbb8; margin-bottom: 19px; }
+.service-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.65,.3,1); }
+.service-link h3 { font-size: 23px; margin-bottom: 8px; }
+.service-link p { color: #dae8e2; font-size: 15px; margin-bottom: 14px; }
+.service-more { color: #efc8a2; font-size: 14px; justify-content: space-between; border-bottom: 1px solid #52736e; padding-bottom: 16px; }
+.service-link[href="implantes.html"] .service-thumb img { object-fit: contain; object-position: center; background: #eee5da; }
+.service-link[href="blanqueamiento.html"] .service-thumb img { object-position: right center; }
+.service-link[href="coronas.html"] .service-thumb img { object-position: center bottom; }
+
+/* Each treatment has one replaceable photo, followed by its step navigation. */
+.service-hero { align-items: center; }
+.service-hero p:not(.service-lead) { font-size: 16px; }
+.service-lead { font-size: 23px; }
+.treatment-photo { min-width: 0; overflow: hidden; border-radius: 5px; background: #d3c2de; }
+.treatment-photo img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.treatment-photo figcaption { font-size: 12px; color: #493b53; padding: 13px 18px; }
+.service-cuidado .treatment-photo { background: #b4cec2; }
+.service-rehabilitacion .treatment-photo { background: #ddc3a7; }
+.service-overview { background: var(--deep); color: white; padding: 25px; border-radius: 5px; }
+.service-overview .service-icon { display: none; }
+.service-overview h2 { font-size: 24px; }
+.service-overview a { font-size: 15px; }
+.service-overview li { border-color: #65857f; }
+.service-overview a > span { font-size: 13px; color: #efc8a2; }
+.service-overview :focus-visible { outline-color: #efc8a2; }
+.journey-number { color: var(--terracotta); }
+.service-invitation { background: var(--plum); color: white; }
+.service-invitation p { color: #e8dfee; font-size: 17px; }
+.service-invitation .button { background: #eed2b3; color: #293a38; }
+.service-invitation :focus-visible { outline-color: #eed2b3; }
+@media (hover: hover) and (pointer: fine) {
+  a:hover > .icon-arrow-ne, a:hover .service-more .icon-arrow-ne { transform: translate(3px,-3px); }
+  a:hover > .icon-arrow-up { transform: translateY(-3px); }
+  a:hover > .icon-arrow-down { transform: translateY(3px); }
+  .service-link:hover .service-thumb img { transform: scale(1.045); }
+  .service-link:hover h3 { color: #efc8a2; }
+  .service-filters button:hover { background: #335d60; color: white; }
+  .service-filters button[aria-pressed="true"]:hover { background: #e7bf9b; color: var(--deep); }
+}
+@media (min-width: 600px) {
+  .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 34px 28px; }
+  .clinic-intro { padding-block: 44px; }
+  .service-overview ol { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 25px; }
+}
+@media (min-width: 900px) {
+  .clinic-intro { padding-block: 50px; }
+  .clinic-intro p { font-size: 17px; }
+  .home-promotions { padding-block: 46px 60px; }
+  .service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 42px 30px; }
+  .service-hero { grid-template-columns: 1fr 1fr; gap: 55px; }
+  .service-lead { font-size: 28px; }
+  .service-overview { padding: 30px 34px; }
+  .service-overview ol { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 25px; }
+  .service-overview a { align-items: baseline; }
+  .navigation, .js .navigation { gap: 0; }
+  .header-inner { flex-wrap: wrap; }
+}
+@media (min-width: 1100px) {
+  .logo-crop { --logo-width: 220px; }
+  .header-inner { padding-block: 12px; flex-wrap: nowrap; }
+  .navigation, .js .navigation { gap: 15px; }
+  .navigation > a, .services-menu > summary { font-size: 14px; }
+  .navigation > .button { font-size: 13px; gap: 8px; padding-inline: 13px; }
+  .button-small .icon-arrow { width: 18px; height: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .icon-arrow, .service-thumb img, .service-filters button { transition: none; }
+  a:hover > .icon-arrow, a:hover .service-more .icon-arrow, .service-link:hover .service-thumb img { transform: none; }
 }

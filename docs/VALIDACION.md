@@ -1,5 +1,17 @@
 # Validación del sitio
 
+## Contraste, imágenes y navegación visual: 29/09/2026
+
+- Sustituidas 170 flechas de texto por SVG inline decorativos en las once páginas. Sin caracteres Unicode de flecha restantes. La plantilla de promociones también usa SVG. No se realizó una prueba en un dispositivo iOS físico.
+- Logo aumentado a aproximadamente 173–190 px en móvil y 220 px en escritorio; texto principal de 16 px. Cabecera de escritorio desde 1100 px. Medición de inicio a 360, 390, 430, 768, 900, 1000, 1099, 1100 y 1440 px sin desbordamiento; las nueve páginas de servicios también comprobadas a 390 px. Revisión visual móvil, tablet y escritorio.
+- Verde petróleo profundo en presentación y catálogo; lila, arena, terracota y ciruela con más presencia. Corregido el contraste de los textos de casos clínicos sobre el nuevo fondo lila: 7,85:1 para el texto principal. Revisados además los colores de texto de las ofertas y del catálogo.
+- Catálogo con nueve fotografías/ilustraciones referenciales y filtros por área. Probados clic y teclado: Todos 9, Rehabilitación 4, Estética y alineación 3, Cuidado dental 2. Conteo anunciado con aria-live. Navegación real desde el catálogo a ortodoncia comprobada.
+- Ocho páginas de tratamientos incorporan una imagen reemplazable y conservan debajo los enlaces a sus etapas. Implantes mantiene su material existente. Tres imágenes nuevas y una conversión del implante a WebP: 526.938 bytes en total. Recursos servidos con HTTP 200. No representan pacientes ni instalaciones reales.
+- Movimiento breve al entrar contenido, cambiar importes y pasar sobre fotos/flechas. Código condicionado por prefers-reduced-motion; contenido visible sin animaciones. No se simuló el ajuste del sistema operativo. Precio probado de nuevo: 12 cuotas de $47.500 con total $570.000 siempre visible, y regreso a Valor total.
+- Menú móvil y Escape comprobados. SERVIMAT sigue fija abajo a la izquierda y se oculta al entrar el footer; WhatsApp a la derecha. Consola sin errores ni avisos durante la revisión.
+- Auditoría final: once HTML, 458 enlaces/recursos locales y anclas válidas, IDs únicos, un H1 por página, etiquetas balanceadas, noindex y cabeceras HTTP. Sintaxis JavaScript y git diff --check correctos.
+- Imágenes, método de generación y prompts en docs/RECURSOS-VISUALES.md; sustitución por material propio en docs/MEDIOS.md. Captura local: work/visual-refresh-services.png. Continúan pendientes las fotografías reales, casos autorizados y verificación externa del mapa. Sin despliegue definitivo.
+
 ## Casos, medios y promoción interactiva: 29/09/2026
 
 - Inicio con tres espacios de casos antes/después identificados como fotografías en preparación; no hay casos ni pacientes inventados. Galería con el video existente y dos espacios para fotos propias. Plantillas en docs/MEDIOS.md.

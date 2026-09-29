@@ -69,3 +69,10 @@ No presentar precios de capturas de otras clínicas o campañas antiguas como vi
 - Marca JDentalCare tomada de la web oficial del fabricante e ilustración 3D genérica de implante, identificada como referencial y no como un producto específico. No se reutiliza la imagen de una publicación ajena.
 - Foto real del Dr. Tomás Abraham Carrasco aportada por el usuario, situada junto a su nombre en implantes. La portada sigue presentando la clínica.
 - Formación aportada: cirujano dentista, Universidad de Talca; especialista en implantología bucomaxilofacial; diplomado en implantología; perfeccionamiento en implantología avanzada; cursos y perfeccionamiento en implantología digital; múltiples cursos de odontología rehabilitadora estética. Solo se atribuye la Universidad de Talca al título de cirujano dentista.
+
+
+## Revisión visual solicitada el 29/09/2026
+
+El usuario pidió seis cambios: flechas SVG para evitar emojis en iOS, mayor contenido visual y movimiento, más color y contraste, logo ampliado, textos algo mayores y fotografías reemplazables en los servicios. Se conserva la estructura multipágina, los precios y las condiciones confirmadas.
+
+Implementación: presentación y catálogo en verde profundo; ofertas en lila y arena intensos; acentos ciruela y terracota; logo móvil de aproximadamente 173–190 px y escritorio 220 px; textos de lectura principales de 16 px. Catálogo con fotos referenciales, filtros por área y contador accesible. Fotografías sustituibles en las ocho páginas restantes, dejando implantes con sus medios existentes. Las tres imágenes nuevas fueron generadas con la herramienta integrada, sin simular pacientes ni instalaciones reales; WebP y carga diferida para el catálogo. Animaciones breves de entrada y cambios de estado, desactivadas con movimiento reducido. Ninguna flecha depende de un carácter Unicode.

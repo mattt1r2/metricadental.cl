@@ -24,3 +24,41 @@
 Prompt final:
 
 > Use case: scientific-educational. Asset type: generic dental implant illustration for a professional dental clinic website. Create a refined, clear 3D studio render, square composition, warm ivory background matching #eee5da. Show a single dental implant in a clean educational cutaway of pale pink healthy gum and ivory cancellous jawbone, between two natural white molars. Titanium implant screw with a subtle blue-gray metal finish securely seated in bone, gold-toned abutment, separate porcelain white molar crown floating just a little above the abutment so the components are legible and anatomically aligned. Three-quarter front view; keep all components in frame, generous clean margins. Natural ceramic materials, soft diffuse lighting, gentle grounded shadow, restrained polished dental product aesthetic. This is a generic schematic, not an exact branded product. No hands, no faces, no patients, no blood, no pathology, no text, no captions, no arrows, no logos, no brand marks, no promotional prices, no watermark. No extra screws or disconnected roots. A calm realistic 3D educational illustration, not a busy advertisement.
+
+
+## Imágenes referenciales de servicios · actualización visual
+
+Generadas con la herramienta integrada `image_gen`. No representan instalaciones, pacientes ni resultados de Métrica Dental. Se usan como referencias sustituibles por material propio. Originales conservados en la carpeta de imágenes generadas; copias WebP para la web sin retoques de contenido.
+
+### ortodoncia-referencial
+
+Archivo del sitio: `site/assets/ortodoncia-referencial.webp`.
+
+Generated images are saved to C:\Users\matt\.codex\generated_images\01a0dece-fe32-7231-88fc-8a33a1036edb as C:\Users\matt\.codex\generated_images\01a0dece-fe32-7231-88fc-8a33a1036edb\exec-27f319c3-a37b-44b3-b5fc-c20fe9bfe4d0.png by default.
+
+Prompt final:
+
+> Use case: photorealistic-natural. Create one editorial still-life photograph for a refined dental clinic website, landscape 3:2 composition. Realistic material texture, directional soft daylight, soft shadows, subtly tactile backdrop, mature professional art direction in petrol teal, muted lavender and warm sand. Subject centered with generous crop-safe margins, no words or logos, no people or hands, no clinic interior, no blood, no pathology. Not a clinical result or a specific branded product. No collage, no panels. Subject: one realistic dental demonstration model showing upper and lower rows of white teeth, soft pink artificial gums and aligned metal orthodontic brackets with a fine silver archwire. Three-quarter front view on a muted lavender surface, deep teal out-of-focus background. Precise photographic study of a teaching model, crisp brackets, gentle natural imperfections and credible object scale.
+
+### cuidado-dental-referencial
+
+Archivo del sitio: `site/assets/cuidado-dental-referencial.webp`.
+
+Generated images are saved to C:\Users\matt\.codex\generated_images\01a0dece-fe32-7231-88fc-8a33a1036edb as C:\Users\matt\.codex\generated_images\01a0dece-fe32-7231-88fc-8a33a1036edb\exec-e21b382d-1ba7-4771-a200-b6ba507c40a0.png by default.
+
+Prompt final:
+
+> Use case: photorealistic-natural. Create one editorial still-life photograph for a refined dental clinic website, landscape 3:2 composition. Realistic material texture, directional soft daylight, soft shadows, subtly tactile backdrop, mature professional art direction in petrol teal, muted lavender and warm sand. Subject centered with generous crop-safe margins, no words or logos, no people or hands, no clinic interior, no blood, no pathology. Not a clinical result or a specific branded product. No collage, no panels. Subject: a neatly arranged round stainless-steel dental mirror, periodontal scaler and polished dental tweezers resting on a folded muted petrol-teal cloth beside a small ivory ceramic tray. Flat lay from a slight angle, warm sand surface and soft sunlight. Clean, unused tools, editorial still life, understated contrast, realistic steel reflections.
+
+### rehabilitacion-referencial
+
+Archivo del sitio: `site/assets/rehabilitacion-referencial.webp`.
+
+Generated images are saved to C:\Users\matt\.codex\generated_images\01a0dece-fe32-7231-88fc-8a33a1036edb as C:\Users\matt\.codex\generated_images\01a0dece-fe32-7231-88fc-8a33a1036edb\exec-8c59f642-adb0-4767-8f65-e9bbd749fedf.png by default.
+
+Prompt final:
+
+> Use case: photorealistic-natural. Create one editorial still-life photograph for a refined dental clinic website, landscape 3:2 composition. Realistic material texture, directional soft daylight, soft shadows, subtly tactile backdrop, mature professional art direction in petrol teal, muted lavender and warm sand. Subject centered with generous crop-safe margins, no words or logos, no people or hands, no clinic interior, no blood, no pathology. Not a clinical result or a specific branded product. No collage, no panels. Subject: a small dental laboratory plaster model with a row of ivory teeth and two loose porcelain dental crowns neatly placed beside a professional tooth shade guide. Warm clay terracotta tabletop with a muted lavender backdrop. Three-quarter macro view, refined ceramic texture, daylight, natural scale and proportions, careful uncluttered product photography.
+
+
+La ilustración existente también tiene una copia WebP para su uso en el catálogo y la promoción: `site/assets/implante-3d.webp`. Se conserva el PNG original; solo se cambió el formato de entrega, sin retoques de contenido.
