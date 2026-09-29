@@ -54,8 +54,7 @@ const legacyServiceLinks = {
   'implantes': 'implantes.html',
   'promocion': 'implantes.html#promocion',
   'fases': 'implantes.html#fases',
-  'pagos': 'implantes.html#pagos',
-  'casos': 'implantes.html#casos'
+  'pagos': 'implantes.html#pagos'
 };
 const openLegacyService = () => {
   if (!document.body.classList.contains('clinic-home')) return;
@@ -106,3 +105,22 @@ if (watermark && footer) {
   document.fonts?.ready.then(scheduleUpdate);
   window.addEventListener('pageshow', updateFromPosition);
 }
+
+// Both amounts remain readable without JavaScript; the switch is an enhancement.
+document.querySelectorAll('[data-price-switch]').forEach(panel => {
+  const controls = panel.querySelector('.price-options');
+  const amount = panel.querySelector('[data-price-amount]');
+  const caption = panel.querySelector('[data-price-caption]');
+  if (!controls || !amount || !caption) return;
+  controls.hidden = false;
+  controls.addEventListener('click', event => {
+    const button = event.target.closest('[data-price-mode]');
+    if (!button) return;
+    const installments = button.dataset.priceMode === 'installments';
+    controls.querySelectorAll('button').forEach(option => {
+      option.setAttribute('aria-pressed', String(option === button));
+    });
+    amount.textContent = installments ? '$47.500' : '$570.000';
+    caption.textContent = installments ? 'Cada cuota · 12 cuotas sin interés' : 'Implante + corona de zirconio';
+  });
+});

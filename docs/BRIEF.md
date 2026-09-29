@@ -35,7 +35,7 @@ El usuario confirmó los siguientes datos y entregó las dos imágenes de las ca
 ## Pendiente para ampliar y publicar
 
 - Piso/oficina, horarios y correo público si se desea mostrar.
-- Fotografías, especialidades y credenciales del equipo. El cliente ya aportó el nombre Dr. Tomás Abraham Carrasco para la atención de implantes; no se añaden certificaciones ni formación sin respaldo.
+- Información de otros integrantes del equipo, si corresponde. Retrato y formación del Dr. Tomás Abraham Carrasco ya aportados el 29/09/2026 e incorporados en implantes; no se añaden instituciones ni certificaciones distintas de las enviadas.
 - Fechas de inicio/fin de las promociones, condiciones adicionales del descuento y convenios de pago. Los importes y prestaciones de las dos promociones anteriores están confirmados.
 - Fotografías de instalaciones y confirmación del equipamiento disponible.
 - Casos antes/después y autorización de publicación; testimonios reales autorizados.
@@ -56,5 +56,16 @@ No presentar precios de capturas de otras clínicas o campañas antiguas como vi
 - Evaluación, planificación, escáner y controles sin costo, según mensaje del cliente aportado por el usuario. Tipo de escáner, alcance de controles y vigencia exacta por completar; no se asume Cone Beam ni se copia el valor de $25.000 de la referencia externa.
 - Actualización del 28/09/2026: garantía de por vida para implante y corona siempre que se asista a los controles indicados, incluidos en el tratamiento. No extender la gratuidad a otros servicios de mantenimiento ni prometer resultados clínicos de por vida.
 - Actualización del 28/09/2026: 12 cuotas sin interés con tarjeta de crédito mediante Compraquí de BancoEstado, según confirmación directa del cliente trasladada por el usuario. No se asumen tarjetas específicas ni otras condiciones no proporcionadas.
-- El cliente enviará 3 a 5 casos clínicos y fotos propias de las fases. La sección permanece oculta y sin enlace de navegación hasta recibir el material autorizado.
+- El cliente enviará casos clínicos y fotos propias de las fases. La instrucción del 29/09/2026 reemplaza la sección oculta del inicio por espacios visibles identificados como fotografías en preparación, sin casos ficticios.
 - La instrucción del 28/09/2026 prevalece sobre los enfoques anteriores: portada general y páginas independientes para todos los servicios. La dirección implantes.html permite difundir solo la información del tratamiento en anuncios.
+
+
+## Actualización confirmada el 29/09/2026
+
+- Casos clínicos en el inicio: tres espacios para antes/después y aviso de fotografías en preparación. El usuario confirmó que aún no cuenta con casos. Galería de la clínica con el video existente y dos espacios de imágenes. Plantillas para completar en docs/MEDIOS.md; sin formulario de subida ni datos de pacientes.
+- Menú coherente con el orden del inicio: Inicio, Promociones, Servicios, Casos clínicos, La clínica y Ubicación.
+- Precio anterior de implante + corona: **$700.000**, confirmado por el usuario como valor previo real de la clínica, no una media de mercado. Precio actual **$570.000** y ahorro **$130.000**. Se muestra la comparación en inicio e implantes. No hay fecha ni cupos nuevos confirmados.
+- Interacción de precios: selección de valor total o 12 cuotas de **$47.500 sin interés**, cuyo total es $570.000. Beneficios y desglose desplegables. Regeneración ósea no incluida, según la pieza original aportada de Métrica Dental; las necesidades adicionales se determinan en evaluación.
+- Marca JDentalCare tomada de la web oficial del fabricante e ilustración 3D genérica de implante, identificada como referencial y no como un producto específico. No se reutiliza la imagen de una publicación ajena.
+- Foto real del Dr. Tomás Abraham Carrasco aportada por el usuario, situada junto a su nombre en implantes. La portada sigue presentando la clínica.
+- Formación aportada: cirujano dentista, Universidad de Talca; especialista en implantología bucomaxilofacial; diplomado en implantología; perfeccionamiento en implantología avanzada; cursos y perfeccionamiento en implantología digital; múltiples cursos de odontología rehabilitadora estética. Solo se atribuye la Universidad de Talca al título de cirujano dentista.

@@ -1,5 +1,19 @@
 # Validación del sitio
 
+## Casos, medios y promoción interactiva: 29/09/2026
+
+- Inicio con tres espacios de casos antes/después identificados como fotografías en preparación; no hay casos ni pacientes inventados. Galería con el video existente y dos espacios para fotos propias. Plantillas en docs/MEDIOS.md.
+- Retrato real y seis antecedentes de formación aportados por el usuario en la página de implantes. Desplegable de formación probado con Enter; conserva Universidad de Talca solo como institución del título de cirujano dentista.
+- Precio anterior $700.000 confirmado por el usuario como valor previo real de la clínica; actual $570.000 y ahorro $130.000 en ambas páginas. Selector total/cuotas probado con clic y teclado: 12 × $47.500 = $570.000, con total y condiciones siempre presentes. Beneficios de las tres promociones y desglose de implantes comprobados.
+- Ilustración genérica, retrato y logo oficial servidos localmente: HTTP 200 y carga visible. Dos servidores de vista previa antiguos atendían el mismo puerto; se sustituyeron por una única instancia con la lista de recursos actualizada, conservando el túnel.
+- Sin desbordamiento en inicio a 360, 390, 430, 768, 900, 1000 y 1440 px; implantes a 360, 390, 430, 768, 900 y 1440 px. Revisión visual de promoción móvil, retrato, galería en tablet, casos y promoción en escritorio. En móvil, el valor y sus controles aparecen antes de la ilustración.
+- Menú de las once páginas actualizado al orden Inicio → Promociones → Servicios → Casos clínicos → La clínica → Ubicación. Navegación desde implantes a los casos del inicio comprobada: conserva /index.html#casos, sin redirección a la sección antigua. Menú móvil se cierra al navegar.
+- Video de la galería reproducido y pausado por teclado: duración 39,8 segundos, readyState 4 y sin error de medios. No tiene reproducción automática ni precarga del archivo completo.
+- SERVIMAT conserva su posición inferior izquierda; al entrar el footer se oculta con aria-hidden y al salir reaparece. WhatsApp sigue a la derecha.
+- Auditoría de once HTML, 441 enlaces/recursos locales y anclas válidas, IDs únicos, un H1, etiquetas balanceadas, noindex y cabeceras HTTP. JavaScript con sintaxis válida; git diff sin espacios sobrantes. Consola limpia en una carga nueva de la promoción.
+- Captura local: work/promocion-sep29.png. Fuentes y prompt de la ilustración documentados en docs/RECURSOS-VISUALES.md.
+- Permanecen pendientes las fotografías reales, casos autorizados y la revisión clínica/comercial previa a publicación. Se conserva la limitación de verificación externa del mapa descrita en las revisiones anteriores. Sin despliegue definitivo.
+
 ## Presentación, promociones ampliables y menú: 28/09/2026
 
 - Orden del inicio: presentación breve de Métrica Dental, promociones destacadas, servicios, información ampliada de la clínica, preguntas y ubicación/contacto. Se conserva el estilo aprobado de las tres ofertas y el H1 vuelve a presentar la clínica.

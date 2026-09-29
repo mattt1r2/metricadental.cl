@@ -37,3 +37,12 @@ En móvil las ofertas se muestran en su orden de lectura, una debajo de otra. En
 Mover o quitar el artículo completo. Conservar al principio la oferta destacada si la hubiera. No dejar tarjetas vacías ni mensajes de «próximamente». Al retirar una campaña, actualizar también la página del tratamiento para que un enlace guardado no presente valores vencidos como vigentes; conservar la información del servicio.
 
 Las tres campañas actuales permanecen con los datos confirmados del cliente. El contenido de esta plantilla no se publica automáticamente.
+
+
+## Comparación y selector de implantes
+
+El 29/09/2026 el usuario confirmó que $700.000 fue el precio anterior real de la clínica para implante + corona. Se publica junto a $570.000 y el ahorro $130.000 en el inicio y en implantes.html. Actualizar siempre ambos lugares al cambiar la campaña y no trasladar esa comparación a otro tratamiento.
+
+Cada `.price-switch` muestra el total y las cuotas también sin JavaScript. Los botones se activan desde script.js y alternan entre $570.000 y $47.500 por cuota; `aria-pressed` identifica la selección y una región `aria-live` comunica el cambio. Al modificar valores, actualizar HTML y los dos importes del controlador de script.js, además de pagos, mensajes de WhatsApp, preguntas y desglose. El ahorro se calcula restando el precio actual al anterior, y las cuotas dividiendo el total por doce.
+
+Los beneficios de las tres ofertas utilizan `<details class="promotion-details">`, con control nativo por teclado. Se pueden copiar a otras promociones con contenido confirmado. El logo JDentalCare y la imagen genérica solo corresponden a la oferta de implantes; la imagen no identifica un modelo concreto del fabricante. Mantener visibles las condiciones y conservar el precio total cuando se seleccionen cuotas.
