@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.env.*
+!.env.example
+work/
+/logo-metrica-dental.png
+/logo-servimat.png
