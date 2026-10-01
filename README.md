@@ -16,7 +16,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 - `site/restauraciones.html`, `site/endodoncia.html`, `site/terceros-molares.html`, `site/coronas.html`, `site/carillas.html` y `site/blanqueamiento.html`: explicación, etapas y preguntas específicas.
 - `site/styles.css`: diseño responsive.
 - `site/script.js`: menú móvil, cierre accesible del desplegable de servicios, selector de precio total/cuotas, filtros del catálogo y apariciones suaves con movimiento reducido, compatibilidad con enlaces de la antigua landing y firma flotante accesible.
-- `site/privacidad.html`: borrador informativo de privacidad.
+- `site/privacidad.html`: información de privacidad y servicios externos.
 - `site/_headers`: cabeceras HTTP para Pages.
 - `site/assets/`: logos, video optimizado e imagen de portada.
 - `site/assets/fonts/`: Manrope alojada localmente y licencia OFL.
