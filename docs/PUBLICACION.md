@@ -32,3 +32,12 @@ Se conservan espacios de casos clínicos y fotografías en preparación a petici
 Antes de dar la publicación por terminada, verificar HTTPS, cabeceras, código desplegado, enlaces, vídeo, mapa, menú y ausencia de desbordamiento en móvil y escritorio. Registrar aquí el resultado real; este documento no confirma que el sitio ya esté operativo.
 
 Documentación: https://developers.cloudflare.com/pages/configuration/git-integration/ y https://developers.cloudflare.com/pages/configuration/headers/
+
+## Avance del 01/10/2026
+
+- Versión aprobada integrada a main mediante PR #1 (merge bac09d3), con archivos de producción en site/.
+- Validación local: 12 HTML, 484 referencias locales, 10 URL sitemap, sintaxis JavaScript y diff correctos.
+- Panel de Cloudflare: Full (strict) guardado, Always Use HTTPS activado, mínimo TLS 1.2, TLS 1.3 activo. Certificado pendiente mientras se activa el dominio. Ruleset administrado mostrado como Always active.
+- Alojamiento Git todavía pendiente: el panel de creación exige verificar el correo de la cuenta del cliente.
+- Invitación de mantenimiento preparada y autorizada (Domain Administrator limitado a metricadental.cl; Developer Platform Editor). El envío devolvió un error; no se considera completado hasta aparecer en miembros.
+- Consultas DNS públicas todavía devolvían NXDOMAIN. No dar el dominio por accesible ni HTTPS por validado hasta comprobar la publicación real.
