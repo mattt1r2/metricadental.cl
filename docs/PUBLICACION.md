@@ -41,3 +41,11 @@ Documentación: https://developers.cloudflare.com/pages/configuration/git-integr
 - Alojamiento Git todavía pendiente: el panel de creación exige verificar el correo de la cuenta del cliente.
 - Invitación de mantenimiento preparada y autorizada (Domain Administrator limitado a metricadental.cl; Developer Platform Editor). El envío devolvió un error; no se considera completado hasta aparecer en miembros.
 - Consultas DNS públicas todavía devolvían NXDOMAIN. No dar el dominio por accesible ni HTTPS por validado hasta comprobar la publicación real.
+
+## Avance del 03/10/2026
+
+- Correo del cliente verificado: Cloudflare permite entrar al flujo de Pages con repositorio Git. La lista de proyectos seguía vacía antes de iniciar la conexión.
+- DNS delegado a blair.ns.cloudflare.com y melnicoff.ns.cloudflare.com, confirmado el 02/10/2026.
+- Certificado Universal SSL para metricadental.cl y *.metricadental.cl activo, con vencimiento mostrado el 30/12/2026 y certificado de respaldo emitido. HTTPS obligatorio, TLS mínimo 1.2 y TLS 1.3 siguen activos. Falta validar HTTPS con el sitio publicado.
+- Invitación enviada a servimat18@gmail.com; aparece en Members como Pending. Permisos: Domain Administrator para metricadental.cl y Developer Platform Editor para la cuenta. Falta que el destinatario la acepte.
+- La conexión de GitHub abrió la instalación existente y pidió verificar la identidad de mattt1r2 por correo. Código solicitado al usuario; no se han modificado los permisos de la aplicación GitHub ni creado el proyecto Pages. La publicación sigue pendiente.
