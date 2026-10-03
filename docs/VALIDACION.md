@@ -1,5 +1,17 @@
 # Validación del sitio
 
+## Publicación en Cloudflare: 03/10/2026
+
+- Producción: https://metricadental.cl/. Proyecto Pages metricadental-cl conectado a mattt1r2/metricadental.cl, rama main, comando exit 0 y directorio site. Ambos dominios figuran Active y SSL enabled.
+- 35 archivos públicos (HTML, CSS, JavaScript, sitemap, robots, fuentes, imágenes y video) responden 200 y coinciden con los archivos locales, normalizando LF/CRLF en texto. Las nueve páginas de tratamientos funcionan con las URL sin extensión que sirve Pages.
+- /no-existe-validacion, /README.md, /docs/PUBLICACION.md y /.git/config devuelven 404. La raíz del repositorio no está publicada.
+- HTTPS válido, CSP, HSTS, nosniff, DENY, política de referencias y permisos confirmados en respuesta pública. Producción sin X-Robots-Tag noindex; pages.dev sí conserva noindex, nofollow. No se desactivó la validación TLS durante las pruebas.
+- Redirección HTTP → HTTPS y www → raíz comprobadas con 301 y conservación de ruta y parámetros de consulta.
+- Revisión de inicio e implantes a 390 px, sin desbordamiento horizontal ni imágenes rotas. Menú móvil → Servicios → Implantes funciona; el selector cambia a 12 cuotas de $47.500. Vista de contacto comprobada en escritorio.
+- Video público reproducido: readyState 4, duración 39,8 segundos y avance del tiempo; pausado tras comprobarlo. Sin errores ni avisos en la consola observada.
+- El mapa oficial ahora se muestra en la web pública, con imagen satelital y ficha del Edificio Plaza Talca. Resuelta la limitación del navegador local descrita en revisiones anteriores. Evidencia: work/mapa-publico.png y work/cloudflare-dominios-activos.png (archivos locales de trabajo, no publicados).
+- Los apartados históricos siguientes describen revisiones previas, incluidas menciones a noindex, mapa pendiente y ausencia de despliegue que ya no reflejan el estado actual. Quedan pendientes las fotografías/casos reales, oficina y horarios; no se inventaron contenidos ni se probó en un iPhone físico. DNSSEC no está habilitado.
+
 ## Menú según sección y sello de implantes: 29/09/2026
 
 - El menú del inicio cambia su color de fondo y subrayado según la sección visible, usando aria-current=location. Comprobados Inicio, Promociones, Servicios, Casos clínicos, La clínica y Ubicación, desplazamiento manual, regreso al inicio y recarga con ancla. No modifica la URL al desplazarse ni mueve el foco. La galería y las preguntas permanecen dentro del tramo de La clínica.

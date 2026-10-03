@@ -1,6 +1,8 @@
 # Métrica Dental
 
-Web de Clínica Métrica Dental con inicio general y nueve páginas independientes de tratamientos. Diseño móvil, contacto por WhatsApp y firma SERVIMAT. Proyecto estático preparado para GitHub y Cloudflare Pages; sin despliegue definitivo.
+Web de Clínica Métrica Dental con inicio general y nueve páginas independientes de tratamientos. Diseño móvil, contacto por WhatsApp y firma SERVIMAT. Publicada en **https://metricadental.cl/** desde el 03/10/2026 mediante Cloudflare Pages, proyecto `metricadental-cl`.
+
+Los cambios enviados a `main` en `mattt1r2/metricadental.cl` generan un despliegue automático. Cloudflare publica únicamente `site/` (framework None, comando `exit 0`). `www.metricadental.cl` redirige al dominio principal con HTTPS. Configuración, acceso de mantenimiento y comprobaciones en `docs/PUBLICACION.md`.
 
 ## Vista previa
 
@@ -21,7 +23,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 - `site/assets/`: logos, video optimizado e imagen de portada.
 - `site/assets/fonts/`: Manrope alojada localmente y licencia OFL.
 - `docs/BRIEF.md`: decisiones confirmadas y contenido pendiente.
-- `docs/PUBLICACION.md`: preparación del despliegue.
+- `docs/PUBLICACION.md`: configuración del despliegue y mantenimiento.
 - `docs/VALIDACION.md`: comprobaciones y límites de la revisión.
 - `docs/PROMOCIONES.md`: plantilla e instrucciones para agregar, reordenar o retirar ofertas.
 - `docs/MEDIOS.md`: plantillas para incorporar casos reales, fotos y videos en los espacios preparados.
@@ -51,7 +53,7 @@ El servidor temporal de revisión aplica las cabeceras de seguridad y limita los
 
 El contenido pendiente (equipo, equipamiento, casos, dirección de acceso y fechas de las promociones) está documentado en el brief. Las fuentes de referencia para la redacción clínica están en `docs/FUENTES-CLINICAS.md`; la clínica debe validar la versión final. La privacidad sigue siendo un borrador hasta confirmar al responsable.
 
-El sitio lleva `noindex` durante su preparación. No eliminarlo hasta completar la revisión descrita en `docs/PUBLICACION.md`.
+El sitio de producción permite indexación, con URL canónicas y sitemap en `metricadental.cl`. Los dominios de vista previa `pages.dev` conservan la cabecera `noindex, nofollow`; privacidad y 404 también mantienen su exclusión de indexación.
 
 
 La revisión visual del 29/09/2026 utiliza SVG para todas las flechas, amplía el logo y los textos y refuerza los bloques verde petróleo, lila, arena y ciruela. El catálogo incorpora fotografías referenciales y filtros por área, con contador anunciado y botones utilizables por teclado. Las ocho páginas de servicio distintas de implantes tienen una fotografía sustituible y su navegación por etapas debajo de la presentación. La información permanece disponible sin JavaScript. Las apariciones, el cambio de importes y el hover son breves y respetan prefers-reduced-motion; no hay animación continua ni reproducción automática. Imágenes y reemplazos documentados en docs/MEDIOS.md.

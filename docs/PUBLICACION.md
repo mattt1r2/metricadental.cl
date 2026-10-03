@@ -1,27 +1,32 @@
 # Publicación y mantenimiento
 
-El 01/10/2026 el usuario autorizó publicar la web, aplicar seguridad y conectar GitHub para despliegues automáticos. Confirmó la compra de metricadental.cl en NIC Chile con la cuenta del cliente. Cloudflare tiene la zona creada en el plan Free; la activación DNS y el hosting aún deben verificarse en el panel.
+Publicada el 03/10/2026 en **https://metricadental.cl/**, con autorización del usuario para producción, seguridad y despliegues desde GitHub. El dominio está registrado en NIC Chile y el alojamiento pertenece a la cuenta Cloudflare del cliente, tabraham339@gmail.com. Se usa el plan Free.
 
 ## Cloudflare Pages
 
 - Repositorio: mattt1r2/metricadental.cl.
-- Rama de producción: main, después de integrar la versión aprobada del PR #1.
+- Proyecto Pages: metricadental-cl. Primer despliegue: ba2811f6, commit 06e35ad.
+- Rama de producción: main; versión aprobada del PR #1 ya integrada.
 - Framework: ninguno. Comando: exit 0. Directorio de salida: site. Raíz del repositorio sin cambiar.
-- Dominio principal: https://metricadental.cl. Añadir www.metricadental.cl y redirigirlo al principal.
-- Los push a main deben generar un despliegue. Las otras ramas son vistas previas.
+- Dominio principal: https://metricadental.cl. Ambos dominios (raíz y www) figuran Active / SSL enabled en Pages.
+- Los push a main generan despliegues automáticos. Las otras ramas son vistas previas.
 - No subir la raíz del repositorio como carpeta pública: contiene documentación y desarrollo.
+- CNAME raíz y www apuntan a metricadental-cl.pages.dev, creados desde Custom domains.
+- Regla activa WWW a metricadental.cl: https://www.metricadental.cl/* → https://metricadental.cl/${1}, estado 301, conservando parámetros. HTTPS obligatorio también redirige las solicitudes HTTP.
 
 ## Seguridad
 
 site/_headers aplica CSP restrictiva, HSTS de un año sin includeSubDomains/preload, protección contra inclusión en iframes, nosniff, política de referencia y permisos restringidos. Scripts, fuentes y medios son locales. Google Maps es el único iframe permitido. No activar inyección de analítica o scripts de terceros sin revisar CSP y privacidad.
 
-Configurar HTTPS obligatorio, SSL/TLS Full (strict), TLS mínimo 1.2 y comprobar el certificado. Conservar las protecciones gratuitas de DDoS y WAF disponibles. DNSSEC necesita publicar el DS exacto en NIC; no darlo por habilitado hasta verificar la cadena.
+HTTPS obligatorio, SSL/TLS Full (strict), TLS mínimo 1.2 y TLS 1.3 activos. Certificado Universal SSL activo y HTTPS público validado sin omitir la comprobación del certificado. Se conservan las protecciones gratuitas de DDoS y el ruleset WAF administrado. DNSSEC no está configurado: necesita publicar el DS exacto en NIC y verificar la cadena.
 
 Producción permite indexación. Los hostnames pages.dev mantienen X-Robots-Tag: noindex, nofollow. robots.txt, sitemap.xml y URL canónicas usan el dominio definitivo. La página 404 devuelve un error real en Pages y ofrece navegación al inicio.
 
 ## Mantenimiento
 
-El usuario solicitó acceso de mantenimiento desde su cuenta. Conceder los permisos necesarios para el dominio y Pages, manteniendo la cuenta del cliente como propietaria. No conceder facturación ni gestión de miembros si no hace falta. Confirmar los permisos antes de enviar la invitación.
+servimat18@gmail.com figura Active en Members tras aceptar la invitación autorizada. Permisos: Domain Administrator limitado a metricadental.cl y Developer Platform Editor para los recursos de la cuenta. No se concedieron facturación ni gestión de miembros; la cuenta del cliente conserva la propiedad.
+
+La aplicación GitHub Cloudflare Workers and Pages fue autorizada para metricadental.cl, conservando el acceso existente a movo-website. El selector de repositorios de Cloudflare muestra ambos; este proyecto utiliza únicamente metricadental.cl. La autorización de la instalación es compartida: no retirar MOVO ni modificarla sin evaluar el otro sitio. No se modificó su proyecto ni su repositorio.
 
 Para publicar cambios: editar, revisar, hacer commit y push a main; comprobar el despliegue en Workers & Pages y la URL pública. Para cambios amplios, revisar una rama preview antes de integrarla. Pages permite volver a un despliegue anterior.
 
@@ -29,7 +34,7 @@ Para publicar cambios: editar, revisar, hacer commit y push a main; comprobar el
 
 Se conservan espacios de casos clínicos y fotografías en preparación a petición del usuario. No inventar resultados. La privacidad describe la clínica, contacto confirmado, Maps y alojamiento. Oficina, horarios y materiales nuevos se incorporarán cuando el cliente los confirme.
 
-Antes de dar la publicación por terminada, verificar HTTPS, cabeceras, código desplegado, enlaces, vídeo, mapa, menú y ausencia de desbordamiento en móvil y escritorio. Registrar aquí el resultado real; este documento no confirma que el sitio ya esté operativo.
+Validación pública del 03/10/2026: 35 archivos servidos coinciden con el checkout (normalizando LF/CRLF en texto), HTTPS y cabeceras correctos, dominio www redirige conservando ruta y parámetros, y rutas inexistentes responden 404. Los archivos de documentación y Git no están expuestos. En navegador se comprobó el menú móvil, navegación a implantes, selector de cuotas, reproducción del video y mapa visible. Más detalle en VALIDACION.md.
 
 Documentación: https://developers.cloudflare.com/pages/configuration/git-integration/ y https://developers.cloudflare.com/pages/configuration/headers/
 
@@ -46,6 +51,6 @@ Documentación: https://developers.cloudflare.com/pages/configuration/git-integr
 
 - Correo del cliente verificado: Cloudflare permite entrar al flujo de Pages con repositorio Git. La lista de proyectos seguía vacía antes de iniciar la conexión.
 - DNS delegado a blair.ns.cloudflare.com y melnicoff.ns.cloudflare.com, confirmado el 02/10/2026.
-- Certificado Universal SSL para metricadental.cl y *.metricadental.cl activo, con vencimiento mostrado el 30/12/2026 y certificado de respaldo emitido. HTTPS obligatorio, TLS mínimo 1.2 y TLS 1.3 siguen activos. Falta validar HTTPS con el sitio publicado.
-- Invitación enviada a servimat18@gmail.com; aparece en Members como Pending. Permisos: Domain Administrator para metricadental.cl y Developer Platform Editor para la cuenta. Falta que el destinatario la acepte.
-- La conexión de GitHub abrió la instalación existente y pidió verificar la identidad de mattt1r2 por correo. Código solicitado al usuario; no se han modificado los permisos de la aplicación GitHub ni creado el proyecto Pages. La publicación sigue pendiente.
+- Certificado Universal SSL para metricadental.cl y *.metricadental.cl activo, con vencimiento mostrado el 30/12/2026 y certificado de respaldo emitido. HTTPS obligatorio, TLS mínimo 1.2 y TLS 1.3 siguen activos; HTTPS público validado.
+- Invitación aceptada por servimat18@gmail.com; estado Active confirmado en Members. Permisos: Domain Administrator para metricadental.cl y Developer Platform Editor para la cuenta.
+- Identidad de mattt1r2 verificada y permisos de la aplicación guardados tras confirmación específica del usuario. Proyecto Pages creado desde GitHub, publicado y asociado a ambos dominios; ambos activos con SSL. Se guarda esta documentación en main para comprobar un despliegue automático posterior al inicial.
