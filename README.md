@@ -12,7 +12,7 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 
 ## Estructura
 
-- `site/index.html`: presentación breve, promociones interactivas y ampliables, catálogo, casos clínicos preparados para completar, galería, preguntas, mapa y contacto.
+- `site/index.html`: presentación breve, promociones interactivas y ampliables, la clínica con video de tecnología, catálogo, casos clínicos preparados para completar, preguntas, video de ubicación, mapa y contacto.
 - `site/implantes.html`: retrato y currículum del doctor, video, promoción ilustrada con precio anterior y ahorro, selector de cuotas, garantía, cinco fases y preguntas.
 - `site/ortodoncia.html` y `site/limpieza-dental.html`: información de cada tratamiento y sus promociones completas.
 - `site/restauraciones.html`, `site/endodoncia.html`, `site/terceros-molares.html`, `site/coronas.html`, `site/carillas.html` y `site/blanqueamiento.html`: explicación, etapas y preguntas específicas.
@@ -20,7 +20,8 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 - `site/script.js`: menú móvil, cierre accesible del desplegable de servicios, selector de precio total/cuotas, filtros del catálogo y apariciones suaves con movimiento reducido, compatibilidad con enlaces de la antigua landing y firma flotante accesible.
 - `site/privacidad.html`: información de privacidad y servicios externos.
 - `site/_headers`: cabeceras HTTP para Pages.
-- `site/assets/`: logos, video optimizado e imagen de portada.
+- `site/assets/`: logos, iconos del sitio, imágenes y video anterior de implantes.
+- `site/assets/videos/`: siete videos nuevos optimizados y sus portadas WebP, distribuidos entre el inicio y los tratamientos. Originales conservados en `material/`, fuera de Git.
 - `site/assets/fonts/`: Manrope alojada localmente y licencia OFL.
 - `docs/BRIEF.md`: decisiones confirmadas y contenido pendiente.
 - `docs/PUBLICACION.md`: configuración del despliegue y mantenimiento.
@@ -31,9 +32,9 @@ Desde esa carpeta, ejecutar `python -m http.server 8081 --bind 127.0.0.1 --direc
 
 Los textos, enlaces y datos comerciales se editan directamente en HTML. Cada archivo está completo; mantener coherentes la navegación, el pie y la firma en todas las páginas. Los colores se encuentran al principio de `styles.css`. No hay dependencias de producción, recopilación de formularios ni pagos en línea.
 
-Todas las páginas mantienen el orden Inicio → Promociones → Servicios → Casos clínicos → La clínica → Ubicación, siguiendo las secciones del inicio. El desplegable Servicios contiene los nueve tratamientos y el enlace al catálogo completo. En móvil, Inicio queda visible junto a Menú; el panel se puede desplazar si no cabe. La navegación de escritorio aparece a partir de 1100 px para dar espacio al logo ampliado. El tratamiento actual se marca con `aria-current="page"`. Escape cierra primero Servicios y devuelve el foco a su control; un segundo Escape cierra el menú móvil. Los enlaces funcionan sin JavaScript.
+Todas las páginas mantienen el orden Inicio → Promociones → La clínica → Servicios → Casos clínicos → Ubicación, siguiendo las secciones del inicio. El desplegable Servicios contiene los nueve tratamientos y el enlace al catálogo completo. En móvil, Inicio queda visible junto a Menú; el panel se abre sobre el contenido y se puede desplazar si no cabe. La navegación de escritorio aparece a partir de 1100 px para dar espacio al logo ampliado. El tratamiento actual se marca con `aria-current="page"`; en el inicio se usa `aria-current="location"` siguiendo la sección que llega bajo la cabecera. El indicador cambia solo de color y subrayado, sin recuadro ni cambios de tamaño. Una entrada directa sin ancla, incluida una recarga desde abajo, vuelve inmediatamente a Inicio. Escape cierra primero Servicios y devuelve el foco a su control; un segundo Escape cierra el menú móvil. Los enlaces funcionan sin JavaScript.
 
-El video se optimizó a partir del archivo suministrado, manteniendo el original fuera del repositorio. La portada utiliza la identidad de la clínica sin retrato del dueño. El video con poster ilustrado está en la página de implantes y en la galería del inicio. El antiguo fotograma `clinica.webp` se conserva sin referencias. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial.
+La presentación inicial utiliza la identidad de la clínica sin retrato del dueño. Los videos reales tienen controles nativos, reproducción manual, encuadre completo y carga diferida; al reproducir uno se pausan los demás. En la vista previa local empiezan silenciados, a petición del usuario. La página de implantes conserva además el video anterior con poster ilustrado. El antiguo fotograma `clinica.webp` se conserva sin referencias. El logo conserva su denominación original, que incluye Talca; la ciudad no se utiliza en el mensaje comercial. El favicon y el icono de Apple usan la M del logotipo original para resultar legibles en tamaños pequeños.
 
 Se utiliza Manrope en pesos 400, 500, 600 y 700, servida desde el propio sitio. Su licencia se conserva en `site/assets/fonts/OFL.txt`. No se realizan peticiones a Google Fonts desde la web.
 

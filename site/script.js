@@ -2,6 +2,11 @@
 
 document.documentElement.classList.add('js');
 
+// Local previews stay quiet while testing on the user's computer.
+if (['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+  document.querySelectorAll('video').forEach(video => { video.muted = true; });
+}
+
 // Disclosure navigation preserves the normal document and keyboard order.
 const menuButton = document.querySelector('.menu-toggle');
 const menu = document.querySelector('#navigation');
@@ -41,33 +46,47 @@ if (menuButton && menu) {
   window.addEventListener('pageshow', closeMenu);
 }
 
-// Follow the section being read, including restored scroll and changing layouts.
+// Anchor offsets track the actual header on each screen size.
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader && 'ResizeObserver' in window) {
+  const headerObserver = new ResizeObserver(() => {
+    document.documentElement.style.setProperty('--header-height', `${siteHeader.offsetHeight}px`);
+  });
+  headerObserver.observe(siteHeader);
+}
+
+// The section at the header edge is the section being read.
 if (menu && document.body.classList.contains('clinic-home')) {
+  const openAtHome = !location.hash && performance.getEntriesByType('navigation')[0]?.type !== 'back_forward';
+  if (openAtHome) {
+    // Do not wait for the map/other deferred content to finish loading.
+    history.scrollRestoration = 'manual';
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
   const sections = [
-    ['inicio', menu.querySelector(':scope > a[href="index.html"]')],
+    ['inicio', menu.querySelector(':scope > a[href="index.html#inicio"]')],
     ['promociones', menu.querySelector(':scope > a[href="index.html#promociones"]')],
+    ['clinica', menu.querySelector(':scope > a[href="index.html#clinica"]')],
     ['tratamientos', menu.querySelector('.services-menu > summary')],
     ['casos', menu.querySelector(':scope > a[href="index.html#casos"]')],
-    ['clinica', menu.querySelector(':scope > a[href="index.html#clinica"]')],
     ['contacto', menu.querySelector(':scope > a[href="index.html#contacto"]')]
   ].map(([id, control]) => ({ section: document.getElementById(id), control }))
     .filter(item => item.section && item.control);
   const homeShortcut = document.querySelector('.header-home');
-  const headerRow = document.querySelector('.header-inner');
+  const headerRow = document.querySelector('.site-header');
   let currentSection;
   let navigationFrame = false;
   const updateCurrentSection = () => {
     navigationFrame = false;
-    // Opening the mobile menu pushes the document; keep the reading location.
+    // Keep the current location while the mobile menu is open.
     if (menuButton?.getAttribute('aria-expanded') === 'true') return;
-    // The first row stays stable when the mobile menu is expanded.
-    const logo = headerRow?.querySelector('.brand');
-    const headerEdge = logo ? logo.getBoundingClientRect().bottom + 12 : 100;
-    const readingLine = headerEdge + (window.innerHeight - headerEdge) * .35;
+    const readingLine = (headerRow?.getBoundingClientRect().bottom || 100) + 24;
     let current = sections[0];
-    sections.forEach(item => {
-      if (item.section.getBoundingClientRect().top <= readingLine) current = item;
-    });
+    if (window.scrollY > 8) {
+      sections.forEach(item => {
+        if (item.section.getBoundingClientRect().top <= readingLine) current = item;
+      });
+    }
     if (!current || current === currentSection) return;
     currentSection = current;
     sections.forEach(item => {
@@ -91,6 +110,11 @@ if (menu && document.body.classList.contains('clinic-home')) {
   window.addEventListener('scroll', scheduleNavigationUpdate, { passive: true });
   window.addEventListener('resize', scheduleNavigationUpdate);
   window.addEventListener('pageshow', scheduleNavigationUpdate);
+  window.addEventListener('pageshow', event => {
+    // A direct visit opens at Inicio; explicit section links still work.
+    if (openAtHome && !event.persisted) window.scrollTo({ top: 0, behavior: 'instant' });
+    scheduleNavigationUpdate();
+  });
   document.addEventListener('toggle', scheduleNavigationUpdate, true);
   document.fonts?.ready.then(scheduleNavigationUpdate);
   if ('ResizeObserver' in window) {
@@ -216,9 +240,9 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
       reveals.unobserve(entry.target);
       if (!reducedMotion.matches && entry.target.animate) {
         entry.target.animate([
-          { opacity: .65, transform: 'translateY(18px)' },
-          { opacity: 1, transform: 'translateY(0)' }
-        ], { duration: 520, easing: 'cubic-bezier(.2,.65,.3,1)' });
+          { opacity: .85 },
+          { opacity: 1 }
+        ], { duration: 220, easing: 'ease-out' });
       }
     });
   }, { threshold: .12 });
@@ -230,3 +254,11 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
     }
   });
 }
+
+// Playing a second clip pauses the previous one, without autoplay.
+document.addEventListener('play', event => {
+  if (!(event.target instanceof HTMLVideoElement)) return;
+  document.querySelectorAll('video').forEach(video => {
+    if (video !== event.target && !video.paused) video.pause();
+  });
+}, true);

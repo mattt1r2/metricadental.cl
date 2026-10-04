@@ -979,12 +979,7 @@ body { font-size: 16px; }
 .navigation > a:not(.button), .services-menu > summary, .header-home { text-decoration: none; }
 .navigation > a.is-current, .services-menu > summary.is-current,
 .services-menu:has(.service-submenu [aria-current="page"]) > summary,
-.header-home.is-current { color: var(--teal); text-decoration: underline; text-decoration-color: #a87841; text-decoration-thickness: 2px; text-underline-offset: 8px; }
-.navigation > a.is-current, .services-menu > summary.is-current,
-.services-menu:has(.service-submenu [aria-current="page"]) > summary { background: #eadcc9; border-radius: 3px; box-shadow: 0 0 0 5px #eadcc9; }
-@media (max-width: 1099px) {
-  .navigation > a.is-current, .services-menu > summary.is-current { box-shadow: none; }
-}
+.header-home.is-current { color: var(--teal); }
 
 /* Product credentials remain readable HTML beside the illustration. */
 .home-implant-preview { display: block; }
@@ -1010,4 +1005,128 @@ body { font-size: 16px; }
   .italy-flag { width: 51px; height: 34px; }
   .implant-italy p { font-size: 16px; }
   .implant-guarantee { padding: 22px 26px; }
+}
+
+/* Clear navigation: only colour and a fine line change, never the link size. */
+html { scroll-padding-top: calc(var(--header-height, 100px) + 16px); }
+.site-header { background: #faf7f1; border-bottom-color: #173f441f; }
+.header-home { color: var(--ink); }
+.navigation > a:not(.button), .services-menu > summary, .header-home {
+  position: relative; font-weight: 400; transition: color .16s ease;
+}
+.navigation > a:not(.button)::after, .services-menu > summary::after, .header-home::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 3px;
+  height: 2px; background: var(--teal); opacity: 0; transition: opacity .16s ease;
+}
+.navigation > a.is-current::after, .services-menu > summary.is-current::after,
+.services-menu:has(.service-submenu [aria-current="page"]) > summary::after,
+.header-home.is-current::after { opacity: 1; }
+.services-menu > summary svg { transition: transform .16s ease; }
+@media (max-width: 1099px) {
+  .js .navigation { position: absolute; top: 100%; left: 0; right: 0; width: 100%;
+    padding: 16px 20px 22px; background: #faf7f1; border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 30px #173f4414; max-height: calc(100svh - var(--header-height, 95px)); }
+  .navigation > a:not(.button), .services-menu > summary { padding-inline: 0; }
+  .navigation > a:not(.button)::after, .services-menu > summary::after { right: auto; width: 32px; bottom: 6px; }
+  .service-submenu { margin-block: 5px 12px; border-left: 0; border-radius: 8px; background: #e8eee8; }
+}
+
+/* An editorial introduction keeps the clinic first and offers one scroll away. */
+.clinic-intro-band { background: #153f46; }
+.clinic-intro { gap: 27px; padding-block: 44px; margin-bottom: 0; }
+.clinic-intro h1 { max-width: 19ch; font-size: clamp(36px, 9.3vw, 48px); line-height: 1.13; letter-spacing: -.045em; }
+.clinic-intro h1 > span { color: #dcc1e7; }
+.clinic-intro-copy p { font-size: 16px; line-height: 1.8; }
+.intro-links { display: flex; align-items: center; flex-wrap: wrap; gap: 9px 22px; margin-top: 25px; }
+.clinic-intro .intro-links .text-link { margin-top: 0; }
+.intro-links .button { background: #e9c6a6; }
+.home-promotions { padding-block: 42px 56px; background: #f7f0e7; }
+.promotions-heading { gap: 13px; margin-bottom: 26px; }
+.home-offer { border-radius: 12px; }
+.home-offer-featured { background: #185d66; }
+.home-offer-lilac { background: #d2bcdf; }
+.home-offer-sand { background: #e7c29d; }
+.home-offer-featured .home-offer-link { border-radius: 7px; }
+.home-offer-featured .promotion-price { margin-block: 24px; }
+.promotion-details > summary { min-height: 48px; }
+.price-options { border-radius: 7px; overflow: hidden; }
+.price-options button { transition: background .16s ease, color .16s ease; }
+
+/* Actual clinic videos keep their full portrait frame, including native controls. */
+.video-card { min-width: 0; overflow: hidden; border-radius: 12px; background: #e9e1d7; }
+.video-card video { width: 100%; height: auto; background: #102d32; object-fit: contain; }
+.video-portrait video { aspect-ratio: 9 / 16; max-height: 460px; }
+.video-card figcaption { padding: 19px 22px 22px; }
+.video-card h3 { font-size: 19px; line-height: 1.4; }
+.video-card p { margin-top: 7px; font-size: 14px; color: var(--muted); line-height: 1.7; }
+.clinic-story { background: #edf0e7; padding-block: 56px; }
+.clinic-story-grid { display: grid; gap: 34px; }
+.clinic-story-copy h2 { font-size: clamp(31px, 7.5vw, 43px); margin-bottom: 25px; }
+.clinic-story-copy h2 span { color: var(--teal); }
+.clinic-story-copy > p { max-width: 58ch; color: var(--muted); margin-top: 15px; }
+.clinic-story-copy > .lead { font-size: 19px; color: var(--ink); line-height: 1.6; }
+.clinic-story-copy .text-link { margin-top: 22px; }
+.clinic-story .video-card { background: #d2bcdf; }
+.clinic-story .video-card p { color: #4b3f52; }
+.clinic-values { margin-top: 27px; }
+.clinic-photo-disclosure { margin-top: 38px; border-top: 1px solid #173f4433; }
+.clinic-photo-disclosure > summary { display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; padding-block: 20px; min-height: 48px; cursor: pointer; list-style: none; font-weight: 500; }
+.clinic-photo-disclosure > summary::-webkit-details-marker { display: none; }
+.clinic-photo-disclosure > summary span { font-size: 25px; font-weight: 400; }
+.clinic-photo-disclosure[open] > summary span { transform: rotate(45deg); }
+.clinic-photo-slots { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.clinic-photo-slots .media-placeholder-art { min-height: 140px; }
+.visit-video { display: grid; gap: 25px; padding-block: 35px; border-top: 1px solid #ffffff40; margin-top: 36px; }
+.visit-video > div p { color: #d8e5df; margin-top: 15px; max-width: 45ch; }
+.visit-video .video-card { max-width: 380px; background: #e8d5be; }
+.visit-video .video-card h3 { color: var(--ink); }
+.visit-video .video-card p { color: var(--muted); }
+.visit-video .video-portrait video { max-height: 390px; }
+
+/* The same rhythm and quieter corners carry through every treatment page. */
+.service-hero, .implant-hero { padding-block: 34px 52px; }
+.service-hero > div > h1 { color: var(--teal); }
+.service-hero .video-card { justify-self: center; width: min(100%,400px); }
+.service-hero .video-card p { margin-top: 7px; font-size: 14px; }
+.treatment-photo { border-radius: 12px; }
+.service-overview { border-radius: 12px; }
+.service-overview ol { gap: 18px; }
+.service-overview a { min-height: 52px; }
+.service-link .service-thumb { border-radius: 10px; }
+.service-link .service-more { color: #e9c6a6; }
+.service-thumb img { transition: transform .24s ease; }
+.treatment-film { display: grid; gap: 30px; align-items: center; }
+.treatment-film > div h2 { max-width: 20ch; font-size: clamp(31px,7vw,42px); }
+.treatment-film > div p { margin-top: 20px; max-width: 48ch; color: var(--muted); }
+.treatment-film .text-link { margin-top: 23px; }
+.treatment-film .video-card { width: min(100%,400px); justify-self: center; }
+.faq-list summary { min-height: 62px; }
+.case-image-slots { border-radius: 10px; }
+@media (min-width: 600px) {
+  .clinic-intro { padding-block: 55px; }
+  .home-promotions, .clinic-story { padding-block: 60px; }
+  .video-portrait video { max-height: 520px; }
+}
+@media (min-width: 900px) {
+  .clinic-intro { grid-template-columns: 1.1fr 1fr; gap: 70px; padding-block: 68px; }
+  .clinic-intro h1 { font-size: clamp(45px,4.2vw,58px); }
+  .clinic-story-grid { grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: center; }
+  .clinic-story .video-card { max-width: 370px; justify-self: end; }
+  .clinic-story-copy .clinic-values li { grid-template-columns: 115px 1fr; }
+  .home-promotions { padding-block: 62px 68px; }
+  .home-offer { padding: 30px; }
+  .home-offer-featured { padding: 36px; }
+  .home-offer-top { grid-template-columns: 1fr; }
+  .home-offer-top .home-offer-price { margin-top: 12px; font-size: 45px; }
+  .service-hero { grid-template-columns: 1.2fr .8fr; gap: 80px; }
+  .service-hero .video-card { justify-self: end; }
+  .treatment-film { grid-template-columns: 1.2fr .8fr; gap: 80px; }
+  .visit-video { grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+  .visit-video .video-card { width: 100%; justify-self: end; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .navigation > a, .services-menu > summary, .header-home,
+  .navigation > a::after, .services-menu > summary::after, .header-home::after,
+  .services-menu > summary svg, .price-options button, .service-thumb img { transition: none; }
 }

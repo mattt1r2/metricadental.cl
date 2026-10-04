@@ -105,7 +105,22 @@
 
 Fecha: 26 de septiembre de 2026. Vista previa local: http://127.0.0.1:8081/.
 
-## Contenido y navegación
+## Actualización comprobada del 04/10/2026
+
+- Revisión estática de los 12 HTML: estructura, IDs, anclas, recursos locales, canonicals, sitemap e indexación correctos. JavaScript válido y cabeceras de seguridad de Pages conservadas.
+- Inicio abre arriba y marca Inicio al entrar sin ancla, también al recargar después de desplazarse hasta el pie. Los enlaces a secciones conservan su destino. Se corrigió una restauración tardía del desplazamiento mientras el mapa terminaba de cargar.
+- Promociones y La clínica se marcan cuando llegan bajo la cabecera. Sin fondo café, negrita variable ni cambios de tamaño. El orden del menú coincide con Inicio → Promociones → La clínica → Servicios → Casos clínicos → Ubicación.
+- Menú móvil abre sin mover la presentación: misma posición del contenido antes y después de abrirlo. Cierre por enlaces y dos niveles de Escape comprobados; se devuelve el foco al control correspondiente.
+- Once páginas revisadas a 360 px (Inicio, nueve servicios y privacidad), sin desbordamiento ni imágenes rotas. Inicio revisado a 390, 430 y 768 px; presentaciones y navegación de escritorio revisadas a 1280 px. Estas comprobaciones usan el navegador integrado, no dispositivos físicos.
+- Selector de 12 cuotas muestra $47.500 y conserva el total y sus condiciones. El pie oculta la firma flotante como antes.
+- Siete videos clasificados por contenido y distribuidos en su sección o tratamiento, con portadas locales, controles, playsinline y preload=none. Reproducción comprobada en tecnología y los dos videos de restauraciones, sin errores del reproductor. Al iniciar el segundo, el primero se pausa.
+- Videos silenciados en la vista previa local, confirmado en el navegador. Sin autoplay. Las pruebas posteriores se realizan sin audio.
+- Iconos ICO, PNG de 192 px y Apple de 180 px derivados del logo original, referenciados en todas las páginas. La aparición del favicon en resultados de buscadores depende de su nueva visita al sitio.
+- Originales audiovisuales conservados en material/ y excluidos de Git. Casos antes/después y fotografías de la clínica siguen preparados para completar con material futuro.
+
+La publicación vigente y la configuración de Cloudflare se documentan en PUBLICACION.md. Las notas siguientes corresponden al borrador del 26/09/2026 y se conservan como historial; no describen el despliegue actual.
+
+## Contenido y navegación del borrador inicial
 
 - La portada y el poster del video ya no usan el retrato. Se conserva el video original como explicación complementaria, que sólo reproduce al interactuar.
 - Nueve servicios enlazan a información dentro de la página: implantes, ortodoncia, restauraciones, endodoncia, terceros molares, coronas, carillas, limpieza y blanqueamiento.

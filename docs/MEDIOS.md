@@ -4,9 +4,9 @@ Los espacios están preparados en `site/index.html`. Se sustituyen editando HTML
 
 ## Fotografías de los servicios
 
-El catálogo del inicio incorpora una imagen en `.service-thumb` para cada tratamiento. Las ocho páginas distintas de implantes tienen además una figura `.treatment-photo` junto a su presentación; implantes mantiene la ilustración, retrato y video existentes.
+El catálogo del inicio incorpora una imagen en `.service-thumb` para cada tratamiento. Endodoncia, restauraciones y limpieza usan fotogramas de los videos entregados; sus presentaciones muestran ahora el video completo. Las otras cinco páginas distintas de implantes mantienen una figura `.treatment-photo`; implantes conserva la ilustración, retrato y video anterior, además del nuevo clip.
 
-De momento se utilizan imágenes referenciales generadas de modelos y materiales, identificadas como tales. Las imágenes se agrupan por tema: `ortodoncia-referencial.webp`, `cuidado-dental-referencial.webp` y `rehabilitacion-referencial.webp`, además de `implante-3d.webp`. No representan pacientes, instalaciones ni resultados de la clínica. La procedencia y los prompts están en docs/RECURSOS-VISUALES.md. Las tres WebP suman aproximadamente 446 KiB.
+Los tratamientos sin material propio utilizan imágenes referenciales generadas de modelos y materiales, identificadas como tales. Se agrupan por tema: `ortodoncia-referencial.webp`, `cuidado-dental-referencial.webp` y `rehabilitacion-referencial.webp`, además de `implante-3d.webp`. Estas referencias no representan pacientes, instalaciones ni resultados de la clínica. La procedencia y los prompts están en docs/RECURSOS-VISUALES.md. Las tres WebP suman aproximadamente 446 KiB.
 
 Para poner una fotografía real de un servicio:
 
@@ -46,7 +46,7 @@ Al incorporar el primer caso, cambiar `.media-pending` a “Estamos preparando m
 
 ## Fotografías de la clínica
 
-Buscar `id="galeria"`. Dentro de `.clinic-photo-slots` hay dos figuras `.media-placeholder`. Reemplazar cada una por una fotografía propia, con su descripción:
+Buscar `id="galeria"`, el desplegable “Fotografías de la clínica” dentro de La clínica. En `.clinic-photo-slots` hay dos figuras `.media-placeholder`. Reemplazar cada una por una fotografía propia, con su descripción:
 
 ```html
 <figure class="clinic-photo">
@@ -59,9 +59,21 @@ Adaptar dimensiones, nombre y descripción a la imagen entregada. No usar una fo
 
 ## Videos
 
-El inicio tiene un reproductor real en `.clinic-media-video`; actualmente muestra `assets/implantes.mp4`, el video suministrado previamente. La página de implantes mantiene su propio reproductor. Ambos tienen controles, sin reproducción automática, y `preload="none"`.
+El 04/10/2026 se revisaron los siete MP4 entregados en `material/`, mediante secuencias de fotogramas y transcripción local orientativa. Los originales se conservan en esa carpeta, excluida de Git. Las copias web están en `site/assets/videos/`: H.264/AAC, yuv420p, 540 px de ancho y faststart para comenzar la reproducción sin descargar el archivo completo. Los siete videos suman unos 11,3 MiB y sus portadas están en WebP.
 
-Para sustituirlo, copiar el nuevo MP4 a `site/assets/`, cambiar el `src` del `<source>`, el enlace alternativo y el `poster`, y actualizar el título, texto, `aria-label` y dimensiones. Añadir otra figura `.clinic-media-video` en `.clinic-media-grid` permite publicar un video adicional. Incorporar subtítulos WebVTT mediante `<track kind="captions" srclang="es" label="Español" src="assets/video-es.vtt">` cuando estén disponibles.
+| Archivo web | Contenido y ubicación |
+| --- | --- |
+| `tecnologia.mp4` | Escáner intraoral para planificar implantes, carillas y coronas. En Inicio → La clínica, antes de Servicios. |
+| `ubicacion.mp4` | Presentación del edificio y entorno de la clínica. En Inicio → Ubicación, junto al mapa. |
+| `implantes.mp4` | Presentación del tratamiento por el Dr. Tomás Abraham. En la página de implantes, antes de las cinco fases. |
+| `limpieza.mp4` | Limpieza y barniz de flúor, con valor de $19.990. En la presentación de Limpieza dental. |
+| `endodoncia.mp4` | Explicación del objetivo del tratamiento de conductos. En la presentación de Endodoncia. |
+| `equipo.mp4` | Recuperación de un diente mediante diagnóstico y restauración. Aunque el nombre original parecía general, corresponde a Restauraciones; va junto a su presentación. |
+| `restauraciones.mp4` | Presentación comercial de la atención de caries. En Restauraciones, después del proceso. Como menciona un descuento, su pie remite a la clínica para confirmar vigencia y condiciones. |
+
+Todos usan `.video-card.video-portrait`, controles nativos, `playsinline`, `preload="none"`, portada y enlace alternativo. Conservan el encuadre vertical completo; no tienen autoplay. Al reproducir uno, se pausan los demás. El video anterior `assets/implantes.mp4` se conserva en su lugar en la página de implantes y es distinto del nuevo `assets/videos/implantes.mp4`.
+
+Para sustituir un video, copiar el nuevo MP4 optimizado a `site/assets/videos/`, cambiar el `src` del `<source>`, el enlace alternativo y el `poster`, y actualizar el título, texto, `aria-label` y dimensiones. Para otro video, añadir una figura `.video-card.video-portrait` dentro de la sección apropiada. No copiar en titulares precios o afirmaciones clínicas sin confirmarlos. Incorporar subtítulos WebVTT mediante `<track kind="captions" srclang="es" label="Español" src="assets/video-es.vtt">` cuando se disponga de una transcripción revisada; no publicar automáticamente la salida de reconocimiento de voz.
 
 Las cinco fases en `implantes.html` conservan comentarios para añadir fotografías propias dentro de cada `.journey-copy`.
 
