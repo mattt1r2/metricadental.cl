@@ -2,10 +2,8 @@
 
 document.documentElement.classList.add('js');
 
-// Local previews stay quiet while testing on the user's computer.
-if (['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
-  document.querySelectorAll('video').forEach(video => { video.muted = true; });
-}
+// Every clip starts silent, including previews on the user's computer.
+document.querySelectorAll('video').forEach(video => { video.muted = true; });
 
 // Disclosure navigation preserves the normal document and keyboard order.
 const menuButton = document.querySelector('.menu-toggle');
@@ -255,10 +253,120 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   });
 }
 
-// Playing a second clip pauses the previous one, without autoplay.
-document.addEventListener('play', event => {
-  if (!(event.target instanceof HTMLVideoElement)) return;
-  document.querySelectorAll('video').forEach(video => {
-    if (video !== event.target && !video.paused) video.pause();
+// Play one visible clip at a time. Native controls remain available without JS.
+const clips = [...document.querySelectorAll('video')];
+const clipVisibility = new Map(clips.map(video => [video, 0]));
+const manuallyPaused = new WeakSet();
+const expectedPauses = new WeakSet();
+const autoplayRequests = new WeakSet();
+let activeClip = null;
+
+const stopClip = video => {
+  if (!video.paused) {
+    expectedPauses.add(video);
+    video.pause();
+  }
+  video.muted = true;
+};
+
+clips.forEach(video => {
+  const frame = video.closest('figure');
+  if (frame) {
+    frame.classList.add('video-frame');
+    const sound = document.createElement('button');
+    sound.className = 'video-sound';
+    sound.type = 'button';
+    sound.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4Z"/><path class="sound-off" d="m16 9 5 6m0-6-5 6"/><path class="sound-on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>';
+    const updateSound = () => {
+      const audible = !video.muted && video.volume > 0;
+      sound.classList.toggle('has-sound', audible);
+      sound.setAttribute('aria-pressed', String(audible));
+      const label = `${audible ? 'Silenciar' : 'Activar sonido'}: ${video.getAttribute('aria-label')}`;
+      sound.setAttribute('aria-label', label);
+      sound.title = audible ? 'Silenciar' : 'Activar sonido';
+    };
+    sound.addEventListener('click', () => {
+      const audible = !video.muted && video.volume > 0;
+      if (!audible && video.volume === 0) video.volume = 1;
+      video.muted = audible;
+    });
+    video.addEventListener('volumechange', updateSound);
+    updateSound();
+    frame.append(sound);
+  }
+  video.addEventListener('pause', () => {
+    if (expectedPauses.has(video)) {
+      expectedPauses.delete(video);
+    } else if (activeClip === video && !document.hidden && clipVisibility.get(video) >= .35) {
+      // Respect a visitor who presses pause, until the clip leaves the screen.
+      manuallyPaused.add(video);
+    }
   });
-}, true);
+  video.addEventListener('play', () => {
+    if (autoplayRequests.has(video) && activeClip !== video) {
+      stopClip(video);
+      return;
+    }
+    activeClip = video;
+    manuallyPaused.delete(video);
+    clips.forEach(other => { if (other !== video) stopClip(other); });
+  });
+});
+
+const updatePlayback = () => {
+  if (document.hidden) {
+    clips.forEach(stopClip);
+    activeClip = null;
+    return;
+  }
+  if (reducedMotion.matches) {
+    if (activeClip && clipVisibility.get(activeClip) < .15) {
+      stopClip(activeClip);
+      activeClip = null;
+    }
+    return;
+  }
+  // Keep the current clip while still substantially visible, avoiding flicker.
+  let next = activeClip && clipVisibility.get(activeClip) >= .35 ? activeClip : null;
+  if (!next) {
+    next = clips.filter(video => clipVisibility.get(video) >= .6 && !manuallyPaused.has(video))
+      .sort((a, b) => clipVisibility.get(b) - clipVisibility.get(a))[0] || null;
+  }
+  if (activeClip && activeClip !== next) stopClip(activeClip);
+  activeClip = next;
+  if (!next || !next.paused || manuallyPaused.has(next) || autoplayRequests.has(next)) return;
+  next.muted = true;
+  autoplayRequests.add(next);
+  const request = next.play();
+  request?.then(() => {
+    if (activeClip !== next || document.hidden || reducedMotion.matches) stopClip(next);
+  }).catch(() => {
+    // Browsers that block autoplay keep the poster and normal play control.
+    manuallyPaused.add(next);
+  }).finally(() => { autoplayRequests.delete(next); });
+};
+
+if ('IntersectionObserver' in window && clips.length) {
+  let clipObserver;
+  const observeClips = () => {
+    clipObserver?.disconnect();
+    clipObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        clipVisibility.set(entry.target, entry.intersectionRatio);
+        if (entry.intersectionRatio < .15) manuallyPaused.delete(entry.target);
+      });
+      updatePlayback();
+    }, { rootMargin: `-${siteHeader?.offsetHeight || 0}px 0px 0px 0px`, threshold: [0, .15, .35, .6, .85, 1] });
+    clips.forEach(video => clipObserver.observe(video));
+  };
+  observeClips();
+  window.addEventListener('resize', observeClips);
+  document.addEventListener('visibilitychange', updatePlayback);
+  reducedMotion.addEventListener('change', event => {
+    if (event.matches) {
+      clips.forEach(stopClip);
+      activeClip = null;
+    } else updatePlayback();
+  });
+  window.addEventListener('pagehide', () => clips.forEach(stopClip));
+}

@@ -1,5 +1,20 @@
 # Validación del sitio
 
+## Revisión del 04/10/2026: presentación de videos e identidad
+
+Esta revisión sustituye las limitaciones históricas de publicación y reproducción anotadas más abajo. El sitio se publica desde main en Cloudflare Pages con dominio metricadental.cl.
+
+- Revisadas las doce páginas a 360 px sin desbordamiento horizontal; revisión visual adicional a 390, 430, 768 y 1280 px de las áreas modificadas.
+- Clips con encuadre natural 9:16, sin límite de altura que provoque franjas. Ubicación integrada junto a la dirección; clips de restauraciones juntos y video de implantes junto a la garantía. Sin pies repetidos.
+- Comprobadas reproducción automática silenciada al entrar en pantalla, pausa al salir y exclusión entre clips. La pausa manual permanece; el botón de sonido cambia su estado accesible y permite activar/desactivar audio. La prueba de sonido se hizo con el video pausado para no emitir audio en el computador.
+- Catálogo sin fotogramas recortados; fotos referenciales identificadas. Resumen de pasos eliminado, conservando cinco etapas de implantes y cuatro por cada uno de los otros ocho servicios.
+- Brackets y limpieza muestran precio y prestaciones en un panel compartido. Se mantienen valores y condiciones confirmados.
+- Iconos de las doce páginas derivados del logo completo original, sin monograma. Textos secundarios y titulares con mayor legibilidad.
+- Comprobación estática: doce HTML equilibrados, 504 referencias locales válidas, diez URL en sitemap; JavaScript sin errores de sintaxis. CSP, rutas canónicas y privacidad conservadas.
+
+La revisión responsive utiliza el navegador integrado, no dispositivos Safari/iOS físicos. El movimiento reducido se respeta mediante la lógica de reproducción manual; no se modificó la preferencia del sistema para probarlo.
+
+
 ## Publicación en Cloudflare: 03/10/2026
 
 - Producción: https://metricadental.cl/. Proyecto Pages metricadental-cl conectado a mattt1r2/metricadental.cl, rama main, comando exit 0 y directorio site. Ambos dominios figuran Active y SSL enabled.

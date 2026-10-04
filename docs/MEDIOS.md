@@ -4,7 +4,7 @@ Los espacios están preparados en `site/index.html`. Se sustituyen editando HTML
 
 ## Fotografías de los servicios
 
-El catálogo del inicio incorpora una imagen en `.service-thumb` para cada tratamiento. Endodoncia, restauraciones y limpieza usan fotogramas de los videos entregados; sus presentaciones muestran ahora el video completo. Las otras cinco páginas distintas de implantes mantienen una figura `.treatment-photo`; implantes conserva la ilustración, retrato y video anterior, además del nuevo clip.
+El catálogo del inicio incorpora una imagen referencial en `.service-thumb` para cada tratamiento; no utiliza fotogramas recortados de los videos. Endodoncia, restauraciones y limpieza muestran los clips completos únicamente en sus páginas. Las otras cinco páginas distintas de implantes mantienen una figura `.treatment-photo`; implantes conserva la ilustración, retrato y video anterior, además del nuevo clip.
 
 Los tratamientos sin material propio utilizan imágenes referenciales generadas de modelos y materiales, identificadas como tales. Se agrupan por tema: `ortodoncia-referencial.webp`, `cuidado-dental-referencial.webp` y `rehabilitacion-referencial.webp`, además de `implante-3d.webp`. Estas referencias no representan pacientes, instalaciones ni resultados de la clínica. La procedencia y los prompts están en docs/RECURSOS-VISUALES.md. Las tres WebP suman aproximadamente 446 KiB.
 
@@ -65,15 +65,15 @@ El 04/10/2026 se revisaron los siete MP4 entregados en `material/`, mediante sec
 | --- | --- |
 | `tecnologia.mp4` | Escáner intraoral para planificar implantes, carillas y coronas. En Inicio → La clínica, antes de Servicios. |
 | `ubicacion.mp4` | Presentación del edificio y entorno de la clínica. En Inicio → Ubicación, junto al mapa. |
-| `implantes.mp4` | Presentación del tratamiento por el Dr. Tomás Abraham. En la página de implantes, antes de las cinco fases. |
+| `implantes.mp4` | Presentación del tratamiento por el Dr. Tomás Abraham. En la página de implantes, junto a la garantía y antes de las cinco fases. |
 | `limpieza.mp4` | Limpieza y barniz de flúor, con valor de $19.990. En la presentación de Limpieza dental. |
 | `endodoncia.mp4` | Explicación del objetivo del tratamiento de conductos. En la presentación de Endodoncia. |
 | `equipo.mp4` | Recuperación de un diente mediante diagnóstico y restauración. Aunque el nombre original parecía general, corresponde a Restauraciones; va junto a su presentación. |
-| `restauraciones.mp4` | Presentación comercial de la atención de caries. En Restauraciones, después del proceso. Como menciona un descuento, su pie remite a la clínica para confirmar vigencia y condiciones. |
+| `restauraciones.mp4` | Presentación comercial de la atención de caries. En la presentación de Restauraciones, junto al otro video. Confirmar con la clínica cualquier descuento mencionado antes de trasladarlo a las promociones escritas. |
 
-Todos usan `.video-card.video-portrait`, controles nativos, `playsinline`, `preload="none"`, portada y enlace alternativo. Conservan el encuadre vertical completo; no tienen autoplay. Al reproducir uno, se pausan los demás. El video anterior `assets/implantes.mp4` se conserva en su lugar en la página de implantes y es distinto del nuevo `assets/videos/implantes.mp4`.
+Todos usan `.video-card.video-portrait`, controles nativos, `muted`, `loop`, `playsinline`, `preload="none"`, portada y enlace alternativo. Conservan el encuadre vertical completo y su proporción natural. Al entrar en pantalla se reproduce un solo video, silenciado; al salir o cambiar de pestaña se pausa y vuelve a silenciarse. El botón SVG permite activar sonido opcional. La pausa manual se respeta hasta que el video salga de pantalla. Con movimiento reducido, la reproducción es manual. No añadir pies repetidos debajo de los clips. El video anterior `assets/implantes.mp4` se conserva en su lugar en la página de implantes y es distinto del nuevo `assets/videos/implantes.mp4`.
 
-Para sustituir un video, copiar el nuevo MP4 optimizado a `site/assets/videos/`, cambiar el `src` del `<source>`, el enlace alternativo y el `poster`, y actualizar el título, texto, `aria-label` y dimensiones. Para otro video, añadir una figura `.video-card.video-portrait` dentro de la sección apropiada. No copiar en titulares precios o afirmaciones clínicas sin confirmarlos. Incorporar subtítulos WebVTT mediante `<track kind="captions" srclang="es" label="Español" src="assets/video-es.vtt">` cuando se disponga de una transcripción revisada; no publicar automáticamente la salida de reconocimiento de voz.
+Para sustituir un video, copiar el nuevo MP4 optimizado a `site/assets/videos/`, cambiar el `src` del `<source>`, el enlace alternativo y el `poster`, y actualizar el `aria-label` descriptivo y las dimensiones. Para otro video, añadir una figura `.video-card.video-portrait` dentro de la sección apropiada. No copiar en titulares precios o afirmaciones clínicas sin confirmarlos. Incorporar subtítulos WebVTT mediante `<track kind="captions" srclang="es" label="Español" src="assets/video-es.vtt">` cuando se disponga de una transcripción revisada; no publicar automáticamente la salida de reconocimiento de voz.
 
 Las cinco fases en `implantes.html` conservan comentarios para añadir fotografías propias dentro de cada `.journey-copy`.
 
