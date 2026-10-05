@@ -1,0 +1,49 @@
+/* Paleta aprobada del borrador: solo colores, exclusiva del inicio. */
+.clinic-home {
+  --deep: #173f44;
+  --teal: #155e68;
+  --paper: #fcfaf6;
+  --sand-light: #f0e7dc;
+  --sand: #d8c1aa;
+  --lilac: #e3d8eb;
+  --ink: #243b3e;
+  --muted: #526366;
+  --line: #d9ddd7;
+  background: var(--paper);
+  color: var(--ink);
+}
+.clinic-home .site-header,
+.clinic-home .navigation { background-color: #fcfaf6; }
+.clinic-home .clinic-intro-band { background: #173f44; }
+.clinic-home .clinic-intro h1 > span { color: #e3ccb6; }
+.clinic-home .intro-links .button { background: #e3ccb6; }
+.clinic-home .clinic-intro .text-link { color: #f3e8dc; }
+.clinic-home .home-promotions { background: #f4eee6; }
+.clinic-home .home-offer-featured { background: #184f56; color: #fff; }
+/* La franja lila se pinta sobre el fondo; no añade borde ni cambia el tamaño. */
+.clinic-home .home-offer-lilac {
+  background: linear-gradient(to bottom, #bea6cc 0 4px, #fcfaf7 4px 100%);
+}
+.clinic-home .home-offer-sand { background: #e7d7c4; }
+.clinic-home .promotion-comparison > strong { background: #e3d8eb; color: #173f44; }
+.clinic-home .home-offer-featured .price-options { border-color: #8faeb1; }
+.clinic-home .home-offer-featured .price-options button[aria-pressed="true"] { background: #f0e7dc; }
+.clinic-home .home-offer-featured .promotion-price > strong { color: #f0e7dc; }
+.clinic-home .home-offer-featured .home-offer-link { background: #f0e7dc; }
+.clinic-home .home-promotions-note { color: #526366; }
+.clinic-home .clinic-story { background: #fcfaf6; }
+.clinic-home .services { background: #173f44; }
+.clinic-home .service-filters button[aria-pressed="true"] { background: #e3ccb6; }
+.clinic-home .service-link .service-more { color: #e3ccb6; }
+.clinic-home .clinical-cases { background: #f0ecef; }
+.clinic-home .case-image-slots { border-color: #d9d1dc; background: #d9d1dc; }
+.clinic-home .case-image-slots span { background: #e7e1e8; color: #47575a; }
+.clinic-home .case-image-slots span + span { background: #f8f5f8; }
+.clinic-home .contact { background: #eaf0ea; }
+.clinic-home .location { background: #f9f7f1; }
+.clinic-home .location-social { border-color: #ced9d1; }
+
+@media (hover: hover) and (pointer: fine) {
+  .clinic-home .intro-links .button:hover,
+  .clinic-home .home-offer-featured .home-offer-link:hover { background: #d8c1aa; }
+}
