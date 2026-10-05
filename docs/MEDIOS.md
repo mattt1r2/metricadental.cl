@@ -69,7 +69,7 @@ El 04/10/2026 se revisaron los siete MP4 entregados en `material/`, mediante sec
 | `limpieza.mp4` | Limpieza y barniz de flúor, con valor de $19.990. En la presentación de Limpieza dental. |
 | `endodoncia.mp4` | Explicación del objetivo del tratamiento de conductos. En la presentación de Endodoncia. |
 | `equipo.mp4` | Recuperación de un diente mediante diagnóstico y restauración. Aunque el nombre original parecía general, corresponde a Restauraciones; va junto a su presentación. |
-| `restauraciones.mp4` | Presentación comercial de la atención de caries. En la presentación de Restauraciones, junto al otro video. Confirmar con la clínica cualquier descuento mencionado antes de trasladarlo a las promociones escritas. |
+| `restauraciones.mp4` | Clip de la mujer retirado de la página el 05/10/2026 a petición del usuario. Archivo conservado; Restauraciones muestra únicamente `equipo.mp4`. |
 
 Todos usan `.video-card.video-portrait`, controles nativos, `muted`, `loop`, `playsinline`, `preload="none"`, portada y enlace alternativo. Conservan el encuadre vertical completo y su proporción natural. Al entrar en pantalla se reproduce un solo video, silenciado; al salir o cambiar de pestaña se pausa y vuelve a silenciarse. El botón SVG permite activar sonido opcional. La pausa manual se respeta hasta que el video salga de pantalla. Con movimiento reducido, la reproducción es manual. No añadir pies repetidos debajo de los clips. El video anterior `assets/implantes.mp4` se conserva en su lugar en la página de implantes y es distinto del nuevo `assets/videos/implantes.mp4`.
 

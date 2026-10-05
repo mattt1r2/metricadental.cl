@@ -1008,7 +1008,8 @@ body { font-size: 16px; }
 }
 
 /* Clear navigation: only colour and a fine line change, never the link size. */
-html { scroll-padding-top: calc(var(--header-height, 100px) + 16px); }
+html { scroll-padding-top: calc(var(--header-height, 100px) + 16px); scroll-behavior: auto; }
+html.is-loaded { scroll-behavior: smooth; }
 .site-header { background: #faf7f1; border-bottom-color: #173f441f; }
 .header-home { color: var(--ink); }
 .navigation > a:not(.button), .services-menu > summary, .header-home {
@@ -1107,9 +1108,6 @@ h3 { letter-spacing: -.015em; }
 .service-hero { gap: 26px; }
 .service-hero > div > h1 { color: var(--teal); }
 .service-hero .video-card { width: min(100%, 222px); }
-.service-media { display: flex; align-items: center; justify-content: center; gap: 14px; min-width: 0; }
-.service-media-pair .video-card { width: min(calc((100% - 14px) / 2), 205px); }
-.service-media-pair { align-self: center; }
 .treatment-photo { border-radius: 12px; }
 .service-link .service-thumb { border-radius: 10px; }
 .service-link .service-more { color: #e9c6a6; }
@@ -1159,8 +1157,8 @@ h3 { letter-spacing: -.015em; }
 @media (min-width: 900px) {
   .clinic-intro { grid-template-columns: 1.1fr 1fr; gap: 70px; padding-block: 68px; }
   .clinic-intro h1 { font-size: clamp(45px,4.2vw,58px); }
-  .clinic-story-grid { grid-template-columns: minmax(0, 1fr) 260px; gap: 60px; }
-  .clinic-story .video-card { width: 245px; }
+  .clinic-story-grid { grid-template-columns: minmax(0, 1fr) 330px; gap: 60px; }
+  .clinic-story .video-card { width: 300px; }
   .clinic-story-copy .clinic-values li { grid-template-columns: 115px 1fr; }
   .home-promotions { padding-block: 62px 68px; }
   .home-offer { padding: 30px; }
@@ -1168,14 +1166,18 @@ h3 { letter-spacing: -.015em; }
   .home-offer-top { grid-template-columns: 1fr; }
   .home-offer-top .home-offer-price { margin-top: 12px; font-size: 45px; }
   .service-hero { grid-template-columns: 1fr 1fr; gap: 50px; }
-  .service-hero:has(> .video-card) { grid-template-columns: minmax(0,1fr) 260px; gap: 60px; }
-  .service-hero:has(> .video-card) .video-card { width: 240px; }
-  .contact-layout { grid-template-columns: .9fr 1.3fr; gap: 45px; }
-  .location { padding: 26px; gap: 22px; }
+  .service-hero:has(> .video-card) { grid-template-columns: minmax(0,1fr) 330px; gap: 60px; }
+  .service-hero:has(> .video-card) .video-card { width: 300px; }
+  .guarantee { grid-template-columns: minmax(0,1fr) 330px; gap: 60px; }
+  .guarantee .video-card { width: 300px; }
+  .contact-layout { grid-template-columns: .8fr 1.4fr; gap: 40px; }
+  .location { grid-template-columns: minmax(0,1fr) 220px; padding: 26px; gap: 22px; }
+  .location .video-card { width: 220px; }
   .service-promotion .promotion-copy { grid-template-columns: .9fr 1.1fr; padding: 38px; gap: 50px; }
   .promotion-benefits { padding-left: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  html.is-loaded { scroll-behavior: auto; }
   .navigation > a, .services-menu > summary, .header-home,
   .navigation > a::after, .services-menu > summary::after, .header-home::after,
   .services-menu > summary svg, .price-options button, .service-thumb img { transition: none; }

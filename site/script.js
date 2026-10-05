@@ -1,6 +1,8 @@
 'use strict';
 
 document.documentElement.classList.add('js');
+// Cross-page section links open directly; smooth scrolling starts after loading.
+window.addEventListener('load', () => document.documentElement.classList.add('is-loaded'), { once: true });
 
 // Every clip starts silent, including previews on the user's computer.
 document.querySelectorAll('video').forEach(video => { video.muted = true; });
@@ -62,12 +64,12 @@ if (menu && document.body.classList.contains('clinic-home')) {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
   const sections = [
-    ['inicio', menu.querySelector(':scope > a[href="index.html#inicio"]')],
-    ['promociones', menu.querySelector(':scope > a[href="index.html#promociones"]')],
-    ['clinica', menu.querySelector(':scope > a[href="index.html#clinica"]')],
+    ['inicio', menu.querySelector(':scope > a[href="#inicio"]')],
+    ['promociones', menu.querySelector(':scope > a[href="#promociones"]')],
+    ['clinica', menu.querySelector(':scope > a[href="#clinica"]')],
     ['tratamientos', menu.querySelector('.services-menu > summary')],
-    ['casos', menu.querySelector(':scope > a[href="index.html#casos"]')],
-    ['contacto', menu.querySelector(':scope > a[href="index.html#contacto"]')]
+    ['casos', menu.querySelector(':scope > a[href="#casos"]')],
+    ['contacto', menu.querySelector(':scope > a[href="#contacto"]')]
   ].map(([id, control]) => ({ section: document.getElementById(id), control }))
     .filter(item => item.section && item.control);
   const homeShortcut = document.querySelector('.header-home');
@@ -108,11 +110,6 @@ if (menu && document.body.classList.contains('clinic-home')) {
   window.addEventListener('scroll', scheduleNavigationUpdate, { passive: true });
   window.addEventListener('resize', scheduleNavigationUpdate);
   window.addEventListener('pageshow', scheduleNavigationUpdate);
-  window.addEventListener('pageshow', event => {
-    // A direct visit opens at Inicio; explicit section links still work.
-    if (openAtHome && !event.persisted) window.scrollTo({ top: 0, behavior: 'instant' });
-    scheduleNavigationUpdate();
-  });
   document.addEventListener('toggle', scheduleNavigationUpdate, true);
   document.fonts?.ready.then(scheduleNavigationUpdate);
   if ('ResizeObserver' in window) {

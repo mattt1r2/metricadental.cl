@@ -1,5 +1,12 @@
 # Validación del sitio
 
+## Ajustes del 05/10/2026
+
+- El inicio utiliza fragmentos locales; comprobado que cambiar entre secciones conserva el selector de cuotas y no recarga la página. Retirado el segundo reinicio de scroll en pageshow. Desde Restauraciones, Ubicación abre directamente bajo la cabecera y cierra el menú móvil.
+- Restauraciones conserva solo el video del doctor. Clips de servicios, clínica y garantía ampliados a 300 px desde 900 px; ubicación a 220 px. Tamaño de los servicios en móvil conservado en 222 px; comprobaciones a 390 y 430 px y contacto a 900 px sin desbordamientos.
+- Logo completo transparente en favicon PNG y todos los tamaños ICO; verificado el canal alfa. Nueva URL para evitar reutilizar el icono blanco en caché. Apple conserva su icono actual.
+- Doce HTML, 501 referencias locales y JavaScript comprobados; condiciones comerciales y reproducción silenciada conservadas.
+
 ## Revisión del 04/10/2026: presentación de videos e identidad
 
 Esta revisión sustituye las limitaciones históricas de publicación y reproducción anotadas más abajo. El sitio se publica desde main en Cloudflare Pages con dominio metricadental.cl.
