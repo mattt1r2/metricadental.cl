@@ -1,0 +1,24 @@
+/* Clinical records retain the full frame; this sheet loads only on Implantes. */
+.implant-cases { background: #edf2ef; }
+.implant-case-grid { display: grid; gap: 32px; }
+.implant-case { min-width: 0; }
+.implant-case h3 { margin-bottom: 14px; font-size: 20px; }
+.case-photo-link { position: relative; display: block; border-radius: 10px; overflow: hidden; background: #172e31; }
+.case-photo-link > img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; }
+.case-enlarge { position: absolute; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 7px; padding: 9px 12px; border-radius: 24px; background: #fafaf7; color: #173f44; font-size: 13px; box-shadow: 0 2px 10px #0003; }
+.case-enlarge svg, .case-detail-link svg { width: 19px; height: 19px; flex-shrink: 0; }
+.case-detail-link { display: flex; align-items: center; gap: 14px; margin-top: 14px; width: fit-content; min-height: 68px; color: var(--teal); font-size: 14px; font-weight: 600; }
+.case-detail-link img { width: 58px; height: 68px; object-fit: contain; background: #172e31; border-radius: 5px; }
+.case-detail-link > span { display: flex; align-items: center; gap: 10px; }
+.implant-cases .clinical-note { max-width: 65ch; margin-top: 30px; color: #58676a; font-size: 13px; }
+.case-viewer { width: min(960px, calc(100% - 24px)); max-height: calc(100dvh - 32px); padding: 20px; border: 0; border-radius: 12px; color: #fafaf7; background: #172e31; }
+.case-viewer::backdrop { background: #091b20db; }
+.case-viewer figure { display: grid; justify-items: center; gap: 12px; padding-top: 40px; }
+.case-viewer img { width: auto; max-width: 100%; height: auto; max-height: calc(100dvh - 180px); object-fit: contain; }
+.case-viewer figcaption { font-size: 14px; text-align: center; }
+.case-viewer-close { position: absolute; right: 12px; top: 12px; display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; border: 1px solid #ffffff60; border-radius: 50%; color: white; background: #173f44; cursor: pointer; }
+.case-viewer-close svg { width: 22px; height: 22px; }
+html.case-viewer-open { overflow: hidden; }
+@media (min-width: 700px) { .implant-case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 30px; } }
+@media (min-width: 1100px) { .implant-case-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; } .implant-case h3 { min-height: 49px; font-size: 18px; } }
+@media (hover: hover) { .case-photo-link:hover .case-enlarge, .case-detail-link:hover > span { text-decoration: underline; text-underline-offset: 4px; } }

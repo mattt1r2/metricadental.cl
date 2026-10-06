@@ -1,12 +1,12 @@
 # Incorporar casos clínicos, fotografías y videos
 
-Los espacios están preparados en `site/index.html`. Se sustituyen editando HTML y copiando los archivos a `site/assets/`; no hay un formulario de subida público ni se almacenan datos de pacientes.
+Los casos clínicos están en `site/implantes.html`; las fotografías de la clínica permanecen en `site/index.html`. Se sustituyen editando HTML y copiando los archivos a `site/assets/`; no hay un formulario de subida público ni se almacenan datos de pacientes.
 
 ## Fotografías de los servicios
 
 El catálogo del inicio incorpora una imagen referencial en `.service-thumb` para cada tratamiento; no utiliza fotogramas recortados de los videos. Endodoncia, restauraciones y limpieza muestran los clips completos únicamente en sus páginas. Las otras cinco páginas distintas de implantes mantienen una figura `.treatment-photo`; implantes conserva la ilustración, retrato y video anterior, además del nuevo clip.
 
-Los tratamientos sin material propio utilizan imágenes referenciales generadas de modelos y materiales, identificadas como tales. Se agrupan por tema: `ortodoncia-referencial.webp`, `cuidado-dental-referencial.webp` y `rehabilitacion-referencial.webp`, además de `implante-3d.webp`. Estas referencias no representan pacientes, instalaciones ni resultados de la clínica. La procedencia y los prompts están en docs/RECURSOS-VISUALES.md. Las tres WebP suman aproximadamente 446 KiB.
+Desde el 06/10/2026, el catálogo del inicio usa nueve fotografías reales y distintas de Pexels, alojadas en `site/assets/servicios/`. Son referencias y no representan pacientes ni instalaciones de la clínica. Licencia, autores y páginas fuente en docs/RECURSOS-VISUALES.md. Las referencias generadas de las páginas de servicios se conservan hasta sustituirlas por material propio.
 
 Para poner una fotografía real de un servicio:
 
@@ -17,32 +17,22 @@ Para poner una fotografía real de un servicio:
 
 Para incorporar otra imagen a una página, copiar la figura `.treatment-photo` con el archivo y pie correctos a la etapa correspondiente. Los filtros del catálogo utilizan `data-service-category`: `rehabilitacion`, `estetica` o `cuidado`; al cambiar una foto, conservar esos atributos y el enlace al tratamiento.
 
-## Casos clínicos del inicio
+## Casos clínicos de implantes
 
-Buscar `id="casos"`. Hay tres `.case-placeholder`, cada uno con espacios antes/después. Mientras no existan casos, se muestra “Fotografías del caso en preparación”. No se han usado resultados ficticios.
+Desde el 06/10/2026 no hay casos en la portada. En `implantes.html#casos` se muestran los cuatro casos aportados, con las seis fotografías de `material/`:
 
-Cuando la clínica entregue fotos autorizadas, copiar archivos con nombres sin datos identificativos, por ejemplo `caso-01-antes.webp` y `caso-01-despues.webp`. Reemplazar uno de los bloques `.case-placeholder` completos por este artículo y adaptar texto y dimensiones a los archivos reales:
+| Original | Copia publicada | Uso |
+| --- | --- | --- |
+| `1.jpg` | `assets/casos/caso-01.webp` | Arcada inferior y radiografía; no es una comparación antes/después. |
+| `2.0.jpg` | `assets/casos/caso-02.webp` | Comparación del caso 2. |
+| `2.1.jpg` | `assets/casos/caso-02-detalle.webp` | Detalle de corona y componentes del caso 2. |
+| `3.jpg` | `assets/casos/caso-03.webp` | Comparación del caso 3. |
+| `4.0.jpg` | `assets/casos/caso-04.webp` | Comparación del caso 4. |
+| `4.1.jpg` | `assets/casos/caso-04-otra-vista.webp` | Otra vista del caso 4. |
 
-```html
-<article class="clinical-case">
-  <div class="case-photos">
-    <figure>
-      <img src="assets/caso-01-antes.webp" alt="Descripción clínica de la situación inicial" width="1000" height="1000" loading="lazy">
-      <figcaption>Antes</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/caso-01-despues.webp" alt="Descripción clínica del resultado documentado" width="1000" height="1000" loading="lazy">
-      <figcaption>Después</figcaption>
-    </figure>
-  </div>
-  <h3>Nombre del tratamiento real</h3>
-  <p>Descripción breve validada por la clínica, con las etapas realizadas y el seguimiento correspondiente.</p>
-</article>
-```
+La cuadrícula `.implant-case-grid` admite más artículos `.implant-case`. Cada enlace `data-case-photo` abre la imagen completa en un diálogo accesible y conserva su enlace directo si no hay JavaScript. El `data-caption` identifica la imagen ampliada. El estilo y la ampliación se cargan exclusivamente en Implantes mediante `implant-cases.css` e `implant-cases.js`. Renovar el hash de sus enlaces si cambian esos archivos.
 
-Los archivos de ejemplo no existen: incorporar primero el material antes de pegar el artículo. No conservar texto genérico como si describiera un caso real. Se pueden añadir más artículos dentro de `.clinical-cases-grid`; el diseño agrega filas. Las imágenes usan `object-fit: contain` para mostrar el encuadre clínico completo.
-
-Al incorporar el primer caso, cambiar `.media-pending` a “Estamos preparando más casos para compartir contigo” si siguen faltando fotografías. Quitar ese aviso y los bloques pendientes cuando la galería esté completa. Mantener la nota de resultados individuales. La autorización de publicación se gestiona fuera del repositorio; no guardar aquí consentimientos ni datos identificativos de pacientes.
+Conservar los encuadres completos con `object-fit: contain`, dimensiones reales y descripciones de lo que muestra la foto. No atribuir técnicas, plazos ni historias que la clínica no haya aportado. Para otros servicios se crearán apartados propios cuando exista material correspondiente. La autorización de publicación se gestiona fuera del repositorio; no guardar aquí consentimientos ni datos identificativos de pacientes.
 
 ## Fotografías de la clínica
 

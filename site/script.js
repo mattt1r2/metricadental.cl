@@ -68,7 +68,6 @@ if (menu && document.body.classList.contains('clinic-home')) {
     ['promociones', menu.querySelector(':scope > a[href="#promociones"]')],
     ['clinica', menu.querySelector(':scope > a[href="#clinica"]')],
     ['tratamientos', menu.querySelector('.services-menu > summary')],
-    ['casos', menu.querySelector(':scope > a[href="#casos"]')],
     ['contacto', menu.querySelector(':scope > a[href="#contacto"]')]
   ].map(([id, control]) => ({ section: document.getElementById(id), control }))
     .filter(item => item.section && item.control);
@@ -133,7 +132,8 @@ const legacyServiceLinks = {
   'implantes': 'implantes.html',
   'promocion': 'implantes.html#promocion',
   'fases': 'implantes.html#fases',
-  'pagos': 'implantes.html#pagos'
+  'pagos': 'implantes.html#pagos',
+  'casos': 'implantes.html#casos'
 };
 const openLegacyService = () => {
   if (!document.body.classList.contains('clinic-home')) return;

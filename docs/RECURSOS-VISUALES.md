@@ -62,3 +62,24 @@ Prompt final:
 
 
 La ilustración existente también tiene una copia WebP para su uso en el catálogo y la promoción: `site/assets/implante-3d.webp`. Se conserva el PNG original; solo se cambió el formato de entrega, sin retoques de contenido.
+
+
+## Fotografías reales del catálogo · 06/10/2026
+
+Las nueve miniaturas del inicio sustituyen las referencias generadas. Fotografías de Pexels, con licencia para uso comercial: https://www.pexels.com/license/. Se alojan localmente como WebP de 1200 × 800, con recorte para la miniatura y sin retoques de contenido. Son imágenes de referencia, no pacientes ni instalaciones de la clínica. No hay llamadas a Pexels desde la web.
+
+| Servicio | Autor | Fuente | Archivo |
+| --- | --- | --- | --- |
+| implantes | cottonbro studio | https://www.pexels.com/photo/close-up-shot-of-dental-implant-model-6502305/ | `site/assets/servicios/implantes-foto.webp` |
+| ortodoncia | cottonbro studio | https://www.pexels.com/photo/close-up-photo-of-dentist-examining-patient-s-teeth-6528866/ | `site/assets/servicios/ortodoncia-foto.webp` |
+| restauraciones | cottonbro studio | https://www.pexels.com/photo/patient-having-a-dental-treatment-6529110/ | `site/assets/servicios/restauraciones-foto.webp` |
+| endodoncia | Cedric Fauntleroy | https://www.pexels.com/photo/close-up-shot-of-dental-tools-4269356/ | `site/assets/servicios/endodoncia-foto.webp` |
+| terceros-molares | Kaboompics | https://www.pexels.com/photo/a-patient-undergoing-a-dental-procedure-6627559/ | `site/assets/servicios/terceros-molares-foto.webp` |
+| coronas | Ivan Babydov | https://www.pexels.com/photo/crop-faceless-master-making-dental-implants-7788508/ | `site/assets/servicios/coronas-foto.webp` |
+| carillas | Kaboompics | https://www.pexels.com/photo/close-up-of-teeth-veneers-6627599/ | `site/assets/servicios/carillas-foto.webp` |
+| limpieza-dental | Pavel Danilyuk | https://www.pexels.com/photo/patient-at-the-dentist-6812534/ | `site/assets/servicios/limpieza-dental-foto.webp` |
+| blanqueamiento | Shiny Diamond | https://www.pexels.com/photo/close-up-photo-of-woman-with-pink-lipstick-smiling-3762402/ | `site/assets/servicios/blanqueamiento-foto.webp` |
+
+## Casos clínicos aportados · 06/10/2026
+
+Originales numerados en material/, fuera de Git. Copias WebP en site/assets/casos/ conservan dimensiones, contenido y encuadre completos, sin mejora ni generación de resultados. Se omiten metadatos de los archivos publicados. Casos 1, 2, 3 y 4; 2.1 es el detalle de la corona del caso 2 y 4.1 otra vista del caso 4. Solo aparecen en implantes.html.
