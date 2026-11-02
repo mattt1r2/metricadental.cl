@@ -1,5 +1,15 @@
 # Publicación y mantenimiento
 
+## SEO y recursos · 02/11/2026
+
+- Metadatos y datos estructurados estáticos de las diez páginas públicas: mantenerlos con `python scripts/update-seo.py`. El script conserva los titulares y textos visibles. Incluye `Dentist`, `WebSite`, `WebPage`, catálogo de nueve servicios y, en cada tratamiento, `Service` y `BreadcrumbList`. No incluye horarios, reseñas, calificaciones, oficina ni ficha propia de Maps sin confirmación.
+- Imagen social: `assets/metrica-dental-social-v1.jpg`, con URL absoluta, dimensiones y descripción, además de tarjetas para redes. La imagen usa el logo suministrado y el texto aprobado de la clínica.
+- Los enlaces internos usan las rutas canónicas sin `.html`; Cloudflare conserva las redirecciones de las URLs antiguas. La navegación interna del inicio mantiene sus fragmentos locales para evitar recargas.
+- Logos, retrato y material promocional se entregan como WebP; fuentes Manrope en WOFF2 con precarga de pesos 400 y 600. Los originales y licencias permanecen en el repositorio. Las fotos clínicas y el comportamiento de reproducción de videos no se modifican.
+- La etiqueta de Analytics mantiene la propiedad autorizada y registra únicamente en los dominios de producción; las vistas previas locales y de Pages no contabilizan tráfico ni contactos de prueba.
+- Verificaciones antes de publicar: `python scripts/version-assets.py`, `python scripts/check-seo.py`, sintaxis de JavaScript y `git diff --check`. El validador reconoce rutas sin extensión y excluye de las páginas normales el archivo de verificación de Search Console.
+- Search Console: el 02/11 se envió `https://metricadental.cl/sitemap.xml`, aceptado con estado Correcto y diez páginas descubiertas. La ficha propia de Google Maps, horarios y contenido clínico nuevo siguen dependiendo del cliente.
+
 Publicada el 03/10/2026 en **https://metricadental.cl/**, con autorización del usuario para producción, seguridad y despliegues desde GitHub. El dominio está registrado en NIC Chile y el alojamiento pertenece a la cuenta Cloudflare del cliente, tabraham339@gmail.com. Se usa el plan Free.
 
 ## Cloudflare Pages

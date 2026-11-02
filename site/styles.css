@@ -1,7 +1,7 @@
-@font-face { font-family: Manrope; src: url('assets/fonts/manrope-400.ttf') format('truetype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: Manrope; src: url('assets/fonts/manrope-500.ttf') format('truetype'); font-weight: 500; font-display: swap; }
-@font-face { font-family: Manrope; src: url('assets/fonts/manrope-600.ttf') format('truetype'); font-weight: 600; font-display: swap; }
-@font-face { font-family: Manrope; src: url('assets/fonts/manrope-700.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: Manrope; src: url('assets/fonts/manrope-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: Manrope; src: url('assets/fonts/manrope-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: Manrope; src: url('assets/fonts/manrope-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: Manrope; src: url('assets/fonts/manrope-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 
 :root {
   --teal: #155e68;
@@ -910,9 +910,9 @@ body { font-size: 16px; }
 .service-link h3 { font-size: 23px; margin-bottom: 8px; }
 .service-link p { color: #dae8e2; font-size: 15px; margin-bottom: 14px; }
 .service-more { color: #efc8a2; font-size: 14px; justify-content: space-between; border-bottom: 1px solid #52736e; padding-bottom: 16px; }
-.service-link[href="implantes.html"] .service-thumb img { object-fit: contain; object-position: center; background: #eee5da; }
-.service-link[href="blanqueamiento.html"] .service-thumb img { object-position: right center; }
-.service-link[href="coronas.html"] .service-thumb img { object-position: center bottom; }
+.service-link[href="/implantes"] .service-thumb img { object-fit: contain; object-position: center; background: #eee5da; }
+.service-link[href="/blanqueamiento"] .service-thumb img { object-position: right center; }
+.service-link[href="/coronas"] .service-thumb img { object-position: center bottom; }
 
 /* Each treatment has one replaceable photo, followed by its step navigation. */
 .service-hero { align-items: center; }

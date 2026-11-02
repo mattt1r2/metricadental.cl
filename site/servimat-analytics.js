@@ -1,6 +1,8 @@
 /* SERVIMAT: GA4 + contact and native-video events. No message/phone/email values. */
 (() => {
   'use strict';
+  // Local and Pages previews must not inflate production traffic or contacts.
+  if (!['metricadental.cl', 'www.metricadental.cl'].includes(location.hostname)) return;
   if (window.__servimatGALoaded) return;
   const ownScript = document.currentScript;
   const cfg = window.servimatGAConfig || {};

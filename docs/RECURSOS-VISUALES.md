@@ -1,5 +1,11 @@
 # Recursos incorporados el 29/09/2026
 
+## Recursos optimizados y presentación social · 02/11/2026
+
+- Copias WebP optimizadas de `logo.png`, `jdentalcare.png`, `dr-tomas-abraham.png`, `promocion-brackets.png` y `promocion-limpieza.png`. Se conservan todos los originales. La compresión WebP es sin pérdida; logo, marca JD y retrato se entregan a una resolución adecuada para su tamaño en pantalla. Las fotografías clínicas se conservan intactas.
+- `site/assets/metrica-dental-social-v1.jpg`: tarjeta de 1200 × 630 para Open Graph y redes. Compuesta con el logo original, la paleta de la clínica, el texto ya aprobado del inicio y el dominio. No utiliza imágenes generadas ni fotografías de pacientes. Se recortó únicamente el margen vacío exterior del logo para esta tarjeta.
+- Las fuentes Manrope se sirven en WOFF2, conservando los TTF originales y su licencia OFL. La conversión mantiene los mapas de caracteres y las métricas; no cambia la tipografía del diseño.
+
 ## Retrato
 
 - Archivo publicado: `site/assets/dr-tomas-abraham.png`.

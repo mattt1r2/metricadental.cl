@@ -121,19 +121,19 @@ if (menu && document.body.classList.contains('clinic-home')) {
 
 // Preserve shared links from the previous single-page version.
 const legacyServiceLinks = {
-  'ortodoncia': 'ortodoncia.html',
-  'restauraciones': 'restauraciones.html',
-  'endodoncia': 'endodoncia.html',
-  'molares': 'terceros-molares.html',
-  'coronas': 'coronas.html',
-  'carillas': 'carillas.html',
-  'limpieza': 'limpieza-dental.html',
-  'blanqueamiento': 'blanqueamiento.html',
-  'implantes': 'implantes.html',
-  'promocion': 'implantes.html#promocion',
-  'fases': 'implantes.html#fases',
-  'pagos': 'implantes.html#pagos',
-  'casos': 'implantes.html#casos'
+  'ortodoncia': '/ortodoncia',
+  'restauraciones': '/restauraciones',
+  'endodoncia': '/endodoncia',
+  'molares': '/terceros-molares',
+  'coronas': '/coronas',
+  'carillas': '/carillas',
+  'limpieza': '/limpieza-dental',
+  'blanqueamiento': '/blanqueamiento',
+  'implantes': '/implantes',
+  'promocion': '/implantes#promocion',
+  'fases': '/implantes#fases',
+  'pagos': '/implantes#pagos',
+  'casos': '/implantes#casos'
 };
 const openLegacyService = () => {
   if (!document.body.classList.contains('clinic-home')) return;
