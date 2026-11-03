@@ -1,5 +1,19 @@
 # Publicación y mantenimiento
 
+## Mantenimiento técnico y revisión SEO · 03/11/2026
+
+- Respaldo previo de la versión `701f516`, que coincidía con `main` en GitHub: `work/respaldos/2026-11-03-pre-mantenimiento-701f516/`. Contiene `repositorio.bundle` con el historial, `fuentes-publicadas.zip`, `material-original.zip` y `manifest.json` con los hashes SHA-256. Estos archivos son locales y están excluidos de Git y del directorio público.
+- Se restauró el bundle en una carpeta de prueba, se contrastaron los 99 archivos versionados y se recuperaron los 15 originales (material y logos suministrados). La copia restaurada superó `scripts/check-seo.py`: doce páginas, diez rutas indexables y 540 referencias locales. No se sustituyó el proyecto de trabajo ni se ejecutó una restauración sobre producción.
+- El respaldo cubre fuentes, historial y materiales; no es una exportación de las cuentas de Cloudflare o NIC. La configuración de publicación y seguridad se describe más abajo. El historial de fuentes también permanece en GitHub.
+- Se corrigió el contraste de los tres textos secundarios del panel promocional de implantes: `#4b5b5d` sobre `#ead9c7`, relación 5,16:1. Se conservaron fondos, tamaños, distribución y textos.
+- Se ajustaron 21 pares de dimensiones de imágenes y las dimensiones declaradas del video vertical de implantes (360 x 640). Los siete enlaces alternativos «Abrir video» tienen ahora nombres accesibles específicos. Los originales, imágenes, videos, fuentes y logos no se editaron.
+- El contenido visible de las doce páginas se contrastó con el respaldo. Títulos, descripciones, precios, contactos, datos estructurados, canonical, robots y sitemap permanecen iguales. La revisión de títulos y descripciones no requirió ajustes este mes (0 de hasta 2 páginas).
+- Search Console: las diez URLs del sitemap se comprobaron como indexadas el 03/11 mediante inspecciones individuales. El sitemap figura Correcto con diez páginas descubiertas; el informe agregado de cobertura aún conserva fecha 22/10 y no debe confundirse con esas inspecciones recientes.
+- Se revisaron la portada a 360, 390, 430, 768 y 1280 px, las páginas de tratamientos a 390 px, el menú móvil con teclado y Escape, las imágenes y el inicio silenciado de los videos. Las pruebas de Safari/iPhone real siguen pendientes; una revisión responsive en Chromium no las sustituye.
+- Los subtítulos requieren transcripciones revisadas. También siguen pendientes la ficha propia de Google Maps, los horarios y el material adicional que aporte la clínica. No completar estos datos con suposiciones.
+
+Para recuperar una versión desde el respaldo, clonar primero `repositorio.bundle` en una carpeta nueva y verificar su commit y `scripts/check-seo.py`. `fuentes-publicadas.zip` ofrece una copia de los archivos versionados y `material-original.zip` conserva el material excluido de Git. Comprobar los hashes de `manifest.json` antes de utilizarlos. La vuelta de producción a una versión anterior se gestiona mediante un commit de reversión normal o el rollback de Cloudflare Pages; no usar force push ni sobrescribir cambios pendientes.
+
 ## SEO y recursos · 02/11/2026
 
 - Metadatos y datos estructurados estáticos de las diez páginas públicas: mantenerlos con `python scripts/update-seo.py`. El script conserva los titulares y textos visibles. Incluye `Dentist`, `WebSite`, `WebPage`, catálogo de nueve servicios y, en cada tratamiento, `Service` y `BreadcrumbList`. No incluye horarios, reseñas, calificaciones, oficina ni ficha propia de Maps sin confirmación.

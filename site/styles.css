@@ -469,6 +469,10 @@ html:not(.js) .servimat-watermark { display: none; }
 .implant-film figcaption { padding: 15px 18px 18px; color: #d4e0dd; font-size: 11px; }
 .implant-film :focus-visible { outline-color: var(--sand); outline-offset: -4px; }
 .implant-offer { background: var(--sand-light); }
+/* Keep the offer's secondary copy readable on the approved sand background. */
+.implant-offer .section-heading > p,
+.implant-offer .price-breakdown small,
+.implant-offer .offer-note { color: #4b5b5d; }
 .offer-layout { display: grid; gap: 27px; }
 .offer-prices { min-width: 0; }
 .offer-price-row { padding: 23px 0; border-top: 1px solid #c9bbab; }
