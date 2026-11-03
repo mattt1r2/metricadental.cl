@@ -1,5 +1,14 @@
 # Publicación y mantenimiento
 
+## Ampliación SEO de implantes y limpieza · 03/11/2026
+
+- Por solicitud posterior del usuario, se optimizan únicamente los títulos y las descripciones de `/implantes` y `/limpieza-dental`, con el tratamiento y el valor promocional confirmado. Se sincronizan Open Graph, Twitter y las descripciones de los datos estructurados. Los encabezados y todo el contenido del `body` permanecen idénticos.
+- Cada uno de estos dos servicios incluye su promoción como `Offer` de un `Service`, con moneda CLP, enlace al panel visible y condiciones ya publicadas. Implantes mantiene el total de $570.000, sus dos etapas, la exclusión de regeneración ósea y la evaluación individual. Limpieza conserva $19.990 y su alcance supragingival; no se presenta como tratamiento periodontal profundo. No se añaden fechas de vencimiento, cupos, disponibilidad, reseñas ni resultados no confirmados.
+- `scripts/update-seo.py --pages implantes limpieza-dental` permite regenerar solo estas páginas. Antes de escribir, comprueba que el valor de la oferta coincide con el contenido visible. Los precios deben actualizarse de forma coherente si la clínica los modifica en el futuro.
+- Se registra `lastmod` del 03/11/2026 únicamente en las dos URLs modificadas del sitemap. Las otras ocho rutas, canonical, robots, estilos, scripts, logos, imágenes, videos y datos de contacto se conservan.
+- Consumo final de ajustes de títulos y descripciones del ciclo: **2 de hasta 2 páginas**. La revisión inicial de mantenimiento figura abajo como registro histórico. El efecto en búsquedas debe medirse después del nuevo rastreo; la publicación no acredita una mejora de posiciones o de CTR.
+- Respaldo previo de fuentes, historial y PDF: `work/respaldos/2026-11-03-pre-seo-implantes-limpieza-99837dc/`, fuera de Git y de la carpeta pública. Los pendientes del propietario y los resultados de las comprobaciones se entregan en el informe mensual local.
+
 ## Mantenimiento técnico y revisión SEO · 03/11/2026
 
 - Respaldo previo de la versión `701f516`, que coincidía con `main` en GitHub: `work/respaldos/2026-11-03-pre-mantenimiento-701f516/`. Contiene `repositorio.bundle` con el historial, `fuentes-publicadas.zip`, `material-original.zip` y `manifest.json` con los hashes SHA-256. Estos archivos son locales y están excluidos de Git y del directorio público.
@@ -7,7 +16,7 @@
 - El respaldo cubre fuentes, historial y materiales; no es una exportación de las cuentas de Cloudflare o NIC. La configuración de publicación y seguridad se describe más abajo. El historial de fuentes también permanece en GitHub.
 - Se corrigió el contraste de los tres textos secundarios del panel promocional de implantes: `#4b5b5d` sobre `#ead9c7`, relación 5,16:1. Se conservaron fondos, tamaños, distribución y textos.
 - Se ajustaron 21 pares de dimensiones de imágenes y las dimensiones declaradas del video vertical de implantes (360 x 640). Los siete enlaces alternativos «Abrir video» tienen ahora nombres accesibles específicos. Los originales, imágenes, videos, fuentes y logos no se editaron.
-- El contenido visible de las doce páginas se contrastó con el respaldo. Títulos, descripciones, precios, contactos, datos estructurados, canonical, robots y sitemap permanecen iguales. La revisión de títulos y descripciones no requirió ajustes este mes (0 de hasta 2 páginas).
+- El contenido visible de las doce páginas se contrastó con el respaldo. En esta primera revisión se conservaron títulos, descripciones, precios, contactos, datos estructurados, canonical, robots y sitemap (0 de hasta 2 páginas). La ampliación posterior de implantes y limpieza se registra arriba.
 - Search Console: las diez URLs del sitemap se comprobaron como indexadas el 03/11 mediante inspecciones individuales. El sitemap figura Correcto con diez páginas descubiertas; el informe agregado de cobertura aún conserva fecha 22/10 y no debe confundirse con esas inspecciones recientes.
 - Se revisaron la portada a 360, 390, 430, 768 y 1280 px, las páginas de tratamientos a 390 px, el menú móvil con teclado y Escape, las imágenes y el inicio silenciado de los videos. Las pruebas de Safari/iPhone real siguen pendientes; una revisión responsive en Chromium no las sustituye.
 - Los subtítulos requieren transcripciones revisadas. También siguen pendientes la ficha propia de Google Maps, los horarios y el material adicional que aporte la clínica. No completar estos datos con suposiciones.

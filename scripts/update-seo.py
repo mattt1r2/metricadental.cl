@@ -4,6 +4,7 @@ Run from any directory with Python 3. No package or runtime dependency is added
 to the website. Visible page content, prices and headings stay in the HTML.
 """
 from pathlib import Path
+import argparse
 import html
 import json
 import re
@@ -21,8 +22,8 @@ PAGES = {
         'Conoce Métrica Dental: implantes, ortodoncia, limpieza y otros tratamientos. Revisa nuestras promociones y solicita tu hora por WhatsApp.'),
     'implantes': (
         'Implantes dentales',
-        'Implantes dentales y corona de zirconio | Métrica Dental',
-        'Implante JD de origen italiano y corona de zirconio por $570.000. Conoce las etapas, las cuotas y las condiciones. Agenda tu evaluación.'),
+        'Implantes dentales y corona por $570.000 | Métrica Dental',
+        'Implante JD italiano y corona de zirconio por $570.000. Evaluación sin costo y 12 cuotas sin interés con Compraquí de BancoEstado. Consulta condiciones.'),
     'ortodoncia': (
         'Ortodoncia',
         'Ortodoncia y brackets | Métrica Dental',
@@ -49,12 +50,35 @@ PAGES = {
         'Evalúa cambios en la forma y apariencia de tus dientes con carillas. Conoce la planificación, la colocación y los cuidados en Métrica Dental.'),
     'limpieza-dental': (
         'Limpieza dental',
-        'Limpieza dental y aplicación de flúor | Métrica Dental',
-        'Limpieza dental y flúor por $19.990 en Métrica Dental. Revisa las prestaciones incluidas, las etapas del tratamiento y solicita tu hora por WhatsApp.'),
+        'Limpieza dental + flúor por $19.990 | Métrica Dental',
+        'Limpieza dental y flúor por $19.990. Incluye destartraje supragingival, pulido, aeropulido y evaluación de caries. Solicita tu hora por WhatsApp.'),
     'blanqueamiento': (
         'Blanqueamiento dental',
         'Blanqueamiento dental profesional | Métrica Dental',
         'Evalúa opciones para aclarar el tono de tus dientes naturales. Conoce cómo se planifica el blanqueamiento, sus cuidados y solicita una evaluación.')
+}
+
+# Only the two confirmed promotions requested for this maintenance cycle.
+# Their conditions remain alongside the visible prices and in each offer.
+CONFIRMED_OFFERS = {
+    'implantes': {
+        'name': 'Implante + corona de zirconio',
+        'price': '570000',
+        'description': (
+            'Instalación del implante JD: $270.000. Corona de zirconio, laboratorio y aditamentos: $300.000. '
+            'No incluye regeneración ósea. La evaluación determina si el tratamiento es adecuado para ti '
+            'y si necesitas procedimientos adicionales. Solicita el presupuesto de tu caso y confirma '
+            'las condiciones de la promoción antes de iniciar.')
+    },
+    'limpieza-dental': {
+        'name': 'Limpieza dental + flúor',
+        'price': '19990',
+        'description': (
+            'Destartraje supragingival con ultrasonido, pulido coronario con pasta profiláctica, '
+            'aeropulido de manchas, aplicación de barniz de flúor y evaluación de caries. '
+            'La indicación de cada prestación depende de la evaluación clínica. '
+            'Consulta disponibilidad antes de agendar.')
+    }
 }
 
 
@@ -98,10 +122,19 @@ def structured_data(slug, name, title, description):
         page['mainEntity'] = {'@id': CLINIC_ID}
     else:
         service_id = url + '#servicio'
-        graph.append({'@type': 'Service', '@id': service_id,
-                      'name': name, 'url': url, 'serviceType': name,
-                      'description': description, 'provider': {'@id': CLINIC_ID},
-                      'mainEntityOfPage': {'@id': url + '#webpage'}})
+        service = {'@type': 'Service', '@id': service_id,
+                   'name': name, 'url': url, 'serviceType': name,
+                   'description': description, 'provider': {'@id': CLINIC_ID},
+                   'mainEntityOfPage': {'@id': url + '#webpage'}}
+        if slug in CONFIRMED_OFFERS:
+            service['offers'] = {
+                '@type': 'Offer', '@id': url + '#oferta',
+                **CONFIRMED_OFFERS[slug],
+                'priceCurrency': 'CLP', 'url': url + '#promocion',
+                'seller': {'@id': CLINIC_ID},
+                'itemOffered': {'@id': service_id}
+            }
+        graph.append(service)
         breadcrumbs_id = url + '#breadcrumb'
         graph.append({'@type': 'BreadcrumbList', '@id': breadcrumbs_id,
                       'itemListElement': [
@@ -112,10 +145,15 @@ def structured_data(slug, name, title, description):
     return {'@context': 'https://schema.org', '@graph': graph}
 
 
-def apply():
-    for slug, (name, title, description) in PAGES.items():
+def apply(slugs=None):
+    selected = list(dict.fromkeys(slugs)) if slugs else list(PAGES)
+    for slug in selected:
+        name, title, description = PAGES[slug]
         path = SITE / (slug + '.html')
         text = path.read_text(encoding='utf-8')
+        if slug in CONFIRMED_OFFERS:
+            visible_price = '$' + format(int(CONFIRMED_OFFERS[slug]['price']), ',').replace(',', '.')
+            assert visible_price in text.partition('<body')[2], (slug, 'offer differs from visible price')
         text = re.sub(r'  <!-- SEO BEGIN -->.*?  <!-- SEO END -->\n?', '', text, flags=re.S)
         text = re.sub(r'<title>.*?</title>', '<title>' + html.escape(title) + '</title>', text, count=1)
         for key, value in [('description', description), ('og:title', title), ('og:description', description)]:
@@ -142,8 +180,10 @@ def apply():
         ]
         text = text.replace('</head>', '\n'.join(tags) + '\n</head>')
         path.write_text(text, encoding='utf-8')
-    print('Updated metadata, social cards and structured data on 10 public pages.')
+    print(f'Updated metadata, social cards and structured data on {len(selected)} public pages.')
 
 
 if __name__ == '__main__':
-    apply()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--pages', nargs='+', choices=list(PAGES), help='Update only the selected existing pages.')
+    apply(parser.parse_args().pages)
