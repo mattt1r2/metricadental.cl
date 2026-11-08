@@ -8,7 +8,7 @@ La portada presenta primero a Métrica Dental y después las ofertas. Todas se e
 2. Reemplazar el título, precio, prestaciones, condiciones y enlace con datos confirmados. Usar un `id` único en el título y el mismo valor en `aria-labelledby`.
 3. Elegir `home-offer-lilac` o `home-offer-sand`. Si se omite la variante, se usa lila. Las clases no dependen del tratamiento: pueden reutilizarse para cualquier campaña.
 4. Crear o actualizar la promoción completa en la página del tratamiento. El enlace de la tarjeta debe llevar a esa sección existente, no a una página pendiente ni directamente a WhatsApp.
-5. Revisar el resultado en celular y escritorio. La cuadrícula agrega filas según la cantidad de ofertas. Con una oferta destacada, una última oferta sin pareja ocupa el ancho de la fila a partir de cuatro tarjetas.
+5. Revisar el resultado en celular y escritorio. La cuadrícula agrega filas según la cantidad de ofertas, sin necesidad de dejar espacios para futuras campañas.
 
 Plantilla completa de un artículo; sustituir todos los datos de ejemplo antes de incorporarlo al sitio:
 
@@ -30,7 +30,7 @@ Eliminar `.home-offer-detail` si no hay una condición adicional que mostrar. No
 
 El primer artículo puede usar `home-offer home-offer-featured` para mantener la composición verde petróleo de implantes. Usar como máximo una destacada, siempre al principio. El desglose de valores (`home-offer-breakdown`) y las cuotas (`home-offer-finance`) son opcionales; no copiarlos a otro servicio sin condiciones confirmadas.
 
-En móvil las ofertas se muestran en su orden de lectura, una debajo de otra. En tablet la destacada ocupa una fila completa; en escritorio ocupa la izquierda de las dos primeras filas y las siguientes continúan debajo. El diseño no está limitado a tres ofertas ni requiere editar selectores por cada tratamiento nuevo.
+En móvil las ofertas se muestran en su orden de lectura, una debajo de otra. En tablet la destacada ocupa una fila completa. Desde 1100 px, la opción 04 distribuye las ofertas en hasta tres columnas del mismo ancho, con los precios alineados. El diseño admite más ofertas sin editar selectores por tratamiento.
 
 ## Cambiar el orden o retirar una campaña
 
