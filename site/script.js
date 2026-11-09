@@ -43,14 +43,18 @@ if (menuButton && menu) {
   window.matchMedia('(min-width: 1100px)').addEventListener('change', event => {
     if (event.matches) closeMenu();
   });
-  window.addEventListener('pageshow', closeMenu);
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) closeMenu();
+  });
 }
 
-// Anchor offsets track the actual header on each screen size.
+// Anchor offsets and video visibility track the actual header height.
 const siteHeader = document.querySelector('.site-header');
+let observeClips;
 if (siteHeader && 'ResizeObserver' in window) {
   const headerObserver = new ResizeObserver(() => {
     document.documentElement.style.setProperty('--header-height', `${siteHeader.offsetHeight}px`);
+    observeClips?.();
   });
   headerObserver.observe(siteHeader);
 }
@@ -345,7 +349,11 @@ const updatePlayback = () => {
 
 if ('IntersectionObserver' in window && clips.length) {
   let clipObserver;
-  const observeClips = () => {
+  let observedHeaderHeight;
+  observeClips = () => {
+    const headerHeight = siteHeader?.offsetHeight || 0;
+    if (clipObserver && headerHeight === observedHeaderHeight) return;
+    observedHeaderHeight = headerHeight;
     clipObserver?.disconnect();
     clipObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -353,10 +361,11 @@ if ('IntersectionObserver' in window && clips.length) {
         if (entry.intersectionRatio < .15) manuallyPaused.delete(entry.target);
       });
       updatePlayback();
-    }, { rootMargin: `-${siteHeader?.offsetHeight || 0}px 0px 0px 0px`, threshold: [0, .15, .35, .6, .85, 1] });
+    }, { rootMargin: `-${headerHeight}px 0px 0px 0px`, threshold: [0, .15, .35, .6, .85, 1] });
     clips.forEach(video => clipObserver.observe(video));
   };
   observeClips();
+  if (!('ResizeObserver' in window)) window.addEventListener('load', observeClips, { once: true });
   window.addEventListener('resize', observeClips);
   document.addEventListener('visibilitychange', updatePlayback);
   reducedMotion.addEventListener('change', event => {
