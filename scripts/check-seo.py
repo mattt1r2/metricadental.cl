@@ -94,7 +94,7 @@ for protection in ["frame-ancestors 'none'", "object-src 'none'", "script-src 's
 assert "'unsafe-inline'" not in headers and "'unsafe-eval'" not in headers
 assert all(p.stat().st_size<25*1024*1024 for p in SITE.rglob('*') if p.is_file())
 
-for filename in ['styles.css','script.js','servimat-analytics.js']:
+for filename in ['styles.css','service-layout.css','script.js','servimat-analytics.js']:
     version=hashlib.sha256((SITE/filename).read_bytes().replace(b'\r\n',b'\n')).hexdigest()[:12]
     for path in SITE.glob('*.html'):
         for match in re.finditer(r'["\']/?'+re.escape(filename)+r'([^"\']*)',path.read_text(encoding='utf-8')):

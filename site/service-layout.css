@@ -1,0 +1,445 @@
+/* Composición de la portada 04 adaptada a las páginas de tratamiento. */
+.treatment-page {
+  --deep: #173f44;
+  --teal: #155e68;
+  --paper: #fcfaf6;
+  --sand-light: #f0e7dc;
+  --sand: #d8c1aa;
+  --lilac: #e3d8eb;
+  --ink: #243b3e;
+  --muted: #526366;
+  --line: #d9ddd7;
+}
+
+.treatment-page .site-header,
+.treatment-page .navigation {
+  background: var(--paper);
+}
+
+@media (max-width: 1099px) {
+  .js .treatment-page .navigation {
+    /* Mantiene el panel desplazable por encima de la firma y de WhatsApp. */
+    max-height: calc(100vh - var(--header-height, 95px) - 76px - env(safe-area-inset-bottom, 0px));
+    max-height: calc(100dvh - var(--header-height, 95px) - 76px - env(safe-area-inset-bottom, 0px));
+    scroll-padding-block: 8px;
+  }
+}
+
+.treatment-page .button {
+  border-radius: 7px;
+}
+
+.treatment-page main h2 {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
+
+.treatment-page main h3 {
+  letter-spacing: -.012em;
+}
+
+.treatment-page .section-heading > p,
+.treatment-page .journey-copy > p,
+.treatment-page .faq-list details > p {
+  line-height: 1.85;
+}
+
+.service-intro {
+  background: var(--deep);
+  color: #fffaf3;
+}
+
+.service-intro .breadcrumbs {
+  padding-top: 10px;
+  color: #d4e4df;
+  font-size: 12px;
+}
+
+.service-intro .breadcrumbs [aria-current] {
+  color: #f3e8dc;
+}
+
+.service-intro .service-hero,
+.service-intro .implant-hero {
+  gap: 26px;
+  padding-block: 20px 36px;
+}
+
+.service-intro .service-hero > div,
+.service-intro .implant-hero-copy {
+  min-width: 0;
+}
+
+.service-intro .service-hero h1,
+.service-intro .implant-hero h1 {
+  max-width: 20ch;
+  color: #fffaf3;
+  font-size: clamp(34px, 9.5vw, 48px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+
+.service-intro .service-lead,
+.service-intro .implant-hero h1 > span {
+  color: #e3ccb6;
+}
+
+.service-intro .service-lead {
+  margin-top: 15px;
+  font-size: clamp(19px, 4.8vw, 23px);
+  line-height: 1.5;
+}
+
+.service-intro .service-hero p:not(.service-lead),
+.service-intro .implant-hero-description {
+  max-width: 56ch;
+  margin-top: 15px;
+  color: #e4efeb;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.service-intro .button {
+  width: min(100%, 330px);
+  margin-top: 22px;
+  background: #e3ccb6;
+  color: var(--deep);
+}
+
+.service-intro .text-link {
+  color: #f3e8dc;
+}
+
+.service-intro :focus-visible,
+.treatment-page .implant-price-panel :focus-visible {
+  outline-color: #f1d7ad;
+}
+
+.service-intro .treatment-photo {
+  width: 100%;
+  max-width: 520px;
+  justify-self: center;
+  border-radius: 10px;
+  background: var(--sand-light);
+}
+
+.service-intro .treatment-photo img {
+  object-fit: contain;
+}
+
+.service-intro .treatment-photo figcaption {
+  padding: 12px 16px;
+  color: #4b5b5d;
+  line-height: 1.65;
+}
+
+.service-intro .video-card,
+.service-intro .implant-film {
+  border-radius: 10px;
+}
+
+.service-intro .doctor-profile {
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px 16px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-color: #64817d;
+}
+
+.service-intro .doctor-profile > img {
+  width: 64px;
+  height: 64px;
+  border-radius: 7px;
+}
+
+.service-intro .doctor-profile h2 {
+  font-size: 17px;
+}
+
+.service-intro .doctor-profile p,
+.service-intro .doctor-training ul {
+  color: #dceae5;
+  font-size: 13px;
+}
+
+.service-intro .doctor-profile .doctor-specialty,
+.service-intro .doctor-training > summary {
+  color: #f3e8dc;
+}
+
+.service-intro .doctor-training {
+  border-color: #64817d;
+}
+
+.treatment-page .page-index {
+  gap: 0 20px;
+  padding-block: 8px;
+}
+
+/* Los mismos valores y condiciones, con una jerarquía común de precios. */
+.treatment-page .service-promotion,
+.treatment-page .implant-offer {
+  background: #f4eee6;
+}
+
+.treatment-page .service-promotion-layout {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+}
+
+.treatment-page .promotion-card,
+.treatment-page .promotion-visual,
+.treatment-page .implant-price-panel {
+  border-radius: 10px;
+}
+
+.treatment-page .promotion-ortodoncia {
+  background: linear-gradient(to bottom, #bea6cc 0 4px, #fcfaf7 4px 100%);
+}
+
+.treatment-page .promotion-limpieza {
+  background: #e7d7c4;
+}
+
+.treatment-page .service-promotion .promotion-copy {
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(22px, 3.2vw, 36px);
+}
+
+.treatment-page .promotion-copy .promotion-price,
+.treatment-page .implant-price-panel .promotion-price > strong {
+  font-size: clamp(44px, 8vw, 60px);
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+
+.treatment-page .promotion-benefits {
+  padding: 20px 0 0;
+  border-top: 1px solid #173f4433;
+  border-left: 0;
+}
+
+.treatment-page .promotion-benefits .text-link {
+  justify-content: flex-start;
+}
+
+.treatment-page .promotion-poster img {
+  width: min(100%, 420px);
+}
+
+.treatment-page .implant-price-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(22px, 3.2vw, 36px);
+  background: #184f56;
+  color: #fffaf3;
+}
+
+.treatment-page .implant-price-panel .price-switch {
+  display: flex;
+  flex-direction: column;
+}
+
+.treatment-page .implant-price-panel .promotion-price {
+  margin: 0 0 5px;
+}
+
+.treatment-page .implant-price-panel .promotion-price > strong {
+  color: var(--sand-light);
+}
+
+.treatment-page .implant-price-panel .price-options {
+  margin-block: 12px;
+  border-color: #8faeb1;
+}
+
+.treatment-page .implant-price-panel .price-options button[aria-pressed="true"] {
+  background: var(--sand-light);
+  color: var(--deep);
+}
+
+.treatment-page .implant-price-panel .price-options button:focus-visible {
+  outline-offset: -3px;
+}
+
+.treatment-page .implant-price-panel .price-options button[aria-pressed="true"]:focus-visible {
+  outline-color: var(--deep);
+}
+
+.treatment-page .implant-price-panel .price-payment-note {
+  margin-bottom: 0;
+}
+
+.treatment-page .implant-price-panel .price-payment-note > span,
+.treatment-page .implant-price-panel .price-breakdown small {
+  color: #e0eeea;
+}
+
+.treatment-page .implant-price-panel .promotion-comparison {
+  margin: 0;
+}
+
+.treatment-page .implant-price-panel .promotion-details {
+  margin: 0;
+  border-color: #ffffff55;
+}
+
+.treatment-page .implant-price-panel > .button {
+  margin-top: 3px;
+  background: var(--sand-light);
+  color: var(--deep);
+}
+
+.treatment-page .finance-section {
+  background: var(--deep);
+}
+
+.treatment-page .implant-cases {
+  background: #f0ecef;
+}
+
+/* Las etapas y preguntas se leen en filas, como el catálogo del inicio. */
+.treatment-page .journey-list > li {
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 16px;
+  padding-block: 22px;
+}
+
+.treatment-page .journey-number {
+  padding-top: 4px;
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.treatment-page .journey-copy h3 {
+  margin-bottom: 8px;
+  font-size: clamp(20px, 3vw, 24px);
+}
+
+.treatment-page .faq-list summary {
+  min-height: 70px;
+  font-weight: 500;
+}
+
+.treatment-page .faq-list details > p {
+  padding-bottom: 25px;
+}
+
+.treatment-page .service-invitation {
+  background: var(--lilac);
+  color: var(--ink);
+}
+
+.treatment-page .service-invitation p {
+  color: #41575a;
+}
+
+.treatment-page .service-invitation .button {
+  background: var(--teal);
+  color: white;
+}
+
+.treatment-page .service-invitation :focus-visible {
+  outline-color: var(--deep);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-intro .button:hover {
+    background: var(--sand-light);
+  }
+
+  .treatment-page .implant-price-panel > .button:hover {
+    background: var(--sand);
+  }
+
+  .treatment-page .service-invitation .button:hover {
+    background: var(--deep);
+  }
+}
+
+.treatment-page .related a {
+  min-height: 54px;
+}
+
+@media (min-width: 600px) {
+  .treatment-page .section {
+    padding-block: 60px;
+  }
+
+  .service-intro .service-hero,
+  .service-intro .implant-hero {
+    padding-block: 26px 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .treatment-page .service-promotion .promotion-copy {
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    gap: 32px;
+  }
+
+  .treatment-page .promotion-benefits {
+    padding: 0 0 0 32px;
+    border-top: 0;
+    border-left: 1px solid #173f4433;
+  }
+}
+
+@media (min-width: 900px) {
+  .treatment-page .section {
+    padding-block: 68px;
+  }
+
+  .service-intro .service-hero,
+  .service-intro .implant-hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 60px;
+    padding-block: 30px 52px;
+  }
+
+  .service-intro .service-hero:has(> .video-card) {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, .63fr);
+  }
+
+  .service-intro .service-hero .video-card {
+    width: 260px;
+  }
+
+  .service-intro .service-hero h1,
+  .service-intro .implant-hero h1 {
+    font-size: clamp(44px, 3.8vw, 54px);
+  }
+
+  .service-intro .service-hero p:not(.service-lead),
+  .service-intro .implant-hero-description {
+    font-size: 17px;
+  }
+
+  .treatment-page .service-promotion-layout > div:first-child {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 44px;
+    align-items: center;
+  }
+
+  .treatment-page .service-promotion-layout > div:first-child > p {
+    margin: 0;
+  }
+
+  .treatment-page .service-process .journey-copy {
+    display: grid;
+    grid-template-columns: minmax(180px, .75fr) minmax(0, 1.3fr);
+    gap: 0 32px;
+    align-items: start;
+  }
+
+  .treatment-page .service-process .journey-copy h3 {
+    margin-bottom: 0;
+  }
+}

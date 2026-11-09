@@ -4,7 +4,7 @@ import hashlib
 import re
 
 site = Path(__file__).resolve().parents[1] / 'site'
-for name in ['styles.css', 'script.js', 'servimat-analytics.js']:
+for name in ['styles.css', 'service-layout.css', 'script.js', 'servimat-analytics.js']:
     content = (site / name).read_bytes().replace(b'\r\n', b'\n')
     version = hashlib.sha256(content).hexdigest()[:12]
     for page in site.glob('*.html'):
