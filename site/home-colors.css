@@ -27,12 +27,11 @@
 .clinic-home .home-offer-sand { background: #e7d7c4; }
 .clinic-home .promotion-comparison > strong { background: #e3d8eb; color: #173f44; }
 .clinic-home .home-offer-featured .price-options { border-color: #8faeb1; }
-.clinic-home .home-offer-featured .price-options button[aria-pressed="true"] { background: #f0e7dc; }
 .clinic-home .home-offer-featured .promotion-price > strong { color: #f0e7dc; }
 .clinic-home .home-offer-featured .home-offer-link { background: #f0e7dc; }
 .clinic-home .home-promotions-note { color: #526366; }
 .clinic-home .clinic-story { background: #fcfaf6; }
-.clinic-home .services { background: #173f44; }
+.clinic-home .services { background-color: #173f44; }
 .clinic-home .service-filters button[aria-pressed="true"] { background: #e3ccb6; }
 .clinic-home .service-link .service-more { color: #e3ccb6; }
 .clinic-home .clinical-cases { background: #f0ecef; }

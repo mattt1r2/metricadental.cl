@@ -151,6 +151,22 @@ openLegacyService();
 const watermark = document.querySelector('.servimat-watermark');
 const footer = document.querySelector('.site-footer');
 if (watermark && footer) {
+  const backgroundIsDark = (x, y) => {
+    const behind = document.elementsFromPoint(x, y).find(element => !watermark.contains(element));
+    if (behind?.closest('img, picture, video, iframe, .video-frame')) return null;
+    for (let element = behind; element; element = element.parentElement) {
+      const style = window.getComputedStyle(element);
+      if (style.backgroundImage.includes('url(')) return null;
+      const color = style.backgroundColor.match(/[\d.]+/g)?.map(Number);
+      if (!color || (color[3] ?? 1) < .98) continue;
+      const [red, green, blue] = color.slice(0, 3).map(value => {
+        const channel = value / 255;
+        return channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4;
+      });
+      return red * .2126 + green * .7152 + blue * .0722 < .179;
+    }
+    return false;
+  };
   const updateWatermark = hidden => {
     if (hidden && document.activeElement === watermark) {
       footer.querySelector('.servimat-credit')?.focus({ preventScroll: true });
@@ -168,6 +184,14 @@ if (watermark && footer) {
   const updateFromPosition = () => {
     const rect = footer.getBoundingClientRect();
     const footerVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!footerVisible) {
+      const bounds = watermark.getBoundingClientRect();
+      const topSurface = backgroundIsDark(bounds.left + 2, bounds.top + 2);
+      const bottomSurface = backgroundIsDark(bounds.right - 2, bounds.bottom - 2);
+      const mixed = topSurface === null || bottomSurface === null || topSurface !== bottomSurface;
+      watermark.classList.toggle('is-on-mixed', mixed);
+      watermark.classList.toggle('is-on-dark', mixed || topSurface === true);
+    }
     // The signature stays fixed at bottom left; only the footer hides it.
     updateWatermark(footerVisible);
   };
@@ -189,25 +213,54 @@ if (watermark && footer) {
   window.addEventListener('pageshow', updateFromPosition);
 }
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 // Both amounts remain readable without JavaScript; the switch is an enhancement.
 document.querySelectorAll('[data-price-switch]').forEach(panel => {
   const controls = panel.querySelector('.price-options');
   const amount = panel.querySelector('[data-price-amount]');
   const caption = panel.querySelector('[data-price-caption]');
   if (!controls || !amount || !caption) return;
+  let amountMotion;
   controls.hidden = false;
   controls.addEventListener('click', event => {
     const button = event.target.closest('[data-price-mode]');
-    if (!button) return;
+    if (!button || button.getAttribute('aria-pressed') === 'true') return;
     const installments = button.dataset.priceMode === 'installments';
     controls.querySelectorAll('button').forEach(option => {
       option.setAttribute('aria-pressed', String(option === button));
     });
+    controls.dataset.selection = button.dataset.priceMode;
     amount.textContent = installments ? '$47.500' : '$570.000';
     caption.textContent = installments ? 'Cada cuota · 12 cuotas sin interés' : 'Implante + corona de zirconio';
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && amount.animate) {
-      amount.animate([{ opacity: .45, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 240, easing: 'ease-out' });
+    amountMotion?.cancel();
+    if (!reducedMotion.matches && amount.animate) {
+      amountMotion = amount.animate([
+        { opacity: .82, transform: 'translateY(5px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], { duration: 220, easing: 'ease-out' });
     }
+  });
+});
+
+// Expand the native disclosure, then let it resume its natural height.
+document.querySelectorAll('details.promotion-details, details.promotion-poster').forEach(disclosure => {
+  const summary = disclosure.querySelector(':scope > summary');
+  if (!summary) return;
+  let opening;
+  summary.addEventListener('click', event => {
+    if (event.defaultPrevented) return;
+    opening?.cancel();
+    if (disclosure.open || reducedMotion.matches || !disclosure.animate) return;
+
+    const closedHeight = disclosure.getBoundingClientRect().height;
+    event.preventDefault();
+    disclosure.open = true;
+    const openHeight = disclosure.getBoundingClientRect().height;
+    opening = disclosure.animate([
+      { height: `${closedHeight}px`, overflow: 'hidden' },
+      { height: `${openHeight}px`, overflow: 'hidden' }
+    ], { duration: 260, easing: 'ease-out' });
   });
 });
 
@@ -231,28 +284,34 @@ if (serviceBrowser && serviceCards.length) {
 }
 
 // Content stays visible if JavaScript or animation APIs are unavailable.
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const savingBadge = '.promotion-comparison > strong';
   const reveals = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      reveals.unobserve(entry.target);
-      if (!reducedMotion.matches && entry.target.animate) {
-        entry.target.animate([
-          { opacity: .85 },
-          { opacity: 1 }
-        ], { duration: 220, easing: 'ease-out' });
+      const target = entry.target;
+      reveals.unobserve(target);
+      if (reducedMotion.matches || !target.animate) return;
+      if (target.matches(savingBadge)) {
+        target.animate([
+          { transform: 'translateY(3px)', boxShadow: '0 0 0 0 #e3d8eb00' },
+          { transform: 'translateY(0)', boxShadow: '0 0 0 4px #e3d8eb55', offset: .45 },
+          { transform: 'translateY(0)', boxShadow: '0 0 0 7px #e3d8eb00' }
+        ], { duration: 460, easing: 'ease-out' });
+      } else {
+        target.animate([{ opacity: .85 }, { opacity: 1 }], { duration: 220, easing: 'ease-out' });
       }
     });
   }, { threshold: .12 });
-  document.querySelectorAll('.home-offer, .service-link, .treatment-photo, .clinic-media-video, .clinical-cases-grid > *').forEach(element => reveals.observe(element));
+  const revealTargets = `.home-offer, .service-link, .treatment-photo, .clinic-media-video, .clinical-cases-grid > *, ${savingBadge}`;
+  document.querySelectorAll(revealTargets).forEach(element => reveals.observe(element));
   reducedMotion.addEventListener('change', event => {
-    if (event.matches) {
-      reveals.disconnect();
-      document.getAnimations?.().forEach(animation => animation.cancel());
-    }
+    if (event.matches) reveals.disconnect();
   });
 }
+reducedMotion.addEventListener('change', event => {
+  if (event.matches) document.getAnimations?.().forEach(animation => animation.cancel());
+});
 
 // Play one visible clip at a time. Native controls remain available without JS.
 const clips = [...document.querySelectorAll('video')];

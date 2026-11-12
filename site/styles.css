@@ -14,6 +14,8 @@
   --muted: #58676a;
   --line: #d8dfdb;
   --font: Manrope, 'Segoe UI', Arial, sans-serif;
+  --curves-on-dark: repeating-radial-gradient(ellipse at 111% -28%, transparent 0 16px, #ffffff2b 16.5px 17.5px, transparent 18px 25px);
+  --curves-on-light: repeating-radial-gradient(ellipse at 111% -28%, transparent 0 16px, #173f4426 16.5px 17.5px, transparent 18px 25px);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 106px; }
@@ -174,15 +176,64 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .servimat-credit strong { font-size: 9px; font-weight: 600; letter-spacing: .06em; }
 .servimat-credit > span { font-size: 12px; }
 
-/* White artwork reverses against light sections without a background panel. */
-.servimat-watermark { position: fixed; z-index: 60; left: max(15px, env(safe-area-inset-left, 0px)); right: auto; bottom: calc(13px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; justify-content: center; width: max-content; max-width: 138px; min-height: 44px; color: #fff; mix-blend-mode: difference; opacity: .76; transition: opacity .18s ease, visibility .18s ease; }
-.servimat-label { font-size: 6px; font-weight: 600; letter-spacing: .075em; white-space: nowrap; }
-.servimat-brand { display: flex; align-items: center; gap: 6px; }
-.servimat-brand img { width: 22px; height: 22px; object-fit: contain; }
-.servimat-brand strong { font-size: 9px; letter-spacing: .06em; font-weight: 700; }
-.servimat-brand > span { font-size: 12px; }
+/* The floating credit uses the same transparent lockup as Trueno. */
+.servimat-watermark {
+  position: fixed;
+  z-index: 60;
+  left: calc(22px + env(safe-area-inset-left, 0px));
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  max-width: calc(100vw - 120px);
+  min-width: 44px;
+  min-height: 44px;
+  color: #171a18;
+  transition: opacity .28s ease, color .24s ease, visibility .28s ease;
+}
+.servimat-watermark-label {
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .17em;
+  white-space: nowrap;
+}
+.servimat-brand { display: flex; align-items: center; gap: 7px; }
+.servimat-brand img {
+  width: auto;
+  height: 25px;
+  flex: none;
+  object-fit: contain;
+  filter: brightness(0);
+  opacity: .88;
+  transition: opacity .24s ease, transform .24s ease;
+}
+.servimat-brand strong { font-size: 10px; line-height: 1; letter-spacing: .12em; font-weight: 600; white-space: nowrap; }
+.servimat-watermark.is-on-dark { color: white; }
+.servimat-watermark.is-on-dark img { filter: brightness(0) invert(1); }
+.servimat-watermark.is-on-dark:focus-visible { outline-color: #e9bf94; }
+.servimat-watermark.is-on-mixed :is(.servimat-watermark-label, strong) {
+  -webkit-text-stroke: 1.2px #171a18;
+  paint-order: stroke fill;
+}
+@media (max-width: 700px) {
+  .servimat-watermark {
+    left: calc(15px + env(safe-area-inset-left, 0px));
+    bottom: calc(15px + env(safe-area-inset-bottom, 0px));
+    gap: 3px;
+    max-width: calc(100vw - 104px);
+  }
+  .servimat-watermark-label { font-size: 7px; letter-spacing: .14em; }
+  .servimat-brand img { height: 21px; }
+}
 .servimat-watermark.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 html:not(.js) .servimat-watermark { display: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .servimat-watermark:is(:hover, :focus-visible) img { opacity: 1; transform: translateY(-1px); }
+  .servimat-watermark:is(:hover, :focus-visible) .icon-arrow { transform: translate(2px, -2px); }
+}
 .whatsapp-float { position: fixed; z-index: 50; right: max(15px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: 8px; min-height: 46px; padding: 11px 15px; color: white; background: var(--teal); border: 1px solid #ffffff50; border-radius: 30px; box-shadow: 0 3px 12px #132f331f; font-size: 11px; font-weight: 600; }
 .whatsapp-float svg { width: 20px; height: 20px; }
 .legal { max-width: 760px; padding-block: 45px 70px; }
@@ -198,7 +249,7 @@ html:not(.js) .servimat-watermark { display: none; }
   .text-link:hover, .navigation > a:not(.button):hover, .location-social a:hover, .contact-phone:hover, .footer-top > a:hover { text-decoration: underline; text-underline-offset: 5px; }
   .treatment:not(.treatment-highlight):hover h3, .quick-links a:hover { color: var(--teal); }
   .treatment-highlight:hover { background: var(--deep); }
-  .servimat-watermark:hover, .servimat-credit:hover { opacity: 1; }
+  .servimat-credit:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 @media (min-width: 600px) {
   .wrap { width: min(1180px, calc(100% - 64px)); }
@@ -226,10 +277,6 @@ html:not(.js) .servimat-watermark { display: none; }
   .footer-top { align-items: center; gap: 30px; }
   .footer-top > div { flex: 1; }
   .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
-  .servimat-watermark { left: 23px; max-width: 160px; }
-  .servimat-label { font-size: 7px; }
-  .servimat-brand img { width: 25px; height: 25px; }
-  .servimat-brand strong { font-size: 10px; }
   .whatsapp-float { right: 23px; font-size: 12px; }
 }
 @media (min-width: 900px) {
@@ -717,17 +764,58 @@ html:not(.js) .servimat-watermark { display: none; }
 .promotion-comparison { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 18px; margin-top: 20px; font-size: 14px; }
 .promotion-comparison s { text-decoration-thickness: 1px; font-size: 20px; margin-left: 4px; }
 .promotion-comparison > strong { background: var(--lilac); color: var(--deep); padding: 5px 11px; border-radius: 3px; font-size: 13px; font-weight: 600; }
-.price-options { display: flex; gap: 4px; padding: 4px; margin-top: 20px; border: 1px solid #173f4440; border-radius: 5px; width: max-content; max-width: 100%; }
+.price-options {
+  --price-option-gap: 4px;
+  --price-option-fill: var(--deep);
+  --price-option-ink: white;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--price-option-gap);
+  padding: var(--price-option-gap);
+  margin-top: 20px;
+  border: 1px solid #173f4440;
+  border-radius: 7px;
+  width: max-content;
+  max-width: 100%;
+}
 .price-options[hidden] { display: none; }
-.price-options button { min-height: 44px; padding: 9px 16px; border: 0; background: transparent; border-radius: 3px; font-size: 13px; cursor: pointer; }
-.price-options button[aria-pressed="true"] { background: var(--deep); color: white; }
+.price-options::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--price-option-gap);
+  inset-inline-start: var(--price-option-gap);
+  inline-size: calc((100% - 3 * var(--price-option-gap)) / 2);
+  border-radius: 3px;
+  background: var(--price-option-fill);
+  pointer-events: none;
+  transform: translateX(0);
+  transition: transform .22s ease-in-out;
+}
+.price-options[data-selection="installments"]::before { transform: translateX(calc(100% + var(--price-option-gap))); }
+.price-options button {
+  position: relative;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 0;
+  background: transparent;
+  border-radius: 3px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color .11s step-end;
+}
+.price-options button[aria-pressed="true"] { color: var(--price-option-ink); }
 .promotion-price { margin-block: 15px 16px; }
 .promotion-price > strong { display: block; font-size: clamp(46px, 13vw, 64px); letter-spacing: -.06em; line-height: 1.2; font-weight: 600; }
+.promotion-price > [data-price-amount] { font-variant-numeric: tabular-nums; }
 .promotion-price > span { display: block; margin-top: 4px; font-size: 12px; }
 .price-payment-note { font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
 .price-payment-note > span { display: block; font-size: 11px; line-height: 1.6; margin-top: 8px; }
 .home-offer-featured .price-options { border-color: #ffffff66; }
-.home-offer-featured .price-options button[aria-pressed="true"] { background: var(--sand-light); color: var(--deep); }
+.home-offer-featured .price-options, .implant-price-panel .price-options {
+  --price-option-fill: var(--sand-light);
+  --price-option-ink: var(--deep);
+}
 .home-offer-featured .promotion-price > strong { color: var(--sand-light); }
 .home-offer-featured .price-payment-note > span { color: #e0eeea; }
 .promotion-details { border-top: 1px solid #173f4440; margin-top: 16px; padding-block: 3px; }
@@ -841,7 +929,8 @@ html:not(.js) .servimat-watermark { display: none; }
 html { scroll-padding-top: 120px; }
 body { font-size: 16px; }
 .icon-arrow { display: inline-block; width: 22px; height: 22px; vertical-align: middle; flex: 0 0 auto; stroke-width: 1.7; transition: transform .2s ease; }
-.servimat-brand .icon-arrow, .servimat-credit .icon-arrow { width: 12px; height: 12px; }
+.servimat-credit .icon-arrow { width: 12px; height: 12px; }
+.servimat-watermark .icon-arrow { width: 11px; height: 11px; stroke-width: 1.6; }
 .location-map .icon-arrow { width: 16px; height: 16px; }
 .site-header { background: #f8f1e7; border-bottom-color: #cfbda8; }
 .logo-crop { --logo-width: clamp(166px, 48vw, 190px); width: var(--logo-width); height: calc(var(--logo-width) * .352); }
@@ -900,6 +989,59 @@ body { font-size: 16px; }
 
 /* Image-led service catalogue with accessible area filters. */
 .services { background: #113f46; color: #fff; }
+.clinic-home .services, .treatment-page .service-intro {
+  background-image:
+    linear-gradient(90deg, var(--deep), transparent 78%),
+    linear-gradient(0deg, var(--deep), transparent 76%),
+    var(--curves-on-dark);
+  background-position: right top;
+  background-size: min(100%, 960px) clamp(260px, 40vw, 460px);
+  background-repeat: no-repeat;
+}
+
+/* The curves sit behind the content and fade into each section's own colour. */
+:where(
+  .clinic-intro-band, .home-promotions, .home-offer, .clinic-story, .contact, .site-footer,
+  .service-promotion, .promotion-card, .service-invitation, .implant-offer, .implant-price-panel,
+  .finance-section, .implant-cases
+) {
+  --surface-curves: var(--curves-on-dark);
+  position: relative;
+  isolation: isolate;
+}
+:where(
+  .home-promotions, .home-offer:not(.home-offer-featured), .clinic-story, .contact, .service-promotion,
+  .promotion-card, .service-invitation, .implant-offer, .implant-cases
+) { --surface-curves: var(--curves-on-light); }
+:where(
+  .clinic-intro-band, .home-promotions, .home-offer, .clinic-story, .contact, .site-footer,
+  .service-promotion, .promotion-card, .service-invitation, .implant-offer, .implant-price-panel,
+  .finance-section, .implant-cases
+)::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: min(100%, 960px);
+  height: min(100%, clamp(260px, 40vw, 460px));
+  border-radius: inherit;
+  background-image: var(--surface-curves);
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at right top, #000 8%, transparent 94%);
+  mask-image: radial-gradient(ellipse 100% 100% at right top, #000 8%, transparent 94%);
+  pointer-events: none;
+}
+:where(.home-promotions, .clinic-story, .service-promotion, .finance-section)::before {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+}
+:where(.home-offer, .promotion-card, .implant-price-panel)::before {
+  width: min(100%, 340px);
+  height: min(100%, 240px);
+  opacity: .68;
+}
+
 .services .section-heading > p { color: #d6e6df; }
 .service-browser { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
 .service-filters { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -1054,8 +1196,6 @@ html.is-loaded { scroll-behavior: smooth; }
 .home-offer-featured .home-offer-link { border-radius: 7px; }
 .home-offer-featured .promotion-price { margin-block: 24px; }
 .promotion-details > summary { min-height: 48px; }
-.price-options { border-radius: 7px; overflow: hidden; }
-.price-options button { transition: background .16s ease, color .16s ease; }
 
 /* Compact clips use their intrinsic ratio, without cropped frames or side bars. */
 .video-card { min-width: 0; width: min(100%, 230px); overflow: hidden; border-radius: 14px; background: transparent; justify-self: center; }

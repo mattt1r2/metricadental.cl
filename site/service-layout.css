@@ -46,7 +46,7 @@
 }
 
 .service-intro {
-  background: var(--deep);
+  background-color: var(--deep);
   color: #fffaf3;
 }
 
@@ -255,11 +255,6 @@
 .treatment-page .implant-price-panel .price-options {
   margin-block: 12px;
   border-color: #8faeb1;
-}
-
-.treatment-page .implant-price-panel .price-options button[aria-pressed="true"] {
-  background: var(--sand-light);
-  color: var(--deep);
 }
 
 .treatment-page .implant-price-panel .price-options button:focus-visible {
